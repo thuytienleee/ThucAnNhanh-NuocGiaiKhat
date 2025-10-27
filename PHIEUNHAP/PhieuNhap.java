@@ -89,7 +89,7 @@ public class PhieuNhap {
             System.out.println(" - " + dsNL[i]);
         }
         System.out.println("Tong tien: " + TongTienPhieu() + " VND");
-        System.out.println("======================");
+        System.out.println("=======================");
     }
 }
 
