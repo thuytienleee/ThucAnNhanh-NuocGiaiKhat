@@ -1,0 +1,52 @@
+package KHACHHANG;
+
+import java.util.Scanner;
+
+public class mainKH {
+            public void menu() {
+                DanhSachKhachHang danhSachKhachHang = new DanhSachKhachHang();
+                Scanner scanner = new Scanner(System.in);
+        
+                // Đọc danh sách khách hàng từ file
+                danhSachKhachHang.docDS();
+        
+                // Menu cho người dùng
+                while (true) {
+                    System.out.println("=== Quan ly khach hang ===");
+                    System.out.println("1. Them khach hang");
+                    System.out.println("2. Sua thong tin khach hang");
+                    System.out.println("3. Xoa khach hang");
+                    System.out.println("4. Hien thi danh sach khach hang");
+                    System.out.println("5. Thoat");
+                    System.out.println("---------");
+                    System.out.print("Chon 1 tuy chon: ");
+
+                    int choice = scanner.nextInt();
+                    scanner.nextLine();  
+        
+                    if (choice == 1) {
+                        danhSachKhachHang.themKhachHang();
+        
+                    } else if (choice == 2) {
+                        System.out.print("Nhap ma so KH can sua: ");
+                        String maUser = scanner.nextLine();
+                        danhSachKhachHang.suaKhachHang(maUser);
+        
+                    } else if (choice == 3) {
+                        System.out.print("Nhap ma so KH can xoa: ");
+                        String maUser = scanner.nextLine();
+                        danhSachKhachHang.xoaKhachHang(maUser);
+        
+                    } else if (choice == 4) {
+                        danhSachKhachHang.hienThiDanhSach();
+        
+                    } else if (choice == 5) {
+                        System.out.println("Thoat.");
+                        break;
+        
+                    } else {
+                        System.out.println("Lua chon khong hop le ! Vui long thu lai");
+                    }
+                }
+            }
+        }
