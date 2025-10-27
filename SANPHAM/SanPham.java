@@ -1,23 +1,38 @@
 package SANPHAM;
 
-public abstract  class SanPham {
-    private String maSP;
-    private String tenSP;
-    private double giaSP;
-    //private CongThuc congThuc;
-    
-    public SanPham() {}
+import java.util.Date;
 
-    public SanPham(String maSP, String tenSP, double giaSP) {
+/**
+ *
+ * @author Thuy Tien
+ */
+public abstract class SanPham {
+    public String maSP;
+    public String tenSP;
+    public String maLoai;
+    public Double gia;
+    public Date NgaySX;
+    public Date HanSD;
+    //private CongThuc congThuc;
+    public int soLuong;
+    
+    public SanPham(){}
+    
+    public SanPham(String maSP, String tenSP, String maLoai, Double gia, Date NgaySX, Date HanSD/*, CongThuc congThuc*/, int soLuong){
         this.maSP = maSP;
         this.tenSP = tenSP;
-        this.giaSP = giaSP;
+        this.maLoai = maLoai;
+        this.gia = gia;
+        this.NgaySX = NgaySX;
+        this.HanSD = HanSD;
+        //this.congThuc = congThuc;
+        this.soLuong = soLuong;
     }
 
     public String getMaSP() {
         return maSP;
     }
-
+    
     public void setMaSP(String maSP) {
         this.maSP = maSP;
     }
@@ -25,27 +40,64 @@ public abstract  class SanPham {
     public String getTenSP() {
         return tenSP;
     }
-
+    
     public void setTenSP(String tenSP) {
         this.tenSP = tenSP;
     }
 
-    public double getGiaSP() {
-        return giaSP;
+    public String getMaLoai() {
+        return maLoai;
     }
 
-    public void setGiaSP(double giaSP) {
-        this.giaSP = giaSP;
+    public void setMaLoai(String maLoai) {
+        this.maLoai = maLoai;
     }
 
-    /*public void themNguyenLieu() {
-        
-    }*/
+    public Double getGia() {
+        return gia;
+    }
 
-    /*public void Kho(Kho kho) {
-        kho.ThemSP(this);
-    }*/
+    public void setGia(Double gia) {
+        this.gia = gia;
+    }
 
+    public Date getNgaySX() {
+        return NgaySX;
+    }
+
+    public void setNgaySX(Date NgaySX) {
+        this.NgaySX = NgaySX;
+    }
+
+    public Date getHanSD() {
+        return HanSD;
+    }
+
+    public void setHanSD(Date HanSD) {
+        this.HanSD = HanSD;
+    }
+    
+    /*public CongThuc getCongThuc(){
+        return congThuc;
+    }*/
+    
+    /*public void setCongThuc(CongThuc congthuc){
+        this.congThuc = congThuc;\
+    }
+    */
+    
+    public int getSoLuong(){
+        return soLuong;
+    }
+    
+    public void setSoLuong(int soLuong){
+        this.soLuong = soLuong;
+    }
+    
+    public void themNguyenLieu(){}
+    public void CheBien(){}
+    public double tinhTien(){
+        return gia * soLuong;
+    }
     public abstract String toString();
-
 }
