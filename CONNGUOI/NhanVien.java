@@ -1,0 +1,53 @@
+package NHANVIEN;
+
+public class NhanVien {
+    private String maNHANVIEN;
+    private String tenUser;
+    private String diachi;
+    private String soDT;
+    private String ngaysinh;
+    private String gioitinh;
+    private String matkhau;
+    protected String chucvu;
+
+    public NhanVien(String maNHANVIEN, String tenNHANVIEN, String diachi, String soDT, String ngaysinh, String gioitinh, String matkhau, String chucvu) {
+        this.maNHANVIEN = maNHANVIEN;
+        this.tenNHANVIEN = tenNHANVIEN;
+        this.diachi = diachi;   
+        this.soDT = soDT;
+        this.ngaysinh = ngaysinh;
+        this.gioitinh = gioitinh;
+        this.chucvu = chucvu;
+    }
+
+    // Getter methods
+    public String getmaNHANVIEN() { return maNHANVIEN; }
+    public String gettenNHANVIEN() { return tenNHANVIEN; }
+    public String getdiachi() { return diachi; }
+    public String getsoDT() { return soDT; }
+    public String getngaysinh() { return ngaysinh; }
+    public String getgioitinh() { return gioitinh; }
+    public String getmatkhau() { return matkhau; }
+    public String getchucvu(){return chucvu;}
+    public void setmaNHANVIEN(String id) { maNHANVIEN = id; }
+    public void settenNHANVIEN(String name) { tenNHANVIEN = name; }
+    public void setdiachi(String addr) { diachi = addr; }
+    public void setsoDT(String sdt) { soDT = sdt; }
+    public void setngaysinh(String birthday) { ngaysinh = birthday; }
+    public void setgioitinh(String sex) { gioitinh = sex; }
+    public void setmatkhau(String mk) { matkhau = mk; }
+    public void setchucvu(String chucvu){this.chucvu=chucvu;}
+
+    public void hienThiThongTin() {
+        System.out.println("Thong tin nhan vien:");
+        System.out.printf("Ma nhan vien: %s%n", maUser);
+        System.out.printf("Ten nhan vien: %s%n", tenUser);
+        System.out.printf("Dia chi: %s%n", diachi);
+        System.out.printf("So dien thoai: %s%n", soDT);
+        System.out.printf("Ngay sinh: %s%n", ngaysinh);
+        System.out.printf("Gioi tinh: %s%n", gioitinh);
+        System.out.printf("Mat khau: %s%n", matkhau);
+        System.out.printf("Chuc vu: %s%n", chucvu);
+        System.out.println("===========================================");
+    }
+}
