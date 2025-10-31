@@ -1,3 +1,7 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package SANPHAM;
 
 import java.util.Date;
@@ -15,6 +19,6 @@ public class ThucUong extends SanPham{
     
     @Override
     public String toString(){
-        return String.format("[Thức Uống] Mã: %s | Tên: %s | Loai: %s | Giá: %.0f | SL: %d | NSX: %tF | HSD: %tF", maSP, tenSP, maLoai, gia, soLuong, NgaySX, HanSD);
+        return String.format("[Thuc Uong] ID: %s | Name: %s | Category: %s | Price: %.0f | NSX: %tF | HSD: %tF", maSP, tenSP, maLoai, gia, NgaySX, HanSD);
     }
 }
