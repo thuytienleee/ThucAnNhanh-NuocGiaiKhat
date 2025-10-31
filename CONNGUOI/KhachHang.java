@@ -11,11 +11,11 @@ package CONNGUOI;
 public class KhachHang {
     private String maKH;
     private String tenKH;
-    private int sdtKH;
+    private String sdtKH;
     
     public KhachHang(){}
     
-    public KhachHang(String maKH, String tenKH, int sdtKH){
+    public KhachHang(String maKH, String tenKH, String sdtKH){
         this.maKH = maKH;
         this.tenKH = tenKH;
         this.sdtKH = sdtKH;
@@ -37,11 +37,11 @@ public class KhachHang {
         this.tenKH = tenKH;
     }
 
-    public int getSdtKH() {
+    public String getSdtKH() {
         return sdtKH;
     }
 
-    public void setSdtKH(int sdtKH) {
+    public void setSdtKH(String sdtKH) {
         this.sdtKH = sdtKH;
     }
     
