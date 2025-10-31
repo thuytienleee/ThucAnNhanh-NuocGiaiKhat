@@ -150,3 +150,4 @@ public class QUANLYCUAHANG {
         ql.hienThiMenu();
     }
 }
+                                                                                                                                                                                                                 
