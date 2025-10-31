@@ -1,13 +1,18 @@
-package ThucAnNhanh-NuocGiaiKhat.HOADON;
-import java.util.Date;
+package HOADON;
+
+
+import SANPHAM.SanPham;
+import CONNGUOI.NhanVien;
+import CONNGUOI.KhachHang;
 import java.text.SimpleDateFormat;
-import java.io.*;
+import java.util.Date;
 
 public class HoaDon {
     private String maHoaDon;
-    private String maNhanVien;
-    private String maKhachHang;
     private String tenHoaDon;
+    private NhanVien maNhanVien;
+    private NhanVien tenNhanVien;
+    private KhachHang maKhachHang;
     private String diaChi;
     private Date ngayLap;
     private int diemTichLuy;
@@ -17,7 +22,7 @@ public class HoaDon {
 
     // Constructor
     public HoaDon(String maHoaDon, String maNhanVien, String maKhachHang, String tenHoaDon,
-                  String diaChi, int diemTichLuy, Date ngayLap, SanPham[] dsChiTiet) {
+                  String diaChi, Date ngayLap, int diemTichLuy, double tinhTongTien, SanPham[] dsChiTiet) {
         this.maHoaDon = maHoaDon;
         this.maNhanVien = maNhanVien;
         this.maKhachHang = maKhachHang;
