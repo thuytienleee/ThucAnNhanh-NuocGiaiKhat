@@ -1,0 +1,14 @@
+class NhanVien extends CONNGUOI {
+    private String maNV;
+    private String chucVu;
+
+    public NhanVien(String maNV, String ten, String diaChi, String soDT, String ngaySinh, String gioiTinh, String chucVu) {
+        super(ten, diaChi, soDT, ngaySinh, gioiTinh); // gọi constructor lớp cha
+        this.maNV = maNV;
+        this.chucVu = chucVu;
+    }
+
+    public void hienThi() {
+        System.out.println("Mã NV: " + maNV + " | Tên: " + getTen() + " | Chức vụ: " + chucVu);
+    }
+}
