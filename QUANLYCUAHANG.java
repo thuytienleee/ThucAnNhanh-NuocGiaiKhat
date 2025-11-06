@@ -1,37 +1,37 @@
-package ThucAnNhanh_NuocGiaiKhat;
+// package ThucAnNhanh_NuocGiaiKhat;
+package com.example.models.ThucAnNhanhNuocGiaiKhat;
 
 import java.util.Scanner;
-import java.io.*;
 
 public class QUANLYCUAHANG {
-    private DSachSP dsSanPham;
+/*  private DSachSP dsSanPham;
     private DSachNV dsNhanVien;
     private DSachKH dsKhachHang;
     private DSachHD dsHoaDon;
-
+*/
     private Scanner sc = new Scanner(System.in);
 
-    // ✅ Constructor
-    public QUANLYCUAHANG() {
-        dsSanPham = new DSachSP(100);  // mảng 100 sản phẩm
-        dsNhanVien = new DSachNV(50);  // mảng 50 nhân viên
+   /* public QUANLYCUAHANG() {
+        dsSanPham = new DSachSP(100); 
+        dsNhanVien = new DSachNV(50);
         dsKhachHang = new DSachKH(100);
         dsHoaDon = new DSachHD(100);
-    }
+    } */
 
-    // ✅ Hàm hiển thị menu chính
+    // Ham hien thi menu chinh
     public void hienThiMenu() {
         int chon;
         do {
-            System.out.println("\n===== MENU QUẢN LÝ CỬA HÀNG =====");
-            System.out.println("1. Quản lý sản phẩm");
-            System.out.println("2. Quản lý nhân viên");
-            System.out.println("3. Quản lý khách hàng");
-            System.out.println("4. Quản lý hóa đơn");
-            System.out.println("5. Quản lý khuyến mãi");
-            System.out.println("6. Thống kê doanh thu");
-            System.out.println("0. Thoát");
-            System.out.print("👉 Nhập lựa chọn: ");
+            System.out.println("\n===== MENU QUAN LY CUA HANG =====");
+            System.out.println("1. Quan ly san pham");
+            System.out.println("2. Quan ly nhan vien");
+            System.out.println("3. Quan ly khach hang");
+            System.out.println("4. Quan ly hoa don");
+            System.out.println("5. Quan ly kho");
+            System.out.println("6. Bao cao");
+            System.out.println("0. Thoat");
+            System.out.println("==================================");
+            System.out.print("Nhap lua chon: ");
             chon = Integer.parseInt(sc.nextLine());
 
             switch (chon) {
@@ -48,34 +48,43 @@ public class QUANLYCUAHANG {
                     chonQuanLyHoaDon();
                     break;
                 case 5:
-                    chonQuanLyKhuyenMai();
+                    chonQuanLyKho();
                     break;
                 case 6:
-                    chonThongKe();
+                    chonBaoCao();
                     break;
                 case 0:
-                    thoat();
+                    System.out.println("Tam biet ban !");
                     break;
                 default:
-                    System.out.println("❌ Lựa chọn không hợp lệ!");
+                    System.out.println("Lua chon khong hop le!");
             }
         } while (chon != 0);
     }
 
-    // ✅ Quản lý sản phẩm
-    public void chonQuanLySanPham() {
+    private void thoat() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'thoat'");
+    }
+
+    private void chonQuanLySanPham() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'chonQuanLySanPham'");
+    }
+
+/*    public void chonQuanLySanPham() {
         int chon;
         do {
-            System.out.println("\n===== QUẢN LÝ SẢN PHẨM =====");
-            System.out.println("1. Thêm sản phẩm");
-            System.out.println("2. Hiển thị danh sách sản phẩm");
-            System.out.println("3. Tìm kiếm sản phẩm");
-            System.out.println("4. Sửa sản phẩm");
-            System.out.println("5. Xóa sản phẩm");
-            System.out.println("6. Lưu dữ liệu ra file");
-            System.out.println("7. Đọc dữ liệu từ file");
-            System.out.println("0. Quay lại");
-            System.out.print("👉 Chọn: ");
+            System.out.println("\n===== QUAN LY SAN PHAM =====");
+            System.out.println("1. Them san pham");
+            System.out.println("2. Hien thi danh sach san pham");
+            System.out.println("3. Tim kiem san pham");
+            System.out.println("4. Sua san pham");
+            System.out.println("5. Xoa san pham");
+            System.out.println("6. Luu du lieu ra file");
+            System.out.println("7. Doc du lieu tu file");
+            System.out.println("0. Quay lai");
+            System.out.print("Chon: ");
             chon = Integer.parseInt(sc.nextLine());
 
             switch (chon) {
@@ -101,53 +110,109 @@ public class QUANLYCUAHANG {
                     dsSanPham.DocDuLieuTuFile("sanpham.txt");
                     break;
                 case 0:
-                    System.out.println("⬅ Quay lại menu chính...");
+                    System.out.println("Quay lai menu chinh...");
                     break;
                 default:
-                    System.out.println("❌ Lựa chọn không hợp lệ!");
+                    System.out.println("Lua chon khong hop le!");
+            }
+        } while (chon != 0);
+    } */
+
+    // Quan ly nhan vien
+    public void chonQuanLyNhanVien() {
+        System.out.println("\n[Chuc nang quan ly nhan vien dang phat trien...]");
+        // tuong tu nhu quan ly san pham
+    }
+
+    // Quan ly khach hang
+    public void chonQuanLyKhachHang() {
+        System.out.println("\n[Chuc nang quan ly khach hang dang phat trien...]");
+        // tuong tu nhu quan ly san pham
+    }
+
+    // Quan ly hoa don
+    public void chonQuanLyHoaDon() {
+        System.out.println("\n[Chuc nang quan ly hoa don dang phat trien...]");
+        // co the them, hien thi, tim kiem hoa don,...
+    }
+
+    // Quan ly kho
+    public void chonQuanLyKho() {
+        int chon;
+        do{
+        System.out.println("\n===== QUAN LY KHO =====");
+        System.out.println("1. Xem danh sach ton kho");
+        System.out.println("2. Quan ly nguyen lieu");
+        System.out.println("3. Quan ly phieu nhap");
+        System.out.println("0. Quay lai");
+        System.out.println("=========================");
+        System.out.print("Chon: ");
+        chon = Integer.parseInt(sc.nextLine());
+        switch (chon) {
+            case 1:
+                Kho kho = new Kho();
+                kho.xemDSTonKho();
+                break;
+            case 2:
+                qlNguyenLieu();
+                break;
+            case 0:
+                System.out.println("Quay lai menu...");
+                break;
+            default:
+                System.out.println("Lua chon khong hop le!");;
             }
         } while (chon != 0);
     }
 
-    // ✅ Quản lý nhân viên
-    public void chonQuanLyNhanVien() {
-        System.out.println("\n[Chức năng quản lý nhân viên đang phát triển...]");
-        // tương tự như quản lý sản phẩm
+    //Quan ly nguyen lieu
+    public void qlNguyenLieu(){
+        DSNguyenLieu dsNguyenLieu = new DSNguyenLieu();
+        int chon;
+        do {
+        System.out.println("\n======== Quan ly nguyen lieu ========");
+        System.out.println("1. Xem danh sach nguyen lieu");
+        System.out.println("2. Them nguyen lieu moi.");
+        System.out.println("3. Sua thong tin nguyen lieu");
+        System.out.println("4. Xoa nguyen lieu.");
+        System.out.println("0. Quay lai");
+        System.out.println("======================================");
+        System.out.print("Chon: ");
+        chon = Integer.parseInt(sc.nextLine());
+        switch (chon) {
+            case 1:
+                dsNguyenLieu.docFile();
+                break;
+            case 2:
+                dsNguyenLieu.AddNL();
+                break;
+            case 4:
+                dsNguyenLieu.xoaNguyenLieu();
+                break;
+            case 0:
+                System.out.println("Quay lai");
+                break;
+            default:
+                System.out.println("Lua chon khong hop le");;
+            } 
+        }while(chon != 0);
     }
 
-    // ✅ Quản lý khách hàng
-    public void chonQuanLyKhachHang() {
-        System.out.println("\n[Chức năng quản lý khách hàng đang phát triển...]");
-        // tương tự như quản lý sản phẩm
+    // BaoCao
+    public void chonBaoCao() {
+        System.out.println("\n[Chuc nang thong ke dang phat trien...]");
     }
 
-    // ✅ Quản lý hóa đơn
-    public void chonQuanLyHoaDon() {
-        System.out.println("\n[Chức năng quản lý hóa đơn đang phát triển...]");
-        // có thể thêm, hiển thị, tìm kiếm hóa đơn,...
-    }
 
-    // ✅ Quản lý khuyến mãi
-    public void chonQuanLyKhuyenMai() {
-        System.out.println("\n[Chức năng quản lý khuyến mãi đang phát triển...]");
-    }
-
-    // ✅ Thống kê doanh thu
-    public void chonThongKe() {
-        System.out.println("\n[Chức năng thống kê đang phát triển...]");
-    }
-
-    // ✅ Thoát chương trình
-    public void thoat() {
-        System.out.println("\n💾 Đang lưu dữ liệu...");
+ /*     public void thoat() {
+        System.out.println("\nDang luu du lieu...");
         dsSanPham.LuuDuLieu("sanpham.txt");
-        System.out.println("✅ Đã lưu. Hẹn gặp lại!");
+        System.out.println("Da luu. Hen gap lai!");
     }
-
-    // ✅ Main chạy chương trình
+*/
+    // Main chay chuong trinh
     public static void main(String[] args) {
         QUANLYCUAHANG ql = new QUANLYCUAHANG();
         ql.hienThiMenu();
     }
 }
-                                                                                                                                                                                                                 

@@ -1,18 +1,22 @@
-package HOADON;
+// package HOADON;
+package com.example.models.ThucAnNhanhNuocGiaiKhat.HOADON;
 
 
-import SANPHAM.SanPham;
-import CONNGUOI.NhanVien;
-import CONNGUOI.KhachHang;
+// import SANPHAM.SanPham;
+// import CONNGUOI.NhanVien;
+// import CONNGUOI.KhachHang;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import com.example.models.ThucAnNhanhNuocGiaiKhat.CONNGUOI.NhanVien;
+import com.example.models.ThucAnNhanhNuocGiaiKhat.CONNGUOI.KhachHang;
+import com.example.models.ThucAnNhanhNuocGiaiKhat.SANPHAM.SanPham;
 
 public class HoaDon {
     private String maHoaDon;
     private String tenHoaDon;
-    private NhanVien maNhanVien;
-    private NhanVien tenNhanVien;
-    private KhachHang maKhachHang;
+    private NhanVien maNV;
+    private NhanVien tenNV;
+    private KhachHang maKH;
     private String diaChi;
     private Date ngayLap;
     private int diemTichLuy;
@@ -21,11 +25,12 @@ public class HoaDon {
     private static int soHoaDon = 0;
 
     // Constructor
-    public HoaDon(String maHoaDon, String maNhanVien, String maKhachHang, String tenHoaDon,
+    public HoaDon(String maHoaDon, NhanVien maNV, KhachHang maKH, String tenHoaDon, NhanVien tenNV,
                   String diaChi, Date ngayLap, int diemTichLuy, double tinhTongTien, SanPham[] dsChiTiet) {
         this.maHoaDon = maHoaDon;
-        this.maNhanVien = maNhanVien;
-        this.maKhachHang = maKhachHang;
+        this.maNV = maNV;
+        this.tenNV = tenNV;
+        this.maKH = maKH;
         this.tenHoaDon = tenHoaDon;
         this.diaChi = diaChi;
         this.diemTichLuy = diemTichLuy;
@@ -43,17 +48,23 @@ public class HoaDon {
     public void setMaHoaDon(String maHoaDon){
         this.maHoaDon = maHoaDon;
     }
-    public String getMaNhanVien(){
-        return maNhanVien;
+    public NhanVien getMaNV(){
+        return maNV;
     }
-    public void setMaNhanVien(String maNhanVien){
-        this.maNhanVien = maNhanVien;
+    public void setMaNV(NhanVien maNV){
+        this.maNV = maNV;
     }
-    public String getMaKhachHang(){
-        return maKhachHang;
+    public NhanVien getTenNV(){
+        return tenNV;
     }
-    public void setMaKhachHang(String maKhachHang){
-        this.maKhachHang = maKhachHang;
+    public void setTenNV(NhanVien tenNV){
+        this.tenNV = tenNV;
+    }
+    public KhachHang getMaKH(){
+        return maKH;
+    }
+    public void setMaKhachHang(KhachHang maKH){
+        this.maKH = maKH;
     }
     public String getTenHoaDon(){
         return tenHoaDon;
@@ -97,8 +108,8 @@ public class HoaDon {
         System.out.println("Ma hoa don: " + maHoaDon);
         System.out.println("Ten hoa don: " + tenHoaDon);
         System.out.println("Ngay lap: " + sdf.format(ngayLap));
-        System.out.println("Ma nhan vien: " + maNhanVien);
-        System.out.println("Ma khach hang: " + maKhachHang);
+        System.out.println("Ma nhan vien: " + maNV);
+        System.out.println("Ma khach hang: " + maKH);
         System.out.println("Dia chi: " + diaChi);
         System.out.println("Diem tich luy: " + diemTichLuy);
         System.out.println("Danh sach san pham:");

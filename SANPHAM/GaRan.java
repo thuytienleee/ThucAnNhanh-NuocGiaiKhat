@@ -1,4 +1,5 @@
-package SANPHAM;
+// package SANPHAM;
+package com.example.models.ThucAnNhanhNuocGiaiKhat.SANPHAM;
 
 import java.util.Date;
 

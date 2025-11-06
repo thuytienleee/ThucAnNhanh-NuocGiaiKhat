@@ -1,5 +1,4 @@
-package CONGTHUC;
+// package CONGTHUC;
+package com.example.models.ThucAnNhanhNuocGiaiKhat.CONGTHUC;
 
-public class congthuc {
-    
-}
+

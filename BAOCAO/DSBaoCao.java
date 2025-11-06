@@ -1,4 +1,5 @@
-package BAOCAO;
+// package BAOCAO;
+package com.example.models.ThucAnNhanhNuocGiaiKhat.BAOCAO;
 
 import java.io.*;
 import java.util.*;
@@ -100,10 +101,10 @@ public class DSBaoCao implements ICheck {
         }
     }
 
-    public static void main(String[] args) {
-        DSBaoCao ds = new DSBaoCao(50);
-        ds.taoBaoCao();  // Nhap tat ca thong tin, ke ca ID nhan vien
-        ds.printAllReport();
-        ds.ghiReportToFile();
-    }
+    // public static void main(String[] args) {
+    //     DSBaoCao ds = new DSBaoCao(50);
+    //     ds.taoBaoCao();  // Nhap tat ca thong tin, ke ca ID nhan vien
+    //     ds.printAllReport();
+    //     ds.ghiReportToFile();
+    // }
 }
