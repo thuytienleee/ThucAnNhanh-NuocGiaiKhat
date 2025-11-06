@@ -1,4 +1,5 @@
-package NHANVIEN;
+// package NHANVIEN;
+package com.example.models.ThucAnNhanhNuocGiaiKhat.CONNGUOI;
 
 import java.io.BufferedWriter;
 import java.io.File;

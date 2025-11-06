@@ -2,7 +2,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package SANPHAM;
+// package SANPHAM;
+package com.example.models.ThucAnNhanhNuocGiaiKhat.SANPHAM;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -18,12 +19,12 @@ import java.util.Scanner;
  *
  * @author Thuy Tien
  */
-public class DSSanPham {
+public class DSachSP {
     private SanPham[] danhsach;
     private int soluong;
     static Scanner sc = new Scanner(System.in);
     
-    public DSSanPham(int kichThuoc){
+    public DSachSP(int kichThuoc){
         danhsach = new SanPham[kichThuoc];
         soluong = 0;
     }
@@ -191,8 +192,7 @@ public class DSSanPham {
       public void SuaSanPham()
     */
    public static void main(String[] agrs){
-        System.out.println("Working Directory = " + System.getProperty("user.dir"));
-       DSSanPham ds = new DSSanPham(1000);
+       DSachSP ds = new DSachSP(1000);
        ds.DocFile();
        ds.hienThiDS();
    }

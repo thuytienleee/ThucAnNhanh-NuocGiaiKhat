@@ -7,10 +7,8 @@ public class mainKH {
                 DanhSachKhachHang danhSachKhachHang = new DanhSachKhachHang();
                 Scanner scanner = new Scanner(System.in);
         
-                // Đọc danh sách khách hàng từ file
                 danhSachKhachHang.docDS();
         
-                // Menu cho người dùng
                 while (true) {
                     System.out.println("=== Quan ly khach hang ===");
                     System.out.println("1. Them khach hang");
@@ -50,3 +48,4 @@ public class mainKH {
                 }
             }
         }
+        

@@ -1,53 +1,112 @@
-package NHANVIEN;
+// package CONNGUOI;
+package com.example.models.ThucAnNhanhNuocGiaiKhat.CONNGUOI;
+
+import java.util.Date;
 
 public class NhanVien {
-    private String maNHANVIEN;
-    private String tenUser;
-    private String diachi;
-    private String soDT;
-    private String ngaysinh;
-    private String gioitinh;
-    private String matkhau;
-    protected String chucvu;
+    private String maNV;
+    private String tenNV;
+    private int tuoiNV;
+    private Date ngaySinh;
+    private int sdtNV;
+    private String diaChi;
+    private double luong;
+    private String chucVuNV;
+    private int namVaoLam;
 
-    public NhanVien(String maNHANVIEN, String tenNHANVIEN, String diachi, String soDT, String ngaysinh, String gioitinh, String matkhau, String chucvu) {
-        this.maNHANVIEN = maNHANVIEN;
-        this.tenNHANVIEN = tenNHANVIEN;
-        this.diachi = diachi;   
-        this.soDT = soDT;
-        this.ngaysinh = ngaysinh;
-        this.gioitinh = gioitinh;
-        this.chucvu = chucvu;
+    public NhanVien(){}
+    
+    public NhanVien(String maNV, String tenNV, int tuoiNV, Date ngaySinh, int sdtNV, String diaChi, double luong, String chucVuNV, int namVaoLam){
+        this.maNV = maNV;
+        this.tenNV = tenNV;
+        this.tuoiNV = tuoiNV;
+        this.ngaySinh = ngaySinh;
+        this.sdtNV = sdtNV;
+        this.diaChi = diaChi;
+        this.luong = luong;
+        this.chucVuNV = chucVuNV;
+        this.namVaoLam = namVaoLam;
     }
 
-    // Getter methods
-    public String getmaNHANVIEN() { return maNHANVIEN; }
-    public String gettenNHANVIEN() { return tenNHANVIEN; }
-    public String getdiachi() { return diachi; }
-    public String getsoDT() { return soDT; }
-    public String getngaysinh() { return ngaysinh; }
-    public String getgioitinh() { return gioitinh; }
-    public String getmatkhau() { return matkhau; }
-    public String getchucvu(){return chucvu;}
-    public void setmaNHANVIEN(String id) { maNHANVIEN = id; }
-    public void settenNHANVIEN(String name) { tenNHANVIEN = name; }
-    public void setdiachi(String addr) { diachi = addr; }
-    public void setsoDT(String sdt) { soDT = sdt; }
-    public void setngaysinh(String birthday) { ngaysinh = birthday; }
-    public void setgioitinh(String sex) { gioitinh = sex; }
-    public void setmatkhau(String mk) { matkhau = mk; }
-    public void setchucvu(String chucvu){this.chucvu=chucvu;}
+    public String getMaNV() {
+        return maNV;
+    }
 
-    public void hienThiThongTin() {
-        System.out.println("Thong tin nhan vien:");
-        System.out.printf("Ma nhan vien: %s%n", maUser);
-        System.out.printf("Ten nhan vien: %s%n", tenUser);
-        System.out.printf("Dia chi: %s%n", diachi);
-        System.out.printf("So dien thoai: %s%n", soDT);
-        System.out.printf("Ngay sinh: %s%n", ngaysinh);
-        System.out.printf("Gioi tinh: %s%n", gioitinh);
-        System.out.printf("Mat khau: %s%n", matkhau);
-        System.out.printf("Chuc vu: %s%n", chucvu);
-        System.out.println("===========================================");
+    public void setMaNV(String maNV) {
+        this.maNV = maNV;
+    }
+
+    public String getTenNV() {
+        return tenNV;
+    }
+
+    public void setTenNV(String tenNV) {
+        this.tenNV = tenNV;
+    }
+
+    public int getTuoiNV() {
+        return tuoiNV;
+    }
+
+    public void setTuoiNV(int tuoiNV) {
+        this.tuoiNV = tuoiNV;
+    }
+
+    public Date getNgaySinh() {
+        return ngaySinh;
+    }
+
+    public void setNgaySinh(Date ngaySinh) {
+        this.ngaySinh = ngaySinh;
+    }
+
+    public int getSdtNV() {
+        return sdtNV;
+    }
+
+    public void setSdtNV(int sdtNV) {
+        this.sdtNV = sdtNV;
+    }
+
+    public String getDiaChi() {
+        return diaChi;
+    }
+
+    public void setDiaChi(String diaChi) {
+        this.diaChi = diaChi;
+    }
+
+    public double getLuong() {
+        return luong;
+    }
+
+    public void setLuong(double luong) {
+        this.luong = luong;
+    }
+
+    public String getChucVuNV() {
+        return chucVuNV;
+    }
+
+    public void setChucVuNV(String chucVuNV) {
+        this.chucVuNV = chucVuNV;
+    }
+
+    public int getNamVaoLam() {
+        return namVaoLam;
+    }
+
+    public void setNamVaoLam(int namVaoLam) {
+        this.namVaoLam = namVaoLam;
+    }
+    
+    public String toString(){
+        return String.format(" ", maNV, tenNV, tuoiNV, ngaySinh, sdtNV, diaChi, luong, chucVuNV, namVaoLam);
+    }
+
+    public void hienThiThongTinNhanVien(){
+        System.out.println("==================THONG TIN NHAN VIEN========================");
+        toString();
+        System.out.println("=============================================================");
     }
 }
