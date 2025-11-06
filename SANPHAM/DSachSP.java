@@ -169,8 +169,6 @@ public class DSachSP {
                     sp = new ThucAn(maSP, tenSP, maLoai, gia, nsx, hsd, 0);
                 }else if(maLoai.equalsIgnoreCase("DR")){
                     sp = new ThucUong(maSP, tenSP, maLoai, gia, nsx, hsd, 0);
-                }else{
-                    System.out.println("Cannot read");
                 }
                 if(soluong < danhsach.length) danhsach[soluong++] = sp;
             }
@@ -180,6 +178,12 @@ public class DSachSP {
     }
     
    public void hienThiDS(){
+        System.out.print("+------------------------------------------------------------------------------------------------+\n");
+        System.out.print("|                                  PRODUCTION INFOMATION                                         |\n");
+        System.out.print("+------------------------------------------------------------------------------------------------+\n");
+        System.out.print(String.format(" %-10s | %-20s | %-10s | %-10s | %-10s | %-10s\n",
+            "ID", "NAME", "CATEGORY ID", "PRICE", "NSX", "HSD"));
+         System.out.print("+------------------------------------------------------------------------------------------------+\n");
        for(SanPham sp : danhsach){
            if(sp != null) System.out.println(sp.toString());
        }
@@ -192,6 +196,7 @@ public class DSachSP {
     */
    public static void main(String[] agrs){
        DSachSP ds = new DSachSP(1000);
+       //ds.themSanPham();
        ds.DocFile();
        ds.hienThiDS();
    }

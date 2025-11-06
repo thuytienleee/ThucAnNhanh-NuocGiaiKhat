@@ -19,6 +19,8 @@ public class ThucUong extends SanPham{
     
     @Override
     public String toString(){
-        return String.format("[Thuc Uong] ID: %s | Name: %s | Category ID: %s | Price: %.0f | NSX: %tF | HSD: %tF", maSP, tenSP, maLoai, gia, NgaySX, HanSD);
+        return String.format(" %-10s | %-20s | %-10s | %-10.2f | %tF | %tF", maSP, tenSP, maLoai, gia, NgaySX, HanSD);
     }
+
+    
 }

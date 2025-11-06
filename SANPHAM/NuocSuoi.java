@@ -10,7 +10,7 @@ import java.util.Date;
  *
  * @author Thuy Tien
  */
-public class NuocSuoi extends ThucAn {
+public class NuocSuoi extends ThucUong {
     public NuocSuoi(){}
     
     public NuocSuoi(String maSP, String tenSP, String maLoai, double gia, Date NgaySX, Date HanSD, int soLuong){
