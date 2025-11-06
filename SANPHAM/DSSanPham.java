@@ -107,7 +107,7 @@ public class DSSanPham {
     
     public static void ghiVaoFile(SanPham sp){
         try{
-            FileWriter fw= new FileWriter("./src/SANPHAM/SanPham.txt",true);
+            FileWriter fw= new FileWriter("../SANPHAM/SanPham.txt",true);
             BufferedWriter bw= new BufferedWriter(fw);
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
             String line = sp.getMaSP()+" | "+
@@ -137,7 +137,7 @@ public class DSSanPham {
     public  void DocFile(){
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         try{
-            FileReader fr = new FileReader("./src/SANPHAM/SanPham.txt");
+            FileReader fr = new FileReader("../SANPHAM/SanPham.txt");
             BufferedReader br = new BufferedReader(fr);
             String line;
             while((line = br.readLine()) != null){
@@ -191,6 +191,7 @@ public class DSSanPham {
       public void SuaSanPham()
     */
    public static void main(String[] agrs){
+        System.out.println("Working Directory = " + System.getProperty("user.dir"));
        DSSanPham ds = new DSSanPham(1000);
        ds.DocFile();
        ds.hienThiDS();

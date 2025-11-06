@@ -61,7 +61,7 @@ public class nguyenlieu {
 
     @Override
     public String toString(){
-        return String.format("| %-8s | %-20s | %-12s | %-8.2f |",
+        return String.format("  %-8s |  %-19s |  %-11s |  %-8.2f ",
                                     maNL, tenNL, donViTinh, soLuong);
     }
 }

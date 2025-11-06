@@ -1,8 +1,10 @@
 package KHO;
 
 import NGUYENLIEU.nguyenlieu;
-import PHIEUNHAP.PhieuNhap;
 import CONGTHUC.congthuc;
+import PHIEUNHAP.*;
+import ThucAnNhanh.PhieuNhap;
+
 public class Kho {
     private nguyenlieu[] dsKho;
     private int soLuongTon;
@@ -12,6 +14,8 @@ public class Kho {
         this.soLuongTon = soLuongTon;
     }
     
+    public Kho(){}
+
     public nguyenlieu[] getDsKho() {
         return dsKho;
     }
@@ -70,4 +74,9 @@ public class Kho {
         }
     }
     
+    public void xemDSTonKho(){
+        System.out.println("Danh sach ton kho:");
+        System.out.println("- San pham 1: 10 cai");
+        System.out.println("- San pham 2: 5 cai");
+    }
 }
