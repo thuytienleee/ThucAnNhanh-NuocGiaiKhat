@@ -3,7 +3,7 @@ package com.example.models.ThucAnNhanhNuocGiaiKhat.CONNGUOI;
 
 import java.util.Date;
 
-public class NhanVien {
+public class NhanVien extends CONNGUOI {
     private String maNV;
     private String tenNV;
     private int tuoiNV;
