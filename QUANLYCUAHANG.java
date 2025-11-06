@@ -1,4 +1,5 @@
-package ThucAnNhanh_NuocGiaiKhat;
+// package ThucAnNhanh_NuocGiaiKhat;
+package com.example.models.ThucAnNhanhNuocGiaiKhat;
 
 import java.util.Scanner;
 import java.io.*;

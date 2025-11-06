@@ -1,4 +1,5 @@
-package ThucAnNhanh-NuocGiaiKhat.HOADON;
+// package ThucAnNhanh-NuocGiaiKhat.HOADON;
+package com.example.models.ThucAnNhanhNuocGiaiKhat.HOADON;
 
 public class DSachHD {
     private HoaDon[] danhSach;
@@ -24,7 +25,7 @@ public class DSachHD {
     // Xoa hoa don theo ma
     public boolean xoaHoaDon(String maHoaDon) {
         for (int i = 0; i < soLuong; i++) {
-            if (danhSach[i].getMaHoaDon().equals(maHoaDon)) {
+            if (danhSach[i].getMaHoaDon().equalsIgnoreCase(maHoaDon)) {
                 // Doi cac phan tu phia sau len
                 for (int j = i; j < soLuong - 1; j++) {
                     danhSach[j] = danhSach[j + 1];
@@ -41,7 +42,7 @@ public class DSachHD {
         HoaDon[] ketQua = new HoaDon[soLuong];
         int dem = 0;
         for (int i = 0; i < soLuong; i++) {
-            if (danhSach[i].getMaHoaDon().equals(maHoaDon)) {
+            if (danhSach[i].getMaHoaDon().equalsIgnoreCase(maHoaDon)) {
                 ketQua[dem++] = danhSach[i];
             }
         }

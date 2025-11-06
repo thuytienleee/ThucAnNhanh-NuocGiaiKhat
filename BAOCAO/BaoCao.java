@@ -1,4 +1,5 @@
-package BAOCAO;
+// package BAOCAO;
+package com.example.models.ThucAnNhanhNuocGiaiKhat.BAOCAO;
 
 import java.util.Arrays;
 
@@ -31,6 +32,28 @@ public class BaoCao {
         this.SLSanPham = SLSanPham;
     }
 
+    public String getIDBaoCao() { return IDBaoCao; }
+    public String getIDNhanVien() { return IDNhanVien; }
+    public String getReportDay() { return reportDay; }
+    public String getNgayBatDau() { return ngayBatDau; }
+    public String getNgayKetThuc() { return ngayKetThuc; }
+    public int getTongSoHD() { return tongSoHD; }
+    public int getTongDoanhThu() { return tongDoanhThu; }
+    public int getSLKhachMoi() { return SLKhachMoi; }
+    public String[] getIDSanPhamArr() { return IDSanPhamArr; }
+    public int[] getSLSanPham() { return SLSanPham; }
+
+    public void setIDBaoCao(String IDBaoCao) { this.IDBaoCao = IDBaoCao; }
+    public void setIDNhanVien(String IDNhanVien) { this.IDNhanVien = IDNhanVien; }
+    public void setReportDay(String reportDay) { this.reportDay = reportDay; }
+    public void setNgayBatDau(String ngayBatDau) { this.ngayBatDau = ngayBatDau; }
+    public void setNgayKetThuc(String ngayKetThuc) { this.ngayKetThuc = ngayKetThuc; }
+    public void setTongSoHD(int tongSoHD) { this.tongSoHD = tongSoHD; }
+    public void setTongDoanhThu(int tongDoanhThu) { this.tongDoanhThu = tongDoanhThu; }
+    public void setSLKhachMoi(int SLKhachMoi) { this.SLKhachMoi = SLKhachMoi; }
+    public void setIDSanPhamArr(String[] IDSanPhamArr) { this.IDSanPhamArr = IDSanPhamArr; }
+    public void setSLSanPham(int[] SLSanPham) { this.SLSanPham = SLSanPham; }
+
     public void printReport() {
         System.out.println("=========== BAO CAO KINH DOANH ===========");
         System.out.println("ID Bao cao: " + IDBaoCao);
@@ -54,25 +77,4 @@ public class BaoCao {
                Arrays.toString(IDSanPhamArr) + ";" + Arrays.toString(SLSanPham);
     }
 
-    public String getIDBaoCao() { return IDBaoCao; }
-    public String getIDNhanVien() { return IDNhanVien; }
-    public String getReportDay() { return reportDay; }
-    public String getNgayBatDau() { return ngayBatDau; }
-    public String getNgayKetThuc() { return ngayKetThuc; }
-    public int getTongSoHD() { return tongSoHD; }
-    public int getTongDoanhThu() { return tongDoanhThu; }
-    public int getSLKhachMoi() { return SLKhachMoi; }
-    public String[] getIDSanPhamArr() { return IDSanPhamArr; }
-    public int[] getSLSanPham() { return SLSanPham; }
-
-    public void setIDBaoCao(String IDBaoCao) { this.IDBaoCao = IDBaoCao; }
-    public void setIDNhanVien(String IDNhanVien) { this.IDNhanVien = IDNhanVien; }
-    public void setReportDay(String reportDay) { this.reportDay = reportDay; }
-    public void setNgayBatDau(String ngayBatDau) { this.ngayBatDau = ngayBatDau; }
-    public void setNgayKetThuc(String ngayKetThuc) { this.ngayKetThuc = ngayKetThuc; }
-    public void setTongSoHD(int tongSoHD) { this.tongSoHD = tongSoHD; }
-    public void setTongDoanhThu(int tongDoanhThu) { this.tongDoanhThu = tongDoanhThu; }
-    public void setSLKhachMoi(int SLKhachMoi) { this.SLKhachMoi = SLKhachMoi; }
-    public void setIDSanPhamArr(String[] IDSanPhamArr) { this.IDSanPhamArr = IDSanPhamArr; }
-    public void setSLSanPham(int[] SLSanPham) { this.SLSanPham = SLSanPham; }
 }

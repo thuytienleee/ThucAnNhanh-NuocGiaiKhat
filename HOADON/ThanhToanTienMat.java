@@ -1,4 +1,5 @@
-package ThucAnNhanh-NuocGiaiKhat.HOADON;
+// package ThucAnNhanh-NuocGiaiKhat.HOADON;
+package com.example.models.ThucAnNhanhNuocGiaiKhat.HOADON;
 
 public class ThanhToanTienMat implements ThanhToan {
 

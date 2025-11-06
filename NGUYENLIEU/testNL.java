@@ -1,4 +1,5 @@
-package NGUYENLIEU;
+// package NGUYENLIEU;
+package com.example.models.ThucAnNhanhNuocGiaiKhat.NGUYENLIEU;
 
 public class testNL {
     public static void main(String[] args) {

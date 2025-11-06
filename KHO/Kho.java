@@ -1,8 +1,11 @@
-package KHO;
-
-import NGUYENLIEU.nguyenlieu;
-import PHIEUNHAP.PhieuNhap;
-import CONGTHUC.congthuc;
+// package KHO;
+package com.example.models.ThucAnNhanhNuocGiaiKhat.KHO;
+import com.example.models.ThucAnNhanhNuocGiaiKhat.NGUYENLIEU.nguyenlieu;
+import com.example.models.ThucAnNhanhNuocGiaiKhat.PHIEUNHAP.PhieuNhap;
+import com.example.models.ThucAnNhanhNuocGiaiKhat.CONGTHUC.congthuc;
+// import NGUYENLIEU.nguyenlieu;
+// import PHIEUNHAP.PhieuNhap;
+// import CONGTHUC.congthuc;
 public class Kho {
     private nguyenlieu[] dsKho;
     private int soLuongTon;

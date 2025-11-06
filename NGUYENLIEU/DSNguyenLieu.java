@@ -1,4 +1,5 @@
-package NGUYENLIEU;
+// package NGUYENLIEU;
+package com.example.models.ThucAnNhanhNuocGiaiKhat.NGUYENLIEU;
 
 import java.io.*;
 import java.util.Scanner;
