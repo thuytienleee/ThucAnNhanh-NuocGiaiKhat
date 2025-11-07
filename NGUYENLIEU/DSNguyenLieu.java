@@ -6,13 +6,13 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class DSNguyenLieu {
-    private nguyenlieu[] ds;
+    private NguyenLieu[] ds;
     private int soLuong;
 
     public DSNguyenLieu(){}
 
     public DSNguyenLieu(int kichThuoc) {
-        this.ds = new nguyenlieu[kichThuoc];
+        this.ds = new NguyenLieu[kichThuoc];
         this.soLuong = 0;
     }
 
@@ -43,8 +43,9 @@ public class DSNguyenLieu {
             double sl = sc.nextDouble();
             sc.nextLine();
 
-            ds[soLuong++] = new nguyenlieu(ma, ten, dvt, sl);
+            ds[soLuong++] = new NguyenLieu(ma, ten, dvt, sl);
         }
+        sc.close();
     }
 
     // ======== Hàm xóa nguyên liệu ========
@@ -55,7 +56,7 @@ public class DSNguyenLieu {
         boolean find = false;
         
         //Doc file
-        nguyenlieu[] dsnl = new nguyenlieu[0];
+        NguyenLieu[] dsnl = new NguyenLieu[0];
         try {
             BufferedReader br = new BufferedReader(new FileReader("DSnguyenLieu.txt"));
             String st;
@@ -67,7 +68,7 @@ public class DSNguyenLieu {
                 String dvt = str[2].trim();
                 Double sl = Double.parseDouble(str[3].trim());
 
-                nguyenlieu nl = new nguyenlieu(maNL, tenNL, dvt, sl);
+                NguyenLieu nl = new NguyenLieu(maNL, tenNL, dvt, sl);
                 dsnl = Arrays.copyOf(dsnl, dsnl.length + 1);
                 dsnl[dsnl.length - 1] = nl;
             }
@@ -77,8 +78,8 @@ public class DSNguyenLieu {
         }
         
         //Xoa nguyen lieu
-        nguyenlieu[] dsNew = new nguyenlieu[0];
-        for (nguyenlieu nl:dsnl){
+        NguyenLieu[] dsNew = new NguyenLieu[0];
+        for (NguyenLieu nl:dsnl){
             if (!nl.getMaNL().equalsIgnoreCase(maXoa)){
                 dsNew = Arrays.copyOf(dsNew, dsNew.length+1);
                 dsNew[dsNew.length-1] = nl;
@@ -89,11 +90,11 @@ public class DSNguyenLieu {
         if (!find) {
         System.out.println("Khong tim thay ma nguyen lieu: " + maXoa);
         return;
-    }
+        }
 
         //Ghi lại file sau xóa
         try (BufferedWriter bw = new BufferedWriter(new FileWriter("DSnguyenLieu.txt", false))) {
-            for (nguyenlieu x : dsNew) {
+            for (NguyenLieu x : dsNew) {
             bw.write(x.toString());
             bw.newLine();
         }
@@ -101,7 +102,6 @@ public class DSNguyenLieu {
         } catch (Exception e) {
             System.out.println(e);
         }
-        
         docFile();
     }
 
@@ -142,8 +142,8 @@ public class DSNguyenLieu {
     // ======== Đọc file DSNL ========
     public void docFile(){
         String str[];
-        nguyenlieu nl;
-        nguyenlieu dsnl[] = new nguyenlieu[0];
+        NguyenLieu nl;
+        NguyenLieu dsnl[] = new NguyenLieu[0];
         try {
             FileReader fr = new FileReader("DSnguyenLieu.txt");
             BufferedReader br = new BufferedReader(fr);
@@ -157,7 +157,7 @@ public class DSNguyenLieu {
                 String dvt = str[2].trim();
                 Double sl = Double.parseDouble(str[3].trim());
 
-                nl = new nguyenlieu(maNL, tenNL, dvt, sl);
+                nl = new NguyenLieu(maNL, tenNL, dvt, sl);
                 dsnl = Arrays.copyOf(dsnl, dsnl.length + 1);
                 dsnl[dsnl.length-1] = nl;
             }
@@ -172,7 +172,7 @@ public class DSNguyenLieu {
         System.out.println("+----------+----------------------+--------------+----------+");
         System.out.println("| MaNL     | TenNL                | DonViTinh    | SoLuong  |");
         System.out.println("+----------+----------------------+--------------+----------+");
-        for (nguyenlieu x:dsnl){
+        for (NguyenLieu x:dsnl){
             System.out.println(x);
         }        
         System.out.println("+----------+----------------------+--------------+----------+");

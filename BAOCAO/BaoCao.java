@@ -1,4 +1,4 @@
-// package BAOCAO;
+
 package com.example.models.ThucAnNhanhNuocGiaiKhat.BAOCAO;
 
 import java.util.Arrays;
@@ -10,7 +10,7 @@ public class BaoCao {
     private String ngayBatDau;
     private String ngayKetThuc;
     private int tongSoHD;
-    private int tongDoanhThu;
+    private double tongDoanhThu;
     private int SLKhachMoi;
     private String[] IDSanPhamArr;
     private int[] SLSanPham;
@@ -18,7 +18,7 @@ public class BaoCao {
     public BaoCao() {}
 
     public BaoCao(String IDBaoCao, String IDNhanVien, String reportDay, String ngayBatDau,
-                  String ngayKetThuc, int tongSoHD, int tongDoanhThu, int SLKhachMoi,
+                  String ngayKetThuc, int tongSoHD, double tongDoanhThu, int SLKhachMoi,
                   String[] IDSanPhamArr, int[] SLSanPham) {
         this.IDBaoCao = IDBaoCao;
         this.IDNhanVien = IDNhanVien;
@@ -38,7 +38,7 @@ public class BaoCao {
     public String getNgayBatDau() { return ngayBatDau; }
     public String getNgayKetThuc() { return ngayKetThuc; }
     public int getTongSoHD() { return tongSoHD; }
-    public int getTongDoanhThu() { return tongDoanhThu; }
+    public double getTongDoanhThu() { return tongDoanhThu; }
     public int getSLKhachMoi() { return SLKhachMoi; }
     public String[] getIDSanPhamArr() { return IDSanPhamArr; }
     public int[] getSLSanPham() { return SLSanPham; }
@@ -49,7 +49,7 @@ public class BaoCao {
     public void setNgayBatDau(String ngayBatDau) { this.ngayBatDau = ngayBatDau; }
     public void setNgayKetThuc(String ngayKetThuc) { this.ngayKetThuc = ngayKetThuc; }
     public void setTongSoHD(int tongSoHD) { this.tongSoHD = tongSoHD; }
-    public void setTongDoanhThu(int tongDoanhThu) { this.tongDoanhThu = tongDoanhThu; }
+    public void setTongDoanhThu(double tongDoanhThu) { this.tongDoanhThu = tongDoanhThu; }
     public void setSLKhachMoi(int SLKhachMoi) { this.SLKhachMoi = SLKhachMoi; }
     public void setIDSanPhamArr(String[] IDSanPhamArr) { this.IDSanPhamArr = IDSanPhamArr; }
     public void setSLSanPham(int[] SLSanPham) { this.SLSanPham = SLSanPham; }

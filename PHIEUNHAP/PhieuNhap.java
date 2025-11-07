@@ -1,6 +1,6 @@
 // package PHIEUNHAP;
 package com.example.models.ThucAnNhanhNuocGiaiKhat.PHIEUNHAP;
-import com.example.models.ThucAnNhanhNuocGiaiKhat.NGUYENLIEU.nguyenlieu;
+import com.example.models.ThucAnNhanhNuocGiaiKhat.NGUYENLIEU.NguyenLieu;
 import com.example.models.ThucAnNhanhNuocGiaiKhat.CONNGUOI.NhanVien;
 
 import java.util.Date;
@@ -9,7 +9,7 @@ import java.text.SimpleDateFormat;
 public class PhieuNhap {
     private String maPhieuNhap;
     private String tenPhieuNhap;
-    private nguyenlieu[] dsNL;
+    private NguyenLieu[] dsNL;
     private Date ngayNhap;
     private NhanVien nhanVienNhapHang;
     private String trangThai;
@@ -22,12 +22,12 @@ public class PhieuNhap {
         this.ngayNhap = ngayNhap;
         this.nhanVienNhapHang = nhanVienNhapHang;
         this.trangThai = "Chua xac nhan";
-        this.dsNL = new nguyenlieu[kichThuocDS];
+        this.dsNL = new NguyenLieu[kichThuocDS];
         this.soLuongNL = 0;
     }
 
     // Them nguyen lieu vao phieu
-    public void ThemCTPhieuNhap(nguyenlieu nl) {
+    public void ThemCTPhieuNhap(NguyenLieu nl) {
         if (soLuongNL < dsNL.length) {
             dsNL[soLuongNL++] = nl;
         } else {
@@ -53,7 +53,7 @@ public class PhieuNhap {
     // Huy phieu nhap
     public void HuyPhieuNhap() {
         trangThai = "Da huy";
-        dsNL = new nguyenlieu[dsNL.length];
+        dsNL = new NguyenLieu[dsNL.length];
         soLuongNL = 0;
         System.out.println("Phieu nhap da bi huy.");
     }

@@ -9,17 +9,17 @@ package com.example.models.ThucAnNhanhNuocGiaiKhat.CONNGUOI;
  *
  * @author Thuy Tien
  */
-public class KhachHang {
+public class KhachHang extends ConNguoi {
     private String maKH;
-    private String tenKH;
-    private String sdtKH;
     
-    public KhachHang(){}
+    public KhachHang() {
+        super();
+    }
     
-    public KhachHang(String maKH, String tenKH, String sdtKH){
+    public KhachHang(String maKH, String ten, String diaChi, String soDT, 
+                     String ngaySinh, String gioiTinh) {
+        super(ten, diaChi, soDT, ngaySinh, gioiTinh);
         this.maKH = maKH;
-        this.tenKH = tenKH;
-        this.sdtKH = sdtKH;
     }
 
     public String getMaKH() {
@@ -29,25 +29,10 @@ public class KhachHang {
     public void setMaKH(String maKH) {
         this.maKH = maKH;
     }
-
-    public String getTenKH() {
-        return tenKH;
-    }
     
-    public void setTenKH(String tenKH) {
-        this.tenKH = tenKH;
+    @Override
+    public String toString() {
+        return String.format("Ma KH: %s | Ten: %s | SDT: %s | Dia chi: %s | Ngay sinh: %s | Gioi tinh: %s", 
+                            maKH, getTen(), getSoDT(), getDiaChi(), getNgaySinh(), getGioiTinh());
     }
-
-    public String getSdtKH() {
-        return sdtKH;
-    }
-
-    public void setSdtKH(String sdtKH) {
-        this.sdtKH = sdtKH;
-    }
-    
-    public String toString(){
-        return String.format("Customer ID: %s | Name: %s | Numer phone: %s", maKH, tenKH, sdtKH);
-    }
-    
 }

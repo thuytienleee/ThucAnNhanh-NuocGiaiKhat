@@ -194,11 +194,11 @@ public class DSachSP {
       public void timKiemTheoTen(){}
       public void timKiemTheoMa(){}
       public void SuaSanPham()
-    */
-   public static void main(String[] agrs){
-       DSachSP ds = new DSachSP(1000);
-       //ds.themSanPham();
-       ds.DocFile();
-       ds.hienThiDS();
-   }
+//     */
+//    public static void main(String[] agrs){
+//        DSachSP ds = new DSachSP(1000);
+//        //ds.themSanPham();
+//        ds.DocFile();
+//        ds.hienThiDS();
+//    }
 }

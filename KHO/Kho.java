@@ -1,27 +1,29 @@
 // package KHO;
 package com.example.models.ThucAnNhanhNuocGiaiKhat.KHO;
-import com.example.models.ThucAnNhanhNuocGiaiKhat.NGUYENLIEU.nguyenlieu;
-import com.example.models.ThucAnNhanhNuocGiaiKhat.PHIEUNHAP.PhieuNhap;
-import com.example.models.ThucAnNhanhNuocGiaiKhat.CONGTHUC.congthuc;
+import com.example.models.ThucAnNhanhNuocGiaiKhat.NGUYENLIEU.NguyenLieu;
+// import com.example.models.ThucAnNhanhNuocGiaiKhat.NGUYENLIEU.DSNguyenLieu;
+// import com.example.models.ThucAnNhanhNuocGiaiKhat.PHIEUNHAP.PhieuNhap;
+// import com.example.models.ThucAnNhanhNuocGiaiKhat.CONGTHUC.CongThuc;
+// import com.example.models.ThucAnNhanhNuocGiaiKhat.CONGTHUC.CongThuc;
 // import NGUYENLIEU.nguyenlieu;
 // import PHIEUNHAP.PhieuNhap;
-// import CONGTHUC.congthuc;
+// import CONGTHUC.CongThuc;
 public class Kho {
-    private nguyenlieu[] dsKho;
+    private NguyenLieu[] dsKho;
     private int soLuongTon;
 
-    public Kho(nguyenlieu[] dsKho, int soLuongTon) {
+    public Kho(NguyenLieu[] dsKho, int soLuongTon) {
         this.dsKho = dsKho;
         this.soLuongTon = soLuongTon;
     }
     
     public Kho(){}
 
-    public nguyenlieu[] getDsKho() {
+    public NguyenLieu[] getDsKho() {
         return dsKho;
     }
 
-    public void setDsKho(nguyenlieu[] dsKho) {
+    public void setDsKho(NguyenLieu[] dsKho) {
         this.dsKho = dsKho;
     }
 
@@ -33,13 +35,14 @@ public class Kho {
         this.soLuongTon = soLuongTon;
     }
 
+/* 
     // Sau khi nhập hàng
     public void capNhatSauKhiNhap(PhieuNhap phieu){
-        nguyenlieu[] dsPhieu = phieu.getDsNL();
+        NguyenLieu[] dsPhieu = phieu.getDSNguyenLieu();
         int slPhieu = phieu.getSoLuongNL();
 
         for (int i = 0; i < slPhieu; i++){
-            nguyenlieu nlPhieu = dsPhieu[i];
+            NguyenLieu nlPhieu = dsPhieu[i];
             boolean tonTai = false;
 
 
@@ -64,8 +67,8 @@ public class Kho {
     }
 
     //Sau chế biến
-    public void capNhatSauKhiCheBien(congthuc ct){
-        nguyenlieu[] dsNLCT = ct.getDsNL();
+    public void capNhatSauKhiCheBien(CongThuc ct){
+        NguyenLieu[] dsNLCT = ct.getDsNL();
         for (int i = 0; i< dsNLCT.length; i++){
             for (int j = 0; j < soLuongTon; j++){
                 if (dsKho[i].getMaNL().equals(dsNLCT[i].getMaNL())){
@@ -75,6 +78,7 @@ public class Kho {
         }
     }
     
+/* */
     public void xemDSTonKho(){
         System.out.println("Danh sach ton kho:");
         System.out.println("- San pham 1: 10 cai");

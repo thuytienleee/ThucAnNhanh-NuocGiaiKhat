@@ -1,16 +1,17 @@
 // package NGUYENLIEU;
 package com.example.models.ThucAnNhanhNuocGiaiKhat.NGUYENLIEU;
 
-public class nguyenlieu {
+public class NguyenLieu {
     private String maNL;
     private String tenNL;
     private String donViTinh;
     private double soLuong;
+    private double donGia;
 
-    public nguyenlieu() {
+    public NguyenLieu() {
     }
         
-    public nguyenlieu(String maNL, String tenNL, String donViTinh, double soLuong) {
+    public NguyenLieu(String maNL, String tenNL, String donViTinh, double soLuong) {
         this.maNL = maNL;
         this.tenNL = tenNL;
         this.donViTinh = donViTinh;
@@ -40,6 +41,16 @@ public class nguyenlieu {
     }
     public void setSoLuong(double soLuong) {
         this.soLuong = soLuong;
+    }
+    public double getDonGia() {
+        return donGia;
+    }
+    public void setDonGia(double donGia){
+        this.donGia = donGia;
+    }
+
+    public double tinhTien() {
+        return donGia * soLuong;
     }
 
     public boolean kiemTraTonKho(){

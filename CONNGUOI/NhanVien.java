@@ -1,28 +1,23 @@
 // package CONNGUOI;
 package com.example.models.ThucAnNhanhNuocGiaiKhat.CONNGUOI;
 
-import java.util.Date;
+// import java.util.Date;
 
-public class NhanVien extends CONNGUOI {
+public class NhanVien extends ConNguoi {
     private String maNV;
-    private String tenNV;
-    private int tuoiNV;
-    private Date ngaySinh;
-    private int sdtNV;
-    private String diaChi;
     private double luong;
     private String chucVuNV;
     private int namVaoLam;
 
-    public NhanVien(){}
+    public NhanVien() {
+        super();
+    }
     
-    public NhanVien(String maNV, String tenNV, int tuoiNV, Date ngaySinh, int sdtNV, String diaChi, double luong, String chucVuNV, int namVaoLam){
+    public NhanVien(String maNV, String ten, String diaChi, String soDT, 
+                    String ngaySinh, String gioiTinh, double luong, 
+                    String chucVuNV, int namVaoLam) {
+        super(ten, diaChi, soDT, ngaySinh, gioiTinh);
         this.maNV = maNV;
-        this.tenNV = tenNV;
-        this.tuoiNV = tuoiNV;
-        this.ngaySinh = ngaySinh;
-        this.sdtNV = sdtNV;
-        this.diaChi = diaChi;
         this.luong = luong;
         this.chucVuNV = chucVuNV;
         this.namVaoLam = namVaoLam;
@@ -34,46 +29,6 @@ public class NhanVien extends CONNGUOI {
 
     public void setMaNV(String maNV) {
         this.maNV = maNV;
-    }
-
-    public String getTenNV() {
-        return tenNV;
-    }
-
-    public void setTenNV(String tenNV) {
-        this.tenNV = tenNV;
-    }
-
-    public int getTuoiNV() {
-        return tuoiNV;
-    }
-
-    public void setTuoiNV(int tuoiNV) {
-        this.tuoiNV = tuoiNV;
-    }
-
-    public Date getNgaySinh() {
-        return ngaySinh;
-    }
-
-    public void setNgaySinh(Date ngaySinh) {
-        this.ngaySinh = ngaySinh;
-    }
-
-    public int getSdtNV() {
-        return sdtNV;
-    }
-
-    public void setSdtNV(int sdtNV) {
-        this.sdtNV = sdtNV;
-    }
-
-    public String getDiaChi() {
-        return diaChi;
-    }
-
-    public void setDiaChi(String diaChi) {
-        this.diaChi = diaChi;
     }
 
     public double getLuong() {
@@ -100,13 +55,16 @@ public class NhanVien extends CONNGUOI {
         this.namVaoLam = namVaoLam;
     }
     
-    public String toString(){
-        return String.format(" ", maNV, tenNV, tuoiNV, ngaySinh, sdtNV, diaChi, luong, chucVuNV, namVaoLam);
+    @Override
+    public String toString() {
+        return String.format("Ma NV: %s | Ten: %s | Ngay sinh: %s | SDT: %s | Dia chi: %s | Gioi tinh: %s | Luong: %.2f VND | Chuc vu: %s | Nam vao lam: %d", 
+                            maNV, getTen(), getNgaySinh(), getSoDT(), getDiaChi(), 
+                            getGioiTinh(), luong, chucVuNV, namVaoLam);
     }
 
-    public void hienThiThongTinNhanVien(){
+    public void hienThiThongTinNhanVien() {
         System.out.println("==================THONG TIN NHAN VIEN========================");
-        toString();
+        System.out.println(toString());
         System.out.println("=============================================================");
     }
 }

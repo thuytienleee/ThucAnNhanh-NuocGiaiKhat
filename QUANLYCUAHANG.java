@@ -1,9 +1,11 @@
 // package ThucAnNhanh_NuocGiaiKhat;
 package com.example.models.ThucAnNhanhNuocGiaiKhat;
-
+import com.example.models.ThucAnNhanhNuocGiaiKhat.KHO.Kho;
+import com.example.models.ThucAnNhanhNuocGiaiKhat.NGUYENLIEU.DSNguyenLieu;
+import com.example.models.ThucAnNhanhNuocGiaiKhat.HOADON.HoaDon;
 import java.util.Scanner;
 
-public class QUANLYCUAHANG {
+public class QuanLyCuaHang {
 /*  private DSachSP dsSanPham;
     private DSachNV dsNhanVien;
     private DSachKH dsKhachHang;
@@ -132,8 +134,35 @@ public class QUANLYCUAHANG {
 
     // Quan ly hoa don
     public void chonQuanLyHoaDon() {
-        System.out.println("\n[Chuc nang quan ly hoa don dang phat trien...]");
-        // co the them, hien thi, tim kiem hoa don,...
+        int luaChon;
+        do{
+            System.out.println("\n===== QUAN LY HOA DON =====");
+            System.out.println("1. Chi tiet hoa don");
+            System.out.println("2. Chi tiet danh sach hoa don");
+            System.out.println("3. Chi tiet thanh toan");
+            System.out.println("0. Quay lai menu truoc");
+            System.out.println("=============================");
+            System.out.println("Moi ban nhap lua chon: ");
+            luaChon = Integer.parseInt(sc.nextLine());
+            switch(luaChon) {
+                int chon;
+                do{
+                    case 1:{
+                        System.out.println("===== CHI TIET HOA DON =====");
+                        System.out.println("4. Tinh tong tien");
+                        System.out.println("5. In hoa don");
+                        System.out.println("6. Quay lai menu truoc");
+                        System.out.println("Moi ban chon chuc nang chi tiet hoa don: ");
+                        chon = Integer.parseInt(sc.nextLine());
+                        switch(chon) {
+                            case 4:{
+
+                            }
+                        }
+                    }
+                }while(chon != 0);
+            }
+        }while(luaChon != 0);
     }
 
     // Quan ly kho
@@ -160,7 +189,7 @@ public class QUANLYCUAHANG {
                 System.out.println("Quay lai menu...");
                 break;
             default:
-                System.out.println("Lua chon khong hop le!");;
+                System.out.println("Lua chon khong hop le!");
             }
         } while (chon != 0);
     }
@@ -212,7 +241,7 @@ public class QUANLYCUAHANG {
 */
     // Main chay chuong trinh
     public static void main(String[] args) {
-        QUANLYCUAHANG ql = new QUANLYCUAHANG();
+        QuanLyCuaHang ql = new QuanLyCuaHang();
         ql.hienThiMenu();
     }
 }

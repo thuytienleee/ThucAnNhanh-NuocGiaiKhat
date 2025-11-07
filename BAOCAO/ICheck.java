@@ -3,7 +3,7 @@ package com.example.models.ThucAnNhanhNuocGiaiKhat.BAOCAO;
 
 public interface ICheck {
     static boolean isValidDateFormat(String date) {
-        // Kiểm tra định dạng ngày hợp lệ dd/MM/yyyy
+        // Kiem tra dinh dang ngay hop le dd/MM/yyyy
         if (date == null || !date.matches("\\d{2}/\\d{2}/\\d{4}"))
             return false;
         String[] parts = date.split("/");
