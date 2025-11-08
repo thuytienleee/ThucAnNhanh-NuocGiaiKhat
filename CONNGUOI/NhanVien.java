@@ -12,7 +12,7 @@ public class NhanVien extends ConNguoi {
     public NhanVien() {
         super();
     }
-    
+
     public NhanVien(String maNV, String ten, String diaChi, String soDT, 
                     String ngaySinh, String gioiTinh, double luong, 
                     String chucVuNV, int namVaoLam) {

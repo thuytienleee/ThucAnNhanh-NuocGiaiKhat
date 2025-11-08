@@ -11,13 +11,19 @@ public abstract class SanPham {
     public String maSP;
     public String tenSP;
     public String maLoai;
-    public Double gia;
+    public double gia;
     public Date NgaySX;
     public Date HanSD;
     //private CongThuc congThuc;
     public int soLuong;
     
     public SanPham(){}
+
+    public SanPham(String maSP, int soLuong, double gia){
+        this.maSP = maSP;
+        this.soLuong = soLuong;
+        this.gia = gia;
+    }
     
     public SanPham(String maSP, String tenSP, String maLoai, Double gia, Date NgaySX, Date HanSD/*, CongThuc congThuc*/, int soLuong){
         this.maSP = maSP;
@@ -100,5 +106,5 @@ public abstract class SanPham {
     public double tinhTien(){
         return gia * soLuong;
     }
-    public abstract String toString();
+    //public abstract String toString();
 }

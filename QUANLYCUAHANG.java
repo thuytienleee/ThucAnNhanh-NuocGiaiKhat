@@ -3,6 +3,7 @@ package com.example.models.ThucAnNhanhNuocGiaiKhat;
 import com.example.models.ThucAnNhanhNuocGiaiKhat.KHO.Kho;
 import com.example.models.ThucAnNhanhNuocGiaiKhat.NGUYENLIEU.DSNguyenLieu;
 import com.example.models.ThucAnNhanhNuocGiaiKhat.HOADON.HoaDon;
+import com.example.models.ThucAnNhanhNuocGiaiKhat.HOADON.HoaDonIO;
 import java.util.Scanner;
 
 public class QuanLyCuaHang {
@@ -135,6 +136,7 @@ public class QuanLyCuaHang {
     // Quan ly hoa don
     public void chonQuanLyHoaDon() {
         int luaChon;
+        int chonMot;
         do{
             System.out.println("\n===== QUAN LY HOA DON =====");
             System.out.println("1. Chi tiet hoa don");
@@ -145,22 +147,23 @@ public class QuanLyCuaHang {
             System.out.println("Moi ban nhap lua chon: ");
             luaChon = Integer.parseInt(sc.nextLine());
             switch(luaChon) {
-                int chon;
-                do{
-                    case 1:{
+                case 1:{
+                    do{
                         System.out.println("===== CHI TIET HOA DON =====");
                         System.out.println("4. Tinh tong tien");
                         System.out.println("5. In hoa don");
                         System.out.println("6. Quay lai menu truoc");
                         System.out.println("Moi ban chon chuc nang chi tiet hoa don: ");
-                        chon = Integer.parseInt(sc.nextLine());
-                        switch(chon) {
+                        chonMot = Integer.parseInt(sc.nextLine());
+                        switch(chonMot){
                             case 4:{
-
+                                String filePath = "E:\\BaiTapOOP\\src\\com\\example\\models\\ThucAnNhanhNuocGiaiKhat\\hoadon.txt";
+                                HoaDon hoaDon = HoaDonIO.docHoaDonTuFile(filePath);
+                                hoaDon.inHoaDon();
                             }
                         }
-                    }
-                }while(chon != 0);
+                    }while(chonMot != 0);
+                }
             }
         }while(luaChon != 0);
     }
