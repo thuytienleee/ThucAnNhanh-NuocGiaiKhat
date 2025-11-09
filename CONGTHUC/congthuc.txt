@@ -68,11 +68,34 @@ class Pizza extends ThucAn {
     }
 }
 
+// Ga ran
+class Garan extends ThucAn {
+
+    public Garan() {
+        super("GaRan", new String[]{"Bột mì", "Phô mai", "Gà", "Rau"});
+    }
+
+    @Override
+    public void chuanbi() {
+        System.out.println("Chuẩn bị: Nhào bột mì làm đế nhúng gà qua lớp bột, cắt rau, làm sạch gà và cắt miếng vừa ăn.");
+    }
+
+    @Override
+    public void nau() {
+        System.out.println("Nấu: Nhúng gà vào bột và chiên trong dầu nóng.");
+    }
+
+    @Override
+    public void phucvu() {
+        System.out.println("Trình bày: Vớt Gà Rán khi đã chiên vàng cạnh đều, trang trí với rau và rắc phô mai nếu khách yêu cầu.");
+    }
+}
 // main
 public class ThucAn {
     public static void main(String[] args) {
         ThucAn hamburger = new Hamburger();
         ThucAn pizza = new Pizza();
+        ThucAn Garan = new Garan();
 
         // Hamburger
         hamburger.congthuc();
@@ -85,5 +108,11 @@ public class ThucAn {
         pizza.chuanbi();
         pizza.nau();
         pizza.phucvu();
+
+        // Garan
+        Garan.congthuc();
+        Garan.chuanbi();
+        Garan.nau();
+        Garan.phucvu();
     }
 }
