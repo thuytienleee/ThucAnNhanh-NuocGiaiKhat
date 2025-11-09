@@ -1,5 +1,5 @@
 // package BAOCAO;
-package com.example.models.ThucAnNhanhNuocGiaiKhat.BAOCAO;
+package BAOCAO;
 
 import java.io.*;
 import java.util.*;

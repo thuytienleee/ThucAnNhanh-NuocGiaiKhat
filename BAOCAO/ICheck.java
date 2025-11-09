@@ -1,5 +1,5 @@
 // package BAOCAO;
-package com.example.models.ThucAnNhanhNuocGiaiKhat.BAOCAO;
+package BAOCAO;
 
 public interface ICheck {
     static boolean isValidDateFormat(String date) {

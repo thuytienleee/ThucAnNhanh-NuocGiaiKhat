@@ -1,7 +1,7 @@
-package com.example.models.ThucAnNhanhNuocGiaiKhat.HOADON;
-import com.example.models.ThucAnNhanhNuocGiaiKhat.CONNGUOI.NhanVien;
-import com.example.models.ThucAnNhanhNuocGiaiKhat.CONNGUOI.KhachHang;
-import com.example.models.ThucAnNhanhNuocGiaiKhat.SANPHAM.SanPhamTestFile;
+package HOADON;
+import CONNGUOI.KhachHang;
+import CONNGUOI.NhanVien;
+import SANPHAM.SanPhamTestFile;
 import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.*;

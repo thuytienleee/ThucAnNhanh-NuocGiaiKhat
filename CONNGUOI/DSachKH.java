@@ -1,5 +1,5 @@
 // package CONNGUOI;
-package com.example.models.ThucAnNhanhNuocGiaiKhat.CONNGUOI;
+package CONNGUOI;
 // import java.io.BufferedReader;
 // import java.io.FileReader;
 // import java.util.Scanner;

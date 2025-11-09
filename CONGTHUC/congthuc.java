@@ -1,6 +1,6 @@
 // package CONGTHUC;
-package com.example.models.ThucAnNhanhNuocGiaiKhat.CONGTHUC;
-import com.example.models.ThucAnNhanhNuocGiaiKhat.NGUYENLIEU.NguyenLieu;
+package CONGTHUC;
+import NGUYENLIEU.NguyenLieu;
 // import com.example.models.ThucAnNhanhNuocGiaiKhat.NGUYENLIEU.DSNguyenLieu;
 // import com.example.models.ThucAnNhanhNuocGiaiKhat.KHO.Kho;
 

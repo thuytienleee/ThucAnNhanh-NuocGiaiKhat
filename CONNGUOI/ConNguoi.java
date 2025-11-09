@@ -1,4 +1,4 @@
-package com.example.models.ThucAnNhanhNuocGiaiKhat.CONNGUOI;
+package CONNGUOI;
 
 public class ConNguoi {
     private String ten;

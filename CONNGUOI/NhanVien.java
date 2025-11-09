@@ -1,5 +1,5 @@
 // package CONNGUOI;
-package com.example.models.ThucAnNhanhNuocGiaiKhat.CONNGUOI;
+package CONNGUOI;
 
 // import java.util.Date;
 

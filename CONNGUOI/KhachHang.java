@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 // package CONNGUOI;
-package com.example.models.ThucAnNhanhNuocGiaiKhat.CONNGUOI;
+package CONNGUOI;
 
 /**
  *

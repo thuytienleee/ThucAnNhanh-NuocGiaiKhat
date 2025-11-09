@@ -1,5 +1,5 @@
 
-package com.example.models.ThucAnNhanhNuocGiaiKhat.BAOCAO;
+package BAOCAO;
 
 import java.util.Arrays;
 

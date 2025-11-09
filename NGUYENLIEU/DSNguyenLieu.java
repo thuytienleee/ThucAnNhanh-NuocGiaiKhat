@@ -1,5 +1,5 @@
 // package NGUYENLIEU;
-package com.example.models.ThucAnNhanhNuocGiaiKhat.NGUYENLIEU;
+package NGUYENLIEU;
 
 import java.io.*;
 import java.util.Arrays;

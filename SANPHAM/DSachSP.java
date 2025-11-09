@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 // package SANPHAM;
-package com.example.models.ThucAnNhanhNuocGiaiKhat.SANPHAM;
+package SANPHAM;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -195,10 +195,10 @@ public class DSachSP {
       public void timKiemTheoMa(){}
       public void SuaSanPham()
 //     */
-//    public static void main(String[] agrs){
-//        DSachSP ds = new DSachSP(1000);
-//        //ds.themSanPham();
-//        ds.DocFile();
-//        ds.hienThiDS();
-//    }
+   public static void main(String[] agrs){
+        DSachSP ds = new DSachSP(1000);
+        ds.themSanPham();
+        ds.DocFile();
+        ds.hienThiDS();
+    }
 }

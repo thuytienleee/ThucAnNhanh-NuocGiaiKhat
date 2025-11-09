@@ -1,7 +1,7 @@
 // package PHIEUNHAP;
-package com.example.models.ThucAnNhanhNuocGiaiKhat.PHIEUNHAP;
-import com.example.models.ThucAnNhanhNuocGiaiKhat.NGUYENLIEU.NguyenLieu;
-import com.example.models.ThucAnNhanhNuocGiaiKhat.CONNGUOI.NhanVien;
+package PHIEUNHAP;
+import NGUYENLIEU.NguyenLieu;
+import CONNGUOI.NhanVien;
 
 import java.util.Date;
 import java.text.SimpleDateFormat;

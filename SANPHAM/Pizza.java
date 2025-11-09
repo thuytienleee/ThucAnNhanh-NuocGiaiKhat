@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 // package SANPHAM;
-package com.example.models.ThucAnNhanhNuocGiaiKhat.SANPHAM;
+package SANPHAM;
 
 import java.util.Date;
 

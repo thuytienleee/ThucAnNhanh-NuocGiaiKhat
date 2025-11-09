@@ -1,5 +1,5 @@
 // package ThucAnNhanh-NuocGiaiKhat.HOADON;
-package com.example.models.ThucAnNhanhNuocGiaiKhat.HOADON;
+package HOADON;
 
 public class ThanhToanThe implements ThanhToan {
     private double phiGiaoDich;

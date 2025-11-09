@@ -2,12 +2,12 @@
 // import SANPHAM.SanPham;
 // import CONNGUOI.NhanVien;
 // import CONNGUOI.KhachHang;
-package com.example.models.ThucAnNhanhNuocGiaiKhat.HOADON;
+package HOADON;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import com.example.models.ThucAnNhanhNuocGiaiKhat.CONNGUOI.NhanVien;
-import com.example.models.ThucAnNhanhNuocGiaiKhat.CONNGUOI.KhachHang;
-import com.example.models.ThucAnNhanhNuocGiaiKhat.SANPHAM.SanPham;
+import CONNGUOI.NhanVien;
+import CONNGUOI.KhachHang;
+import SANPHAM.SanPham;
 
 public class HoaDon {
     private String maHoaDon;

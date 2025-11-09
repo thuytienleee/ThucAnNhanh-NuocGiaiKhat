@@ -1,6 +1,6 @@
 // package NHANVIEN;
-package com.example.models.ThucAnNhanhNuocGiaiKhat.CONNGUOI;
-import com.example.models.ThucAnNhanhNuocGiaiKhat.CONNGUOI.NhanVien;
+package CONNGUOI;
+import CONNGUOI.NhanVien;
 
 public class DSachNV {
     private NhanVien[] DanhsachNhanVien;

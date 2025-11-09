@@ -1,6 +1,6 @@
 // package KHO;
-package com.example.models.ThucAnNhanhNuocGiaiKhat.KHO;
-import com.example.models.ThucAnNhanhNuocGiaiKhat.NGUYENLIEU.NguyenLieu;
+package KHO;
+import NGUYENLIEU.NguyenLieu;
 // import com.example.models.ThucAnNhanhNuocGiaiKhat.NGUYENLIEU.DSNguyenLieu;
 // import com.example.models.ThucAnNhanhNuocGiaiKhat.PHIEUNHAP.PhieuNhap;
 // import com.example.models.ThucAnNhanhNuocGiaiKhat.CONGTHUC.CongThuc;

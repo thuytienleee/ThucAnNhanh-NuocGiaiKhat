@@ -1,5 +1,5 @@
 // package NGUYENLIEU;
-package com.example.models.ThucAnNhanhNuocGiaiKhat.NGUYENLIEU;
+package NGUYENLIEU;
 
 public class NguyenLieu {
     private String maNL;
