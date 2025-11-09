@@ -1,0 +1,89 @@
+package CONGTHUC:
+
+abstract class ThucAn {
+    protected String name;
+    protected String[] NL;
+
+    public ThucAn(String name, String[] NL) {
+        this.name = name;
+        this.NL = NguyenLieu;
+    }
+
+    public abstract void chuanbi();  
+    public abstract void nau(); 
+    public abstract void phucvu();
+
+    public void congthuc() {
+        System.out.println("\n=== Công thức làm " + name + " ===");
+        System.out.println("Nguyên liệu:");
+        for (int i = 0; i < ML.length; i++) {
+            System.out.println(" - " + [i]);
+        }
+    }
+}
+
+// Hamburger
+class Hamburger extends ThucAn {
+
+    public Hamburger() {
+        super("Hamburger", new String[]{"Bột mì", "Phô mai", "Rau", "Tôm", "Mực"});
+    }
+
+    @Override
+    public void chuanbi() {
+        System.out.println("Chuẩn bị: Nướng bánh mì từ bột mì, rửa rau và sơ chế tôm, mực.");
+    }
+
+    @Override
+    public void nau() {
+        System.out.println("Nấu: Chiên tôm và mực, sau đó kẹp vào bánh cùng rau và phô mai.");
+    }
+
+    @Override
+    public void phucvu() {
+        System.out.println("Trình bày: Cắt đôi hamburger và trang trí với rau xanh, tương cà.");
+    
+}
+
+// Pizza
+class Pizza extends ThucAn {
+
+    public Pizza() {
+        super("Pizza", new String[]{"Bột mì", "Phô mai", "Rau", "Tôm", "Mực"});
+    }
+
+    @Override
+    public void chuanbi() {
+        System.out.println("Chuẩn bị: Nhào bột mì làm đế bánh, cắt rau, làm sạch tôm và mực.");
+    }
+
+    @Override
+    public void nau() {
+        System.out.println("Nấu: Xếp topping tôm, mực, rau và phô mai lên đế bánh rồi nướng.");
+    }
+
+    @Override
+    public void phucvu() {
+        System.out.println("Trình bày: Cắt pizza thành miếng và rắc thêm phô mai nếu khách thêm.");
+    }
+}
+
+// main
+public class ThucAn {
+    public static void main(String[] args) {
+        ThucAn hamburger = new Hamburger();
+        ThucAn pizza = new Pizza();
+
+        // Hamburger
+        hamburger.congthuc();
+        hamburger.chuanbi();
+        hamburger.nau();
+        hamburger.phucvu();
+
+        // Pizza
+        pizza.congthuc();
+        pizza.chuanbi();
+        pizza.nau();
+        pizza.phucvu();
+    }
+}
