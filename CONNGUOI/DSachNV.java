@@ -31,7 +31,7 @@ public class DSachNV {
         }
         return false;
     }
-/* 
+
     public boolean thayDoiThongTinNhanVien(String maNhanVien, String ten, int tuoi, String sdt, String diaChi) {
         NhanVien nv = timKiemNhanVien(maNhanVien);
         if (nv != null) {
@@ -61,7 +61,6 @@ public class DSachNV {
         }
         return false;
     }
-*/
     public void hienThiDanhSach() {
         for (int i = 0; i < soLuongNhanVien; i++) {
             DanhsachNhanVien[i].hienThiThongTinNhanVien();
