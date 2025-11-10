@@ -1,10 +1,9 @@
 // package PHIEUNHAP;
 package PHIEUNHAP;
-import NGUYENLIEU.NguyenLieu;
 import CONNGUOI.NhanVien;
-
-import java.util.Date;
+import NGUYENLIEU.NguyenLieu;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 // import com.example.models.ThucAnNhanhNuocGiaiKhat;
 public class PhieuNhap {
     private String maPhieuNhap;
@@ -15,7 +14,6 @@ public class PhieuNhap {
     private String trangThai;
     private int soLuongNL;
 
-    // Constructor
     public PhieuNhap(String maPhieuNhap, String tenPhieuNhap, Date ngayNhap, NhanVien nhanVienNhapHang, int kichThuocDS) {
         this.maPhieuNhap = maPhieuNhap;
         this.tenPhieuNhap = tenPhieuNhap;
@@ -77,6 +75,62 @@ public class PhieuNhap {
             }
         }
         return tong;
+    }
+
+    public String getMaPhieuNhap() {
+        return maPhieuNhap;
+    }
+
+    public void setMaPhieuNhap(String maPhieuNhap) {
+        this.maPhieuNhap = maPhieuNhap;
+    }
+
+    public String getTenPhieuNhap() {
+        return tenPhieuNhap;
+    }
+
+    public void setTenPhieuNhap(String tenPhieuNhap) {
+        this.tenPhieuNhap = tenPhieuNhap;
+    }
+
+    public NguyenLieu[] getDsNL() {
+        return dsNL;
+    }
+
+    public void setDsNL(NguyenLieu[] dsNL) {
+        this.dsNL = dsNL;
+    }
+
+    public Date getNgayNhap() {
+        return ngayNhap;
+    }
+
+    public void setNgayNhap(Date ngayNhap) {
+        this.ngayNhap = ngayNhap;
+    }
+
+    public NhanVien getNhanVienNhapHang() {
+        return nhanVienNhapHang;
+    }
+
+    public void setNhanVienNhapHang(NhanVien nhanVienNhapHang) {
+        this.nhanVienNhapHang = nhanVienNhapHang;
+    }
+
+    public String getTrangThai() {
+        return trangThai;
+    }
+
+    public void setTrangThai(String trangThai) {
+        this.trangThai = trangThai;
+    }
+
+    public int getSoLuongNL() {
+        return soLuongNL;
+    }
+
+    public void setSoLuongNL(int soLuongNL) {
+        this.soLuongNL = soLuongNL;
     }
 
     // Hien thi thong tin phieu nhap

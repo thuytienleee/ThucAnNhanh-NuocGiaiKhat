@@ -1,12 +1,10 @@
-// package ThucAnNhanh_NuocGiaiKhat;
-package com.example.models.ThucAnNhanhNuocGiaiKhat;
-import com.example.models.ThucAnNhanhNuocGiaiKhat.KHO.Kho;
-import com.example.models.ThucAnNhanhNuocGiaiKhat.NGUYENLIEU.DSNguyenLieu;
-import com.example.models.ThucAnNhanhNuocGiaiKhat.HOADON.HoaDon;
-import com.example.models.ThucAnNhanhNuocGiaiKhat.HOADON.HoaDonIO;
+import HOADON.HoaDon;
+import HOADON.HoaDonIO;
+import KHO.Kho;
+import NGUYENLIEU.DSNguyenLieu;
 import java.util.Scanner;
 
-public class QuanLyCuaHang {
+public class QUANLYCUAHANG {
 /*  private DSachSP dsSanPham;
     private DSachNV dsNhanVien;
     private DSachKH dsKhachHang;
@@ -217,7 +215,10 @@ public class QuanLyCuaHang {
                 break;
             case 2:
                 dsNguyenLieu.AddNL();
+                dsNguyenLieu.ghiFile();
                 break;
+            case 3:
+                dsNguyenLieu.suaNguyenLieu();
             case 4:
                 dsNguyenLieu.xoaNguyenLieu();
                 break;
@@ -244,7 +245,7 @@ public class QuanLyCuaHang {
 */
     // Main chay chuong trinh
     public static void main(String[] args) {
-        QuanLyCuaHang ql = new QuanLyCuaHang();
+        QUANLYCUAHANG ql = new QUANLYCUAHANG();
         ql.hienThiMenu();
     }
 }

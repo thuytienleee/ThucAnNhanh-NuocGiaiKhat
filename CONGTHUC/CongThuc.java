@@ -14,6 +14,72 @@ public class CongThuc {
     private NguyenLieu[] dsNguyenLieu;
     private int soNguyenLieu;
 
+    
+
+    public String getMaCongThuc() {
+        return maCongThuc;
+    }
+
+    public void setMaCongThuc(String maCongThuc) {
+        this.maCongThuc = maCongThuc;
+    }
+
+    public String getTenCongThuc() {
+        return tenCongThuc;
+    }
+
+    public void setTenCongThuc(String tenCongThuc) {
+        this.tenCongThuc = tenCongThuc;
+    }
+
+    public String getMoTa() {
+        return moTa;
+    }
+
+    public void setMoTa(String moTa) {
+        this.moTa = moTa;
+    }
+
+    public String getLoai() {
+        return loai;
+    }
+
+    public void setLoai(String loai) {
+        this.loai = loai;
+    }
+
+    public int getPhienBan() {
+        return phienBan;
+    }
+
+    public void setPhienBan(int phienBan) {
+        this.phienBan = phienBan;
+    }
+
+    public int getThoiGianCheBien() {
+        return thoiGianCheBien;
+    }
+
+    public void setThoiGianCheBien(int thoiGianCheBien) {
+        this.thoiGianCheBien = thoiGianCheBien;
+    }
+
+    public NguyenLieu[] getDsNguyenLieu() {
+        return dsNguyenLieu;
+    }
+
+    public void setDsNguyenLieu(NguyenLieu[] dsNguyenLieu) {
+        this.dsNguyenLieu = dsNguyenLieu;
+    }
+
+    public int getSoNguyenLieu() {
+        return soNguyenLieu;
+    }
+
+    public void setSoNguyenLieu(int soNguyenLieu) {
+        this.soNguyenLieu = soNguyenLieu;
+    }
+
     public CongThuc(String maCT, String tenCT, String moTa, String loai, int phienBan, int thoiGian) {
         this.maCongThuc = maCT;
         this.tenCongThuc = tenCT;

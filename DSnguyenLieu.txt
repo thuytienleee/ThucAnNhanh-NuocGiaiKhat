@@ -1,6 +1,15 @@
-  NL01     |  Bot mi              |  Kg          |  20.00    
-  NL02     |  Pho Mai             |  Kg          |  10.00    
-  NL03     |  Rau                 |  Kg          |  30.00    
-  NL04     |  Tom                 |  Kg          |  15.00    
-  NL05     |  Muc                 |  Kg          |  15.00    
-  NLtest   |  Test                |  abc         |  10.00    
+NL01 | Bot mi | Kg | 20.00
+NL02 | Pho Mai | Kg | 10.00
+NL03 | Rau | Kg | 30.00
+NL04 | Tom | Kg | 15.00
+NL05 | Muc | Kg | 15.00
+NLGA | Ga | Kg | 10.00
+NLBO | Bo | Kg | 15.00
+NLJB | JamBon | Kg | 9.00
+NLCA | Ca | Kg | 10.00
+COCA | Coca | Lon | 100.00
+SPR | Sprite | Lon | 80.00
+PS | Pepsi | Lon | 100.00
+ST | Sting | Lon | 100.00
+AQF | Aquafina | Chai | 80.00
+LV | Lavie | Chai | 100.00

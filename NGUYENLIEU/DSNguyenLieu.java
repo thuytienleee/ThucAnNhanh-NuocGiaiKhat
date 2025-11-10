@@ -9,15 +9,40 @@ public class DSNguyenLieu {
     private NguyenLieu[] ds;
     private int soLuong;
 
-    public DSNguyenLieu(){}
+    public DSNguyenLieu(){
+        this.ds = new NguyenLieu[100];
+        this.soLuong = 0;
+    }
 
     public DSNguyenLieu(int kichThuoc) {
         this.ds = new NguyenLieu[kichThuoc];
         this.soLuong = 0;
     }
 
+    // ======== Kiểm tra mã nguyên liệu đã tồn tại trong file hay chưa ========
+    public boolean tonTaiMa(String maKiemTra) {
+        try (BufferedReader br = new BufferedReader(new FileReader("DSnguyenLieu.txt"))) {
+            String st;
+            while ((st = br.readLine()) != null) {
+                String[] str = st.split("\\|");
+                if (str.length < 4) continue;
+                String maNL = str[0].trim();
+                if (maNL.equalsIgnoreCase(maKiemTra.trim())) {
+                    return true;
+                }
+            }
+        } catch (IOException e) {
+            return false;
+        }
+        return false;
+    }
+
+
     // ======== Thêm nguyên liệu ========
     public void AddNL() {
+        this.ds = new NguyenLieu[100];
+        this.soLuong = 0;
+
         Scanner sc = new Scanner(System.in);
         System.out.print("Nhap so luong nguyen lieu muon them: ");
         int n = sc.nextInt();
@@ -30,8 +55,23 @@ public class DSNguyenLieu {
             }
 
             System.out.println("\nNhap thong tin nguyen lieu thu " + (soLuong + 1) + ":");
+            String ma;
+            while(true){
             System.out.print("Ma nguyen lieu: ");
-            String ma = sc.nextLine();
+            ma = sc.nextLine();
+            
+            boolean trung = tonTaiMa(ma);
+            for (int j = 0; j <soLuong; j++){
+                if (ds[j].getMaNL().equalsIgnoreCase(ma)) {
+                    trung = true;
+                }
+            }
+                if (trung) {
+                System.out.println("Ma nguyen lieu da ton tai, vui long nhap ma khac!");
+            } else {
+                break;
+            }
+        }
 
             System.out.print("Ten nguyen lieu: ");
             String ten = sc.nextLine();
@@ -45,7 +85,86 @@ public class DSNguyenLieu {
 
             ds[soLuong++] = new NguyenLieu(ma, ten, dvt, sl);
         }
-        sc.close();
+    }
+
+    // ======== Hàm sửa nguyên liệu ========
+    public void suaNguyenLieu() {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Nhap ma nguyen lieu can sua: ");
+        String maSua = sc.nextLine().trim();
+        boolean find = false;
+
+        // Đọc file vào mảng
+        NguyenLieu[] dsnl = new NguyenLieu[0];
+        try (BufferedReader br = new BufferedReader(new FileReader("DSnguyenLieu.txt"))) {
+            String st;
+            while ((st = br.readLine()) != null) {
+                String[] str = st.split("\\|");
+
+                String maNL = str[0].trim();
+                String tenNL = str[1].trim();
+                String dvt = str[2].trim();
+                double sl = Double.parseDouble(str[3].trim());
+
+                NguyenLieu nl = new NguyenLieu(maNL, tenNL, dvt, sl);
+                dsnl = Arrays.copyOf(dsnl, dsnl.length + 1);
+                dsnl[dsnl.length - 1] = nl;
+            }
+        } catch (Exception e) {
+            System.out.println("Loi doc file: " + e.getMessage());
+            return;
+        }
+
+        // Tìm và sửa nguyên liệu
+        for (NguyenLieu nl : dsnl) {
+            if (nl.getMaNL().equalsIgnoreCase(maSua)) {
+                find = true;
+                System.out.println("\n=== Thong tin hien tai cua nguyen lieu ===");
+                System.out.println(nl);
+
+                System.out.println("\nNhap thong tin moi (bo qua neu khong muon thay doi):");
+
+                System.out.print("Ten nguyen lieu moi: ");
+                String tenMoi = sc.nextLine().trim();
+                if (!tenMoi.isEmpty()) nl.setTenNL(tenMoi);
+
+                System.out.print("Don vi tinh moi: ");
+                String dvtMoi = sc.nextLine().trim();
+                if (!dvtMoi.isEmpty()) nl.setDonViTinh(dvtMoi);
+
+                System.out.print("So luong moi: ");
+                String slMoi = sc.nextLine().trim();
+                if (!slMoi.isEmpty()) {
+                    try {
+                        double slValue = Double.parseDouble(slMoi);
+                        nl.setSoLuong(slValue);
+                    } catch (NumberFormatException e) {
+                        System.out.println("So luong khong hop le, giu nguyen gia tri cu!");
+                    }
+                }
+
+                System.out.println("\nDa cap nhat thong tin nguyen lieu!");
+                break;
+            }
+        }
+
+        if (!find) {
+            System.out.println("Khong tim thay ma nguyen lieu: " + maSua);
+            return;
+        }
+
+        // Ghi lại file sau khi sửa
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter("DSnguyenLieu.txt", false))) {
+            for (NguyenLieu x : dsnl) {
+                bw.write(x.toString());
+                bw.newLine();
+            }
+            System.out.println("Da ghi lai file DSnguyenLieu.txt sau khi sua!");
+        } catch (Exception e) {
+            System.out.println("Loi ghi file: " + e.getMessage());
+        }
+
+        docFile();
     }
 
     // ======== Hàm xóa nguyên liệu ========
