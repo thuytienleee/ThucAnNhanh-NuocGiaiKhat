@@ -69,51 +69,44 @@ public class QuanLyCuaHang{
     }
 
     private void thoat() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'thoat'");
+       
     }
 
-    private void chonQuanLySanPham() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'chonQuanLySanPham'");
-    }
-
-    /*    public void chonQuanLySanPham() {
+    public void chonQuanLySanPham() {
         int chon;
         do {
             System.out.println("\n===== QUAN LY SAN PHAM =====");
-            System.out.println("1. Them san pham");
-            System.out.println("2. Hien thi danh sach san pham");
-            System.out.println("3. Tim kiem san pham");
-            System.out.println("4. Sua san pham");
+            System.out.println("1. Hien thi danh sach san pham");
+            System.out.println("2. Them san pham");
+            System.out.println("3. Tim kiem san pham theo ten");
+            System.out.println("4. Tim kiem san pham theo ma");
             System.out.println("5. Xoa san pham");
-            System.out.println("6. Luu du lieu ra file");
-            System.out.println("7. Doc du lieu tu file");
-            System.out.println("0. Quay lai");
+            System.out.println("6. Sua san pham");
+            System.out.println("7. Thoat");
+            System.out.println("=============================");
             System.out.print("Chon: ");
             chon = Integer.parseInt(sc.nextLine());
 
             switch (chon) {
                 case 1:
-                    dsSanPham.themSanPhamTuBanPhim();
-                    break;
-                case 2:
                     dsSanPham.hienThiDS();
                     break;
+                case 2:
+                    dsSanPham.themSanPham();
+                    break;
                 case 3:
-                    dsSanPham.timKiemTuBanPhim();
+                    dsSanPham.timKiemTheoTen();
                     break;
                 case 4:
-                    dsSanPham.suaSanPhamTuBanPhim();
+                    dsSanPham.timKiemTheoMa();
                     break;
                 case 5:
-                    dsSanPham.xoaSanPhamTuBanPhim();
+                    dsSanPham.xoaSanPham();
                     break;
                 case 6:
-                    dsSanPham.LuuDuLieu("sanpham.txt");
+                    dsSanPham.suaSanPham();
                     break;
                 case 7:
-                    dsSanPham.DocDuLieuTuFile("sanpham.txt");
                     break;
                 case 0:
                     System.out.println("Quay lai menu chinh...");
@@ -122,7 +115,10 @@ public class QuanLyCuaHang{
                     System.out.println("Lua chon khong hop le!");
             }
         } while (chon != 0);
-    } */
+    }
+
+
+
     // Quan ly nhan vien
     public void chonQuanLyNhanVien() {
         System.out.println("\n[Chuc nang quan ly nhan vien dang phat trien...]");
