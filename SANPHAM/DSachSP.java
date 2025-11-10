@@ -380,7 +380,7 @@ public class DSachSP {
                         String nhap = sc.nextLine().trim();
                         g.setDoCay(nhap.equalsIgnoreCase("Cay"));
                     } else {
-                        System.out.println("❌ This product type has no special attribute!");
+                        System.out.println("This product type has no special attribute!");
                     }
                     break;
                 case 0:
@@ -396,7 +396,7 @@ public class DSachSP {
             // Ghi lại toàn bộ danh sách vào file
             capNhatFileSauKhiXoa();
 
-            System.out.println("💾 File updated successfully!");
+            System.out.println("File updated successfully!");
             break;
         }
     }
