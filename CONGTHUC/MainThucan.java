@@ -4,8 +4,7 @@ import NGUYENLIEU.DSNguyenLieu;
 public class MainThucAn {
     public static void main(String[] args) {
         DSNguyenLieu dsNL = new DSNguyenLieu(100);
-        dsNL.docFile(); // đọc nguyên liệu từ file DSnguyenLieu.txt
-
+        dsNL.docFile(); 
         ThucAn[] menu = { new Hamburger(dsNL), new Pizza(dsNL), new Garan(dsNL) };
 
         for(ThucAn mon: menu){
