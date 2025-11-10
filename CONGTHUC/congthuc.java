@@ -61,7 +61,8 @@ public class CongThuc {
         System.out.println("Mo ta: " + moTa);
         System.out.println("Nguyen lieu:");
         for (int i = 0; i < soNguyenLieu; i++) {
-            dsNguyenLieu[i].toString();
+            String s = dsNguyenLieu[i].toString();
+            System.out.println(s);
         }
     }
 }
