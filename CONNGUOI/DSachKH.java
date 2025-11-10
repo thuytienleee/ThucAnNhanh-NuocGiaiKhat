@@ -1,8 +1,9 @@
-// package CONNGUOI;
+
 package CONNGUOI;
-// import java.io.BufferedReader;
-// import java.io.FileReader;
-// import java.util.Scanner;
+import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 
 public class DSachKH {
     private KhachHang[] danhSachKH;
@@ -80,5 +81,33 @@ public class DSachKH {
             System.out.println(danhSachKH[i]);
         }
     }
-}
+    // Doc DSKH
+public void docDS() {
+        try (BufferedReader br = new BufferedReader(new FileReader("danhSachKhachHang.txt"))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                // bỏ qua dòng trống
+                if (line.trim().isEmpty()) continue;
 
+                // Tách dữ liệu theo dấu '|'
+                String[] parts = line.split("\\|");
+                if (parts.length >= 3) {
+                    String maKH = parts[0].trim();
+                    String ten = parts[1].trim();
+                    String soDT = parts[2].trim();
+
+                    // Các dữ liệu khác tạm để trống
+                    String diaChi = "Chua cap nhat";
+                    String ngaySinh = "Chua cap nhat";
+                    String gioiTinh = "Chua cap nhat";
+
+                    KhachHang kh = new KhachHang(maKH, ten, diaChi, soDT, ngaySinh, gioiTinh);
+                    themKH(kh);
+                }
+            }
+            System.out.println(" Da doc danh sach khach hang tu file thanh cong!");
+        } catch (IOException e) {
+            System.out.println(" Loi khi doc file: " + e.getMessage());
+        }
+    }
+}
