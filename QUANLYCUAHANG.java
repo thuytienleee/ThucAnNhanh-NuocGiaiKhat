@@ -1,26 +1,29 @@
 // package ThucAnNhanh_NuocGiaiKhat;
-package com.example.models.ThucAnNhanhNuocGiaiKhat;
-import com.example.models.ThucAnNhanhNuocGiaiKhat.KHO.Kho;
-import com.example.models.ThucAnNhanhNuocGiaiKhat.NGUYENLIEU.DSNguyenLieu;
-import com.example.models.ThucAnNhanhNuocGiaiKhat.HOADON.HoaDon;
-import com.example.models.ThucAnNhanhNuocGiaiKhat.HOADON.HoaDonIO;
+
+import CONNGUOI.DSachKH;
+import CONNGUOI.DSachNV;
+import HOADON.DSachHD;
+import HOADON.HoaDon;
+import HOADON.HoaDonIO;
+import KHO.Kho;
+import NGUYENLIEU.DSNguyenLieu;
+import SANPHAM.DSachSP;
 import java.util.Scanner;
 
-public class QuanLyCuaHang {
-/*  private DSachSP dsSanPham;
+public class QuanLyCuaHang{
+   private DSachSP dsSanPham;
     private DSachNV dsNhanVien;
     private DSachKH dsKhachHang;
     private DSachHD dsHoaDon;
-*/
+
     private Scanner sc = new Scanner(System.in);
 
-   /* public QUANLYCUAHANG() {
+    /* public QUANLYCUAHANG() {
         dsSanPham = new DSachSP(100); 
         dsNhanVien = new DSachNV(50);
         dsKhachHang = new DSachKH(100);
         dsHoaDon = new DSachHD(100);
     } */
-
     // Ham hien thi menu chinh
     public void hienThiMenu() {
         int chon;
@@ -75,7 +78,7 @@ public class QuanLyCuaHang {
         throw new UnsupportedOperationException("Unimplemented method 'chonQuanLySanPham'");
     }
 
-/*    public void chonQuanLySanPham() {
+    /*    public void chonQuanLySanPham() {
         int chon;
         do {
             System.out.println("\n===== QUAN LY SAN PHAM =====");
@@ -120,7 +123,6 @@ public class QuanLyCuaHang {
             }
         } while (chon != 0);
     } */
-
     // Quan ly nhan vien
     public void chonQuanLyNhanVien() {
         System.out.println("\n[Chuc nang quan ly nhan vien dang phat trien...]");
@@ -137,7 +139,7 @@ public class QuanLyCuaHang {
     public void chonQuanLyHoaDon() {
         int luaChon;
         int chonMot;
-        do{
+        do {
             System.out.println("\n===== QUAN LY HOA DON =====");
             System.out.println("1. Chi tiet hoa don");
             System.out.println("2. Chi tiet danh sach hoa don");
@@ -146,88 +148,89 @@ public class QuanLyCuaHang {
             System.out.println("=============================");
             System.out.println("Moi ban nhap lua chon: ");
             luaChon = Integer.parseInt(sc.nextLine());
-            switch(luaChon) {
-                case 1:{
-                    do{
+            switch (luaChon) {
+                case 1: {
+                    do {
                         System.out.println("===== CHI TIET HOA DON =====");
                         System.out.println("4. Tinh tong tien");
                         System.out.println("5. In hoa don");
                         System.out.println("6. Quay lai menu truoc");
                         System.out.println("Moi ban chon chuc nang chi tiet hoa don: ");
                         chonMot = Integer.parseInt(sc.nextLine());
-                        switch(chonMot){
-                            case 4:{
+                        switch (chonMot) {
+                            case 4: {
                                 String filePath = "E:\\BaiTapOOP\\src\\com\\example\\models\\ThucAnNhanhNuocGiaiKhat\\hoadon.txt";
                                 HoaDon hoaDon = HoaDonIO.docHoaDonTuFile(filePath);
                                 hoaDon.inHoaDon();
                             }
                         }
-                    }while(chonMot != 0);
+                    } while (chonMot != 0);
                 }
             }
-        }while(luaChon != 0);
+        } while (luaChon != 0);
     }
 
     // Quan ly kho
     public void chonQuanLyKho() {
         int chon;
-        do{
-        System.out.println("\n===== QUAN LY KHO =====");
-        System.out.println("1. Xem danh sach ton kho");
-        System.out.println("2. Quan ly nguyen lieu");
-        System.out.println("3. Quan ly phieu nhap");
-        System.out.println("0. Quay lai");
-        System.out.println("=========================");
-        System.out.print("Chon: ");
-        chon = Integer.parseInt(sc.nextLine());
-        switch (chon) {
-            case 1:
-                Kho kho = new Kho();
-                kho.xemDSTonKho();
-                break;
-            case 2:
-                qlNguyenLieu();
-                break;
-            case 0:
-                System.out.println("Quay lai menu...");
-                break;
-            default:
-                System.out.println("Lua chon khong hop le!");
+        do {
+            System.out.println("\n===== QUAN LY KHO =====");
+            System.out.println("1. Xem danh sach ton kho");
+            System.out.println("2. Quan ly nguyen lieu");
+            System.out.println("3. Quan ly phieu nhap");
+            System.out.println("0. Quay lai");
+            System.out.println("=========================");
+            System.out.print("Chon: ");
+            chon = Integer.parseInt(sc.nextLine());
+            switch (chon) {
+                case 1:
+                    Kho kho = new Kho();
+                    kho.xemDSTonKho();
+                    break;
+                case 2:
+                    qlNguyenLieu();
+                    break;
+                case 0:
+                    System.out.println("Quay lai menu...");
+                    break;
+                default:
+                    System.out.println("Lua chon khong hop le!");
             }
         } while (chon != 0);
     }
 
     //Quan ly nguyen lieu
-    public void qlNguyenLieu(){
+    public void qlNguyenLieu() {
         DSNguyenLieu dsNguyenLieu = new DSNguyenLieu();
         int chon;
         do {
-        System.out.println("\n======== Quan ly nguyen lieu ========");
-        System.out.println("1. Xem danh sach nguyen lieu");
-        System.out.println("2. Them nguyen lieu moi.");
-        System.out.println("3. Sua thong tin nguyen lieu");
-        System.out.println("4. Xoa nguyen lieu.");
-        System.out.println("0. Quay lai");
-        System.out.println("======================================");
-        System.out.print("Chon: ");
-        chon = Integer.parseInt(sc.nextLine());
-        switch (chon) {
-            case 1:
-                dsNguyenLieu.docFile();
-                break;
-            case 2:
-                dsNguyenLieu.AddNL();
-                break;
-            case 4:
-                dsNguyenLieu.xoaNguyenLieu();
-                break;
-            case 0:
-                System.out.println("Quay lai");
-                break;
-            default:
-                System.out.println("Lua chon khong hop le");;
-            } 
-        }while(chon != 0);
+            System.out.println("\n======== Quan ly nguyen lieu ========");
+            System.out.println("1. Xem danh sach nguyen lieu");
+            System.out.println("2. Them nguyen lieu moi.");
+            System.out.println("3. Sua thong tin nguyen lieu");
+            System.out.println("4. Xoa nguyen lieu.");
+            System.out.println("0. Quay lai");
+            System.out.println("======================================");
+            System.out.print("Chon: ");
+            chon = Integer.parseInt(sc.nextLine());
+            switch (chon) {
+                case 1:
+                    dsNguyenLieu.docFile();
+                    break;
+                case 2:
+                    dsNguyenLieu.AddNL();
+                    break;
+                case 4:
+                    dsNguyenLieu.xoaNguyenLieu();
+                    break;
+                case 0:
+                    System.out.println("Quay lai");
+                    break;
+                default:
+                    System.out.println("Lua chon khong hop le");
+                    ;
+            }
+        } while (chon != 0);
     }
 
     // BaoCao
@@ -236,12 +239,12 @@ public class QuanLyCuaHang {
     }
 
 
- /*     public void thoat() {
+    /*     public void thoat() {
         System.out.println("\nDang luu du lieu...");
         dsSanPham.LuuDuLieu("sanpham.txt");
         System.out.println("Da luu. Hen gap lai!");
     }
-*/
+     */
     // Main chay chuong trinh
     public static void main(String[] args) {
         QuanLyCuaHang ql = new QuanLyCuaHang();
