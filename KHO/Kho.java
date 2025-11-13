@@ -108,19 +108,6 @@ public class Kho {
         System.out.println("Da cap nhat ton kho tu phieu nhap " + phieu.getMaPhieuNhap());
     }
 
-    // ======== Cập nhật tồn kho sau khi chế biến (xuất kho) ========
-/*  public void capNhatSauKhiCheBien(String maNL, double soLuongSD) {
-        for (NguyenLieu x : dsKho) {
-            if (x.getMaNL().equalsIgnoreCase(maNL)) {
-                x.giamSoluong(soLuongSD);
-                System.out.println("Da tru kho cho " + maNL + ": -" + soLuongSD);
-                return;
-            }
-        }
-        System.out.println("Khong tim thay ma nguyen lieu " + maNL + " trong kho!");
-    }
-*/
-
     // ======== Ghi lại danh sách kho ra file ========
     public void ghiFile() {
         try {

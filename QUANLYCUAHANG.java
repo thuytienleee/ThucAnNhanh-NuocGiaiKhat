@@ -8,7 +8,6 @@ import HOADON.HoaDon;
 import HOADON.HoaDonIO;
 import KHO.Kho;
 import NGUYENLIEU.DSNguyenLieu;
-
 import SANPHAM.DSachSP;
 import java.util.Scanner;
 
@@ -183,7 +182,8 @@ public class QUANLYCUAHANG{
             switch (chon) {
                 case 1:
                     Kho kho = new Kho();
-                    kho.xemDSTonKho();
+                    kho.docFile();
+                    kho.hienThiTonKho();
                     break;
                 case 2:
                     qlNguyenLieu();
