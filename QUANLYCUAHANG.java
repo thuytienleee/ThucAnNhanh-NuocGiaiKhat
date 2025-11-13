@@ -202,7 +202,6 @@ public class QUANLYCUAHANG{
         DSNguyenLieu dsNguyenLieu = new DSNguyenLieu();
         int chon;
         do {
-<<<<<<< HEAD
         System.out.println("\n======== Quan ly nguyen lieu ========");
         System.out.println("1. Xem danh sach nguyen lieu");
         System.out.println("2. Them nguyen lieu moi.");
@@ -232,35 +231,6 @@ public class QUANLYCUAHANG{
                 System.out.println("Lua chon khong hop le");;
             } 
         }while(chon != 0);
-=======
-            System.out.println("\n======== Quan ly nguyen lieu ========");
-            System.out.println("1. Xem danh sach nguyen lieu");
-            System.out.println("2. Them nguyen lieu moi.");
-            System.out.println("3. Sua thong tin nguyen lieu");
-            System.out.println("4. Xoa nguyen lieu.");
-            System.out.println("0. Quay lai");
-            System.out.println("======================================");
-            System.out.print("Chon: ");
-            chon = Integer.parseInt(sc.nextLine());
-            switch (chon) {
-                case 1:
-                    dsNguyenLieu.docFile();
-                    break;
-                case 2:
-                    dsNguyenLieu.AddNL();
-                    break;
-                case 4:
-                    dsNguyenLieu.xoaNguyenLieu();
-                    break;
-                case 0:
-                    System.out.println("Quay lai");
-                    break;
-                default:
-                    System.out.println("Lua chon khong hop le");
-                    ;
-            }
-        } while (chon != 0);
->>>>>>> df5149acfc04091db184b6650f68c1ce2927425b
     }
 
     // BaoCao
