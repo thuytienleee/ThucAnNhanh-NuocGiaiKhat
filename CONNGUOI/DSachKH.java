@@ -1,5 +1,6 @@
 
 package CONNGUOI;
+
 import java.util.Scanner;
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -81,13 +82,16 @@ public class DSachKH {
             System.out.println(danhSachKH[i]);
         }
     }
+
     // Doc DSKH
-public void docDS() {
-        try (BufferedReader br = new BufferedReader(new FileReader("danhSachKhachHang.txt"))) {
+    public void docDS() {
+        try (BufferedReader br = new BufferedReader(new FileReader(
+                "E:\\doandeadline\\src\\src\\comx\\ThucAnNhanhNuocGiaiKhat\\khachhang.txt"))) {
             String line;
             while ((line = br.readLine()) != null) {
                 // bỏ qua dòng trống
-                if (line.trim().isEmpty()) continue;
+                if (line.trim().isEmpty())
+                    continue;
 
                 // Tách dữ liệu theo dấu '|'
                 String[] parts = line.split("\\|");
@@ -109,5 +113,14 @@ public void docDS() {
         } catch (IOException e) {
             System.out.println(" Loi khi doc file: " + e.getMessage());
         }
+    }
+
+    public KhachHang timKiemKH(String maKH) {
+        for (int i = 0; i < soLuongKH; i++) {
+            if (danhSachKH[i].getMaKH().equals(maKH)) {
+                return danhSachKH[i];
+            }
+        }
+        return null;
     }
 }

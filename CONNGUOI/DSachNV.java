@@ -1,8 +1,11 @@
 // package NHANVIEN;
 package CONNGUOI;
 
+<<<<<<< HEAD
 import java.util.Scanner;
 
+=======
+>>>>>>> 6071d028767abc0704412ccd0f261e51a5921d34
 import CONNGUOI.NhanVien;
 
 import java.io.BufferedReader;
@@ -102,6 +105,7 @@ public class DSachNV {
         }
     }
 
+<<<<<<< HEAD
     public void CapNhatFile() {
          SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
     try (BufferedWriter bw = new BufferedWriter(new FileWriter("NhanVien.txt"))) {
@@ -122,6 +126,16 @@ public class DSachNV {
 
             bw.write(line);
             bw.newLine();
+=======
+    public boolean thayDoiThongTinNhanVien(String maNhanVien, String ten, int tuoi, String sdt, String diaChi) {
+        NhanVien nv = timKiemNhanVien(maNhanVien);
+        if (nv != null) {
+            nv.setTen(ten);
+            // nv.setTuoi(tuoi);
+            nv.setSoDT(sdt);
+            nv.setDiaChi(diaChi);
+            return true;
+>>>>>>> 6071d028767abc0704412ccd0f261e51a5921d34
         }
         System.out.println("File updated successfully!");
     } catch (IOException e) {
@@ -234,6 +248,7 @@ public class DSachNV {
         }
     }
 
+<<<<<<< HEAD
     public void timKiemNhanVienTheoMa() {
         while (true) {
             System.out.println("===================== SEARCH STAFF BY ID ===================");
@@ -256,9 +271,17 @@ public class DSachNV {
             } else {
                 break;
             }
+=======
+    public boolean chamCong(String maNhanVien) {
+        NhanVien nv = timKiemNhanVien(maNhanVien);
+        if (nv != null) {
+            // nv.setChamCong(true);
+            return true;
+>>>>>>> 6071d028767abc0704412ccd0f261e51a5921d34
         }
     }
 
+<<<<<<< HEAD
     public void DocFile() {
         SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
         try {
@@ -318,6 +341,8 @@ public class DSachNV {
         }
     }
 
+=======
+>>>>>>> 6071d028767abc0704412ccd0f261e51a5921d34
     public void hienThiDanhSach() {
         System.out.print(
                 "+-----------------------------------------------------------------------------------------------------------------------------------+\n");

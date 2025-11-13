@@ -20,8 +20,15 @@ public class NhanVien {
 
     public NhanVien() {}
 
+<<<<<<< HEAD
     public NhanVien(String maNV, String tenNV, int tuoiNV, String gioitinh, Date ngaySinh, String sdtNV, 
                     String diaChiNV, double luong, String chucVuNV, int namVaoLam) {
+=======
+    public NhanVien(String maNV, String ten, String soDT, String diaChi,
+            String ngaySinh, String gioiTinh, double luong,
+            String chucVuNV, int namVaoLam) {
+        super(ten, diaChi, soDT, ngaySinh, gioiTinh);
+>>>>>>> 6071d028767abc0704412ccd0f261e51a5921d34
         this.maNV = maNV;
         this.tenNV = tenNV;
         this.tuoiNV = tuoiNV;
@@ -114,6 +121,17 @@ public class NhanVien {
     public void setNamVaoLam(int namVaoLam) {
         this.namVaoLam = namVaoLam;
     }
+<<<<<<< HEAD
+=======
+
+    @Override
+    public String toString() {
+        return String.format(
+                "Ma NV: %s | Ten: %s | Ngay sinh: %s | SDT: %s | Dia chi: %s | Gioi tinh: %s | Luong: %.2f VND | Chuc vu: %s | Nam vao lam: %d",
+                maNV, getTen(), getNgaySinh(), getSoDT(), getDiaChi(),
+                getGioiTinh(), luong, chucVuNV, namVaoLam);
+    }
+>>>>>>> 6071d028767abc0704412ccd0f261e51a5921d34
 
     public String toString(){
         return String.format("%-5s | %-20s | %-3d | %-5s | %tF | %-12s | %-15s | %-12d | %-10s | %-10.1f",

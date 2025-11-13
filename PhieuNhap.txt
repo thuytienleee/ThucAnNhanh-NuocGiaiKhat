@@ -1,0 +1,4 @@
+PN001;Phieu nhap hang;02/12/2024;Hoang Thi Lan;NL01,Bot mi,Kg,20.00|NL02,Pho Mai,Kg,10.00|NL03,Rau,Kg,30.00|NL04,Tom,Kg,15.00|NL05,Muc,Kg,15.00|NLGA,Ga,Kg,10.00
+PN002;Phieu nhap hang;12/12/2024;Nguyen Van Son;NLBO,Bo,Kg,15.00|NLJB,JamBon,Kg,9.00|NLCA,Ca,Kg,10.00
+PN003;Phieu nhap hang;05/10/2024;Hoang Anh Kiet;COCA,Coca,Lon,100.00|SPR,Sprite,Lon,80.00|PS,Pepsi,Lon,100.00
+PN004;Phieu nhap hang;21/03/2024;Tran Tan Dat;ST,Sting,Lon,100.00|AQF,Aquafina,Chai,80.00|LV,Lavie,Chai,100.00

@@ -21,17 +21,21 @@ public class Kho {
         NguyenLieu nl;
 
         try {
-            FileReader fr = new FileReader("DSnguyenLieu.txt");
+            FileReader fr = new FileReader(
+                    "E:\\doandeadline\\src\\src\\comx\\ThucAnNhanhNuocGiaiKhat\\DSnguyenLieu.txt");
             BufferedReader br = new BufferedReader(fr);
 
             while (true) {
                 String st = br.readLine();
-                if (st == null) break;
+                if (st == null)
+                    break;
 
-                if (st.trim().isEmpty()) continue;
+                if (st.trim().isEmpty())
+                    continue;
 
                 str = st.split("\\|");
-                if (str.length < 4) continue;
+                if (str.length < 4)
+                    continue;
 
                 String maNL = str[0].trim();
                 String tenNL = str[1].trim();
@@ -69,7 +73,6 @@ public class Kho {
         System.out.println("+----------+----------------------+--------------+----------+");
         System.out.println("Tong so nguyen lieu trong kho: " + soLuongTon);
     }
-
 
     // ======== Cập nhật sau khi nhập ========
     public void capNhatSauKhiNhap(PhieuNhap phieu) {
@@ -109,17 +112,18 @@ public class Kho {
     }
 
     // ======== Cập nhật tồn kho sau khi chế biến (xuất kho) ========
-/*  public void capNhatSauKhiCheBien(String maNL, double soLuongSD) {
-        for (NguyenLieu x : dsKho) {
-            if (x.getMaNL().equalsIgnoreCase(maNL)) {
-                x.giamSoluong(soLuongSD);
-                System.out.println("Da tru kho cho " + maNL + ": -" + soLuongSD);
-                return;
-            }
-        }
-        System.out.println("Khong tim thay ma nguyen lieu " + maNL + " trong kho!");
-    }
-*/
+    /*
+     * public void capNhatSauKhiCheBien(String maNL, double soLuongSD) {
+     * for (NguyenLieu x : dsKho) {
+     * if (x.getMaNL().equalsIgnoreCase(maNL)) {
+     * x.giamSoluong(soLuongSD);
+     * System.out.println("Da tru kho cho " + maNL + ": -" + soLuongSD);
+     * return;
+     * }
+     * }
+     * System.out.println("Khong tim thay ma nguyen lieu " + maNL + " trong kho!");
+     * }
+     */
 
     // ======== Ghi lại danh sách kho ra file ========
     public void ghiFile() {
@@ -128,8 +132,8 @@ public class Kho {
             BufferedWriter bw = new BufferedWriter(fw);
 
             for (NguyenLieu x : dsKho) {
-                bw.write(String.format("%s | %s | %s | %.2f", 
-                    x.getMaNL(), x.getTenNL(), x.getDonViTinh(), x.getSoLuong()));
+                bw.write(String.format("%s | %s | %s | %.2f",
+                        x.getMaNL(), x.getTenNL(), x.getDonViTinh(), x.getSoLuong()));
                 bw.newLine();
             }
 

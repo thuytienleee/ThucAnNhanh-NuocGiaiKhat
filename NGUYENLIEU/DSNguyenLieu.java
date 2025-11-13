@@ -9,7 +9,7 @@ public class DSNguyenLieu {
     private NguyenLieu[] ds;
     private int soLuong;
 
-    public DSNguyenLieu(){
+    public DSNguyenLieu() {
         this.ds = new NguyenLieu[100];
         this.soLuong = 0;
     }
@@ -25,7 +25,8 @@ public class DSNguyenLieu {
             String st;
             while ((st = br.readLine()) != null) {
                 String[] str = st.split("\\|");
-                if (str.length < 4) continue;
+                if (str.length < 4)
+                    continue;
                 String maNL = str[0].trim();
                 if (maNL.equalsIgnoreCase(maKiemTra.trim())) {
                     return true;
@@ -37,7 +38,6 @@ public class DSNguyenLieu {
         return false;
     }
 
-
     // ======== Thêm nguyên liệu ========
     public void AddNL() {
         this.ds = new NguyenLieu[100];
@@ -47,7 +47,7 @@ public class DSNguyenLieu {
         System.out.print("Nhap so luong nguyen lieu muon them: ");
         int n = sc.nextInt();
         sc.nextLine();
-        
+
         for (int i = 0; i < n; i++) {
             if (soLuong >= ds.length) {
                 System.out.println("Danh sach da day, khong the them!");
@@ -56,22 +56,22 @@ public class DSNguyenLieu {
 
             System.out.println("\nNhap thong tin nguyen lieu thu " + (soLuong + 1) + ":");
             String ma;
-            while(true){
-            System.out.print("Ma nguyen lieu: ");
-            ma = sc.nextLine();
-            
-            boolean trung = tonTaiMa(ma);
-            for (int j = 0; j <soLuong; j++){
-                if (ds[j].getMaNL().equalsIgnoreCase(ma)) {
-                    trung = true;
+            while (true) {
+                System.out.print("Ma nguyen lieu: ");
+                ma = sc.nextLine();
+
+                boolean trung = tonTaiMa(ma);
+                for (int j = 0; j < soLuong; j++) {
+                    if (ds[j].getMaNL().equalsIgnoreCase(ma)) {
+                        trung = true;
+                    }
+                }
+                if (trung) {
+                    System.out.println("Ma nguyen lieu da ton tai, vui long nhap ma khac!");
+                } else {
+                    break;
                 }
             }
-                if (trung) {
-                System.out.println("Ma nguyen lieu da ton tai, vui long nhap ma khac!");
-            } else {
-                break;
-            }
-        }
 
             System.out.print("Ten nguyen lieu: ");
             String ten = sc.nextLine();
@@ -126,11 +126,13 @@ public class DSNguyenLieu {
 
                 System.out.print("Ten nguyen lieu moi: ");
                 String tenMoi = sc.nextLine().trim();
-                if (!tenMoi.isEmpty()) nl.setTenNL(tenMoi);
+                if (!tenMoi.isEmpty())
+                    nl.setTenNL(tenMoi);
 
                 System.out.print("Don vi tinh moi: ");
                 String dvtMoi = sc.nextLine().trim();
-                if (!dvtMoi.isEmpty()) nl.setDonViTinh(dvtMoi);
+                if (!dvtMoi.isEmpty())
+                    nl.setDonViTinh(dvtMoi);
 
                 System.out.print("So luong moi: ");
                 String slMoi = sc.nextLine().trim();
@@ -168,18 +170,18 @@ public class DSNguyenLieu {
     }
 
     // ======== Hàm xóa nguyên liệu ========
-    public void xoaNguyenLieu(){
+    public void xoaNguyenLieu() {
         Scanner sc = new Scanner(System.in);
         System.out.print("Nhap ma nguyen lieu can xoa: ");
         String maXoa = sc.nextLine().trim();
         boolean find = false;
-        
-        //Doc file
+
+        // Doc file
         NguyenLieu[] dsnl = new NguyenLieu[0];
         try {
             BufferedReader br = new BufferedReader(new FileReader("DSnguyenLieu.txt"));
             String st;
-            while ((st = br.readLine()) != null){
+            while ((st = br.readLine()) != null) {
                 String[] str = st.split("\\|");
 
                 String maNL = str[0].trim();
@@ -195,29 +197,29 @@ public class DSNguyenLieu {
         } catch (Exception e) {
             System.out.println(e);
         }
-        
-        //Xoa nguyen lieu
+
+        // Xoa nguyen lieu
         NguyenLieu[] dsNew = new NguyenLieu[0];
-        for (NguyenLieu nl:dsnl){
-            if (!nl.getMaNL().equalsIgnoreCase(maXoa)){
-                dsNew = Arrays.copyOf(dsNew, dsNew.length+1);
-                dsNew[dsNew.length-1] = nl;
+        for (NguyenLieu nl : dsnl) {
+            if (!nl.getMaNL().equalsIgnoreCase(maXoa)) {
+                dsNew = Arrays.copyOf(dsNew, dsNew.length + 1);
+                dsNew[dsNew.length - 1] = nl;
             } else {
                 find = true;
             }
         }
         if (!find) {
-        System.out.println("Khong tim thay ma nguyen lieu: " + maXoa);
-        return;
+            System.out.println("Khong tim thay ma nguyen lieu: " + maXoa);
+            return;
         }
 
-        //Ghi lại file sau xóa
+        // Ghi lại file sau xóa
         try (BufferedWriter bw = new BufferedWriter(new FileWriter("DSnguyenLieu.txt", false))) {
             for (NguyenLieu x : dsNew) {
-            bw.write(x.toString());
-            bw.newLine();
-        }
-            System.out.println("Da xoa nguyen lieu "+maXoa);
+                bw.write(x.toString());
+                bw.newLine();
+            }
+            System.out.println("Da xoa nguyen lieu " + maXoa);
         } catch (Exception e) {
             System.out.println(e);
         }
@@ -259,16 +261,18 @@ public class DSNguyenLieu {
     }
 
     // ======== Đọc file DSNL ========
-    public void docFile(){
+    public void docFile() {
         String str[];
         NguyenLieu nl;
         NguyenLieu dsnl[] = new NguyenLieu[0];
         try {
             FileReader fr = new FileReader("DSnguyenLieu.txt");
             BufferedReader br = new BufferedReader(fr);
-            while (true) { 
+            while (true) {
                 String st = br.readLine();
-                if(st == null){ break; }
+                if (st == null) {
+                    break;
+                }
                 str = st.split("\\|");
 
                 String maNL = str[0].trim();
@@ -278,7 +282,7 @@ public class DSNguyenLieu {
 
                 nl = new NguyenLieu(maNL, tenNL, dvt, sl);
                 dsnl = Arrays.copyOf(dsnl, dsnl.length + 1);
-                dsnl[dsnl.length-1] = nl;
+                dsnl[dsnl.length - 1] = nl;
             }
             br.close();
             fr.close();
@@ -291,9 +295,9 @@ public class DSNguyenLieu {
         System.out.println("+----------+----------------------+--------------+----------+");
         System.out.println("| MaNL     | TenNL                | DonViTinh    | SoLuong  |");
         System.out.println("+----------+----------------------+--------------+----------+");
-        for (NguyenLieu x:dsnl){
+        for (NguyenLieu x : dsnl) {
             System.out.println(x);
-        }        
+        }
         System.out.println("+----------+----------------------+--------------+----------+");
     }
 
@@ -304,5 +308,5 @@ public class DSNguyenLieu {
         ds.hienThiDanhSach();
         ds.ghiFile();
         ds.docFile();
-    } 
+    }
 }
