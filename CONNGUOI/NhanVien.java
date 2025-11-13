@@ -3,24 +3,44 @@ package CONNGUOI;
 
 // import java.util.Date;
 
-public class NhanVien extends ConNguoi {
+import java.util.Date;
+
+
+public class NhanVien {
     private String maNV;
+    private String tenNV;
+    private int tuoiNV;
+    private String gioitinh;
+    private Date ngaySinh;
+    private String sdtNV;
+    private String diaChiNV;
     private double luong;
     private String chucVuNV;
     private int namVaoLam;
 
-    public NhanVien() {
-        super();
-    }
+    public NhanVien() {}
 
-    public NhanVien(String maNV, String ten, String diaChi, String soDT, 
-                    String ngaySinh, String gioiTinh, double luong, 
-                    String chucVuNV, int namVaoLam) {
-        super(ten, diaChi, soDT, ngaySinh, gioiTinh);
+    public NhanVien(String maNV, String tenNV, int tuoiNV, String gioitinh, Date ngaySinh, String sdtNV, 
+                    String diaChiNV, double luong, String chucVuNV, int namVaoLam) {
         this.maNV = maNV;
+        this.tenNV = tenNV;
+        this.tuoiNV = tuoiNV;
+        this.gioitinh = gioitinh;
+        this.ngaySinh = ngaySinh;
+        this.sdtNV = sdtNV;
+        this.diaChiNV = diaChiNV;
         this.luong = luong;
         this.chucVuNV = chucVuNV;
         this.namVaoLam = namVaoLam;
+
+    }
+
+    public String getGioitinh() {
+        return gioitinh;
+    }
+
+    public void setGioitinh(String gioitinh) {
+        this.gioitinh = gioitinh;
     }
 
     public String getMaNV() {
@@ -29,6 +49,46 @@ public class NhanVien extends ConNguoi {
 
     public void setMaNV(String maNV) {
         this.maNV = maNV;
+    }
+
+    public String getTenNV() {
+        return tenNV;
+    }
+
+    public void setTenNV(String tenNV) {
+        this.tenNV = tenNV;
+    }
+
+    public int getTuoiNV() {
+        return tuoiNV;
+    }
+
+    public void setTuoiNV(int tuoiNV) {
+        this.tuoiNV = tuoiNV;
+    }
+
+    public Date getNgaySinh() {
+        return ngaySinh;
+    }
+
+    public void setNgaySinh(Date ngaySinh) {
+        this.ngaySinh = ngaySinh;
+    }
+
+    public String getSdtNV() {
+        return sdtNV;
+    }
+
+    public void setSdtNV(String sdtNV) {
+        this.sdtNV = sdtNV;
+    }
+
+    public String getDiaChiNV() {
+        return diaChiNV;
+    }
+
+    public void setDiaChiNV(String diaChiNV) {
+        this.diaChiNV = diaChiNV;
     }
 
     public double getLuong() {
@@ -54,17 +114,9 @@ public class NhanVien extends ConNguoi {
     public void setNamVaoLam(int namVaoLam) {
         this.namVaoLam = namVaoLam;
     }
-    
-    @Override
-    public String toString() {
-        return String.format("Ma NV: %s | Ten: %s | Ngay sinh: %s | SDT: %s | Dia chi: %s | Gioi tinh: %s | Luong: %.2f VND | Chuc vu: %s | Nam vao lam: %d", 
-                            maNV, getTen(), getNgaySinh(), getSoDT(), getDiaChi(), 
-                            getGioiTinh(), luong, chucVuNV, namVaoLam);
-    }
 
-    public void hienThiThongTinNhanVien() {
-        System.out.println("==================THONG TIN NHAN VIEN========================");
-        System.out.println(toString());
-        System.out.println("=============================================================");
+    public String toString(){
+        return String.format("%-5s | %-20s | %-3d | %-5s | %tF | %-12s | %-15s | %-12d | %-10s | %-10.1f",
+        maNV, tenNV, tuoiNV, gioitinh, ngaySinh, sdtNV, diaChiNV, namVaoLam, chucVuNV, luong);
     }
 }
