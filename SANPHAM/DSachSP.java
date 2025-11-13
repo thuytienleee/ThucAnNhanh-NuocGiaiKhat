@@ -142,7 +142,8 @@ public class DSachSP {
     public void DocFile() {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         try {
-            FileReader fr = new FileReader("../SANPHAM/SanPham.txt");
+            FileReader fr = new FileReader(
+                    "E:\\doandeadline\\src\\src\\comx\\ThucAnNhanhNuocGiaiKhat\\SANPHAM\\SanPham.txt");
             BufferedReader br = new BufferedReader(fr);
             String line;
             while ((line = br.readLine()) != null) {
@@ -150,9 +151,9 @@ public class DSachSP {
                     continue;
                 }
                 String[] p = line.split("\\|");
-                //for (int i = 0; i < p.length; i++) {
-                //  p[i] = p[i].trim();
-                //}
+                // for (int i = 0; i < p.length; i++) {
+                // p[i] = p[i].trim();
+                // }
                 String maSP = p[0];
                 String tenSP = p[1].trim();
                 String maLoai = p[2];
@@ -189,12 +190,16 @@ public class DSachSP {
     }
 
     public void hienThiDS() {
-        System.out.print("+------------------------------------------------------------------------------------------------+\n");
-        System.out.print("|                                  PRODUCTION INFOMATION                                         |\n");
-        System.out.print("+------------------------------------------------------------------------------------------------+\n");
+        System.out.print(
+                "+------------------------------------------------------------------------------------------------+\n");
+        System.out.print(
+                "|                                  PRODUCTION INFOMATION                                         |\n");
+        System.out.print(
+                "+------------------------------------------------------------------------------------------------+\n");
         System.out.print(String.format(" %-10s | %-20s | %-10s | %-10s | %-10s | %-10s\n",
                 "ID", "NAME", "CATEGORY ID", "PRICE", "NSX", "HSD"));
-        System.out.print("+------------------------------------------------------------------------------------------------+\n");
+        System.out.print(
+                "+------------------------------------------------------------------------------------------------+\n");
         for (SanPham sp : danhsach) {
             if (sp != null) {
                 System.out.println(sp.toString());
@@ -306,109 +311,109 @@ public class DSachSP {
     }
 
     public void suaSanPham() {
-    while (true) {
-        System.out.println("===== EDIT PRODUCT =====");
-        System.out.print("Enter product ID: ");
-        String maSP = sc.nextLine().trim();
+        while (true) {
+            System.out.println("===== EDIT PRODUCT =====");
+            System.out.print("Enter product ID: ");
+            String maSP = sc.nextLine().trim();
 
-        int index = -1;
-        for (int i = 0; i < soluong; i++) {
-            if (danhsach[i] != null && danhsach[i].getMaSP().equalsIgnoreCase(maSP)) {
-                index = i;
+            int index = -1;
+            for (int i = 0; i < soluong; i++) {
+                if (danhsach[i] != null && danhsach[i].getMaSP().equalsIgnoreCase(maSP)) {
+                    index = i;
+                    break;
+                }
+            }
+
+            if (index == -1) {
+                System.out.println("Product ID not found, please try again!");
+            } else {
+                SanPham sp = danhsach[index];
+                System.out.println("Current product info:");
+                System.out.println(sp.toString());
+
+                System.out.println("\n===== EDIT MENU =====");
+                System.out.println("1. Edit name");
+                System.out.println("2. Edit price");
+                System.out.println("3. Edit manufacture date (NSX)");
+                System.out.println("4. Edit expiry date (HSD)");
+                System.out.println("5. Edit special attribute (size / rau / cay)");
+                System.out.println("0. Exit");
+                System.out.print("Select option: ");
+                int choice = Integer.parseInt(sc.nextLine());
+
+                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+
+                switch (choice) {
+                    case 1:
+                        System.out.print("Enter new name: ");
+                        sp.setTenSP(sc.nextLine());
+                        break;
+                    case 2:
+                        System.out.print("Enter new price: ");
+                        sp.setGia(Double.parseDouble(sc.nextLine()));
+                        break;
+                    case 3:
+                        System.out.print("Enter new manufacture date (yyyy-MM-dd): ");
+                        try {
+                            sp.setNgaySX(sdf.parse(sc.nextLine()));
+                        } catch (Exception e) {
+                            System.out.println("Invalid date format!");
+                        }
+                        break;
+                    case 4:
+                        System.out.print("Enter new expiry date (yyyy-MM-dd): ");
+                        try {
+                            sp.setHanSD(sdf.parse(sc.nextLine()));
+                        } catch (Exception e) {
+                            System.out.println("Invalid date format!");
+                        }
+                        break;
+                    case 5:
+                        String maLoai = sp.getMaLoai();
+                        if (maLoai.equalsIgnoreCase("PZA_TA")) {
+                            Pizza p = (Pizza) sp;
+                            System.out.print("Enter new size: ");
+                            p.setSize(sc.nextLine());
+                        } else if (maLoai.equalsIgnoreCase("HBG_TA")) {
+                            Hamburger h = (Hamburger) sp;
+                            System.out.print("Rau / Khong rau: ");
+                            String nhap = sc.nextLine().trim();
+                            h.setRau(nhap.equalsIgnoreCase("Rau"));
+                        } else if (maLoai.equalsIgnoreCase("GRN_TA")) {
+                            GaRan g = (GaRan) sp;
+                            System.out.print("Cay / Khong cay: ");
+                            String nhap = sc.nextLine().trim();
+                            g.setDoCay(nhap.equalsIgnoreCase("Cay"));
+                        } else {
+                            System.out.println("This product type has no special attribute!");
+                        }
+                        break;
+                    case 0:
+                        System.out.println("Exit editing...");
+                        return;
+                    default:
+                        System.out.println("Invalid choice!");
+                }
+
+                System.out.println("Updated product info:");
+                System.out.println(sp.toString());
+
+                // Ghi lại toàn bộ danh sách vào file
+                capNhatFileSauKhiXoa();
+
+                System.out.println("File updated successfully!");
                 break;
             }
         }
-
-        if (index == -1) {
-            System.out.println("Product ID not found, please try again!");
-        } else {
-            SanPham sp = danhsach[index];
-            System.out.println("Current product info:");
-            System.out.println(sp.toString());
-
-            System.out.println("\n===== EDIT MENU =====");
-            System.out.println("1. Edit name");
-            System.out.println("2. Edit price");
-            System.out.println("3. Edit manufacture date (NSX)");
-            System.out.println("4. Edit expiry date (HSD)");
-            System.out.println("5. Edit special attribute (size / rau / cay)");
-            System.out.println("0. Exit");
-            System.out.print("Select option: ");
-            int choice = Integer.parseInt(sc.nextLine());
-
-            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-
-            switch (choice) {
-                case 1:
-                    System.out.print("Enter new name: ");
-                    sp.setTenSP(sc.nextLine());
-                    break;
-                case 2:
-                    System.out.print("Enter new price: ");
-                    sp.setGia(Double.parseDouble(sc.nextLine()));
-                    break;
-                case 3:
-                    System.out.print("Enter new manufacture date (yyyy-MM-dd): ");
-                    try {
-                        sp.setNgaySX(sdf.parse(sc.nextLine()));
-                    } catch (Exception e) {
-                        System.out.println("Invalid date format!");
-                    }
-                    break;
-                case 4:
-                    System.out.print("Enter new expiry date (yyyy-MM-dd): ");
-                    try {
-                        sp.setHanSD(sdf.parse(sc.nextLine()));
-                    } catch (Exception e) {
-                        System.out.println("Invalid date format!");
-                    }
-                    break;
-                case 5:
-                    String maLoai = sp.getMaLoai();
-                    if (maLoai.equalsIgnoreCase("PZA_TA")) {
-                        Pizza p = (Pizza) sp;
-                        System.out.print("Enter new size: ");
-                        p.setSize(sc.nextLine());
-                    } else if (maLoai.equalsIgnoreCase("HBG_TA")) {
-                        Hamburger h = (Hamburger) sp;
-                        System.out.print("Rau / Khong rau: ");
-                        String nhap = sc.nextLine().trim();
-                        h.setRau(nhap.equalsIgnoreCase("Rau"));
-                    } else if (maLoai.equalsIgnoreCase("GRN_TA")) {
-                        GaRan g = (GaRan) sp;
-                        System.out.print("Cay / Khong cay: ");
-                        String nhap = sc.nextLine().trim();
-                        g.setDoCay(nhap.equalsIgnoreCase("Cay"));
-                    } else {
-                        System.out.println("This product type has no special attribute!");
-                    }
-                    break;
-                case 0:
-                    System.out.println("Exit editing...");
-                    return;
-                default:
-                    System.out.println("Invalid choice!");
-            }
-
-            System.out.println("Updated product info:");
-            System.out.println(sp.toString());
-
-            // Ghi lại toàn bộ danh sách vào file
-            capNhatFileSauKhiXoa();
-
-            System.out.println("File updated successfully!");
-            break;
-        }
     }
-}
 
     public static void main(String[] agrs) {
         DSachSP ds = new DSachSP(1000);
-        //ds.themSanPham(); 
+        // ds.themSanPham();
         ds.DocFile();
-        //ds.xoaSanPham();
+        // ds.xoaSanPham();
         ds.timKiemTheoTen();
         ds.timKiemTheoMa();
-        //ds.hienThiDS();
+        // ds.hienThiDS();
     }
 }

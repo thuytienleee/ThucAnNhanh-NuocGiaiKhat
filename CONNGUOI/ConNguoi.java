@@ -10,6 +10,11 @@ public class ConNguoi {
     public ConNguoi() {
     }
 
+    public ConNguoi(String ten, String soDT) {
+        this.ten = ten;
+        this.soDT = soDT;
+    }
+
     public ConNguoi(String ten, String diaChi, String soDT, String ngaySinh, String gioiTinh) {
         this.ten = ten;
         this.diaChi = diaChi;
@@ -60,7 +65,7 @@ public class ConNguoi {
 
     @Override
     public String toString() {
-        return String.format("Ten: %s | Dia chi: %s | SDT: %s | Ngay sinh: %s | Gioi tinh: %s", 
-                            ten, diaChi, soDT, ngaySinh, gioiTinh);
+        return String.format("Ten: %s | Dia chi: %s | SDT: %s | Ngay sinh: %s | Gioi tinh: %s",
+                ten, diaChi, soDT, ngaySinh, gioiTinh);
     }
 }

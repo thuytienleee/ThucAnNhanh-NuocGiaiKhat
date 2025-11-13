@@ -1,5 +1,6 @@
 // package NHANVIEN;
 package CONNGUOI;
+
 import CONNGUOI.NhanVien;
 
 public class DSachNV {
@@ -36,7 +37,7 @@ public class DSachNV {
         NhanVien nv = timKiemNhanVien(maNhanVien);
         if (nv != null) {
             nv.setTen(ten);
-            nv.setTuoi(tuoi);
+            // nv.setTuoi(tuoi);
             nv.setSoDT(sdt);
             nv.setDiaChi(diaChi);
             return true;
@@ -56,11 +57,12 @@ public class DSachNV {
     public boolean chamCong(String maNhanVien) {
         NhanVien nv = timKiemNhanVien(maNhanVien);
         if (nv != null) {
-            nv.setChamCong(true);
+            // nv.setChamCong(true);
             return true;
         }
         return false;
     }
+
     public void hienThiDanhSach() {
         for (int i = 0; i < soLuongNhanVien; i++) {
             DanhsachNhanVien[i].hienThiThongTinNhanVien();

@@ -13,9 +13,9 @@ public class NhanVien extends ConNguoi {
         super();
     }
 
-    public NhanVien(String maNV, String ten, String diaChi, String soDT, 
-                    String ngaySinh, String gioiTinh, double luong, 
-                    String chucVuNV, int namVaoLam) {
+    public NhanVien(String maNV, String ten, String soDT, String diaChi,
+            String ngaySinh, String gioiTinh, double luong,
+            String chucVuNV, int namVaoLam) {
         super(ten, diaChi, soDT, ngaySinh, gioiTinh);
         this.maNV = maNV;
         this.luong = luong;
@@ -54,12 +54,13 @@ public class NhanVien extends ConNguoi {
     public void setNamVaoLam(int namVaoLam) {
         this.namVaoLam = namVaoLam;
     }
-    
+
     @Override
     public String toString() {
-        return String.format("Ma NV: %s | Ten: %s | Ngay sinh: %s | SDT: %s | Dia chi: %s | Gioi tinh: %s | Luong: %.2f VND | Chuc vu: %s | Nam vao lam: %d", 
-                            maNV, getTen(), getNgaySinh(), getSoDT(), getDiaChi(), 
-                            getGioiTinh(), luong, chucVuNV, namVaoLam);
+        return String.format(
+                "Ma NV: %s | Ten: %s | Ngay sinh: %s | SDT: %s | Dia chi: %s | Gioi tinh: %s | Luong: %.2f VND | Chuc vu: %s | Nam vao lam: %d",
+                maNV, getTen(), getNgaySinh(), getSoDT(), getDiaChi(),
+                getGioiTinh(), luong, chucVuNV, namVaoLam);
     }
 
     public void hienThiThongTinNhanVien() {
