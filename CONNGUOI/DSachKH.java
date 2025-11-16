@@ -70,10 +70,13 @@ public class DSachKH {
                 continue;
             }
 
-            /*if (!tenKH.matches("^[a-zA-ZÀ-ỹ\\s]+$")) {
-                System.out.println("Error: Customer name can only contain letters and spaces!");
-                continue;
-            }*/
+            /*
+             * if (!tenKH.matches("^[a-zA-ZÀ-ỹ\\s]+$")) {
+             * System.out.
+             * println("Error: Customer name can only contain letters and spaces!");
+             * continue;
+             * }
+             */
             break;
         }
 
@@ -275,7 +278,8 @@ public class DSachKH {
 
                             // Kiểm tra định dạng số điện thoại
                             if (!newPhone.matches("^0\\d{9}$")) {
-                                System.out.println("Error: Invalid phone number format! Must start with 0 and have exactly 10 digits.");
+                                System.out.println(
+                                        "Error: Invalid phone number format! Must start with 0 and have exactly 10 digits.");
                                 continue;
                             }
 
@@ -286,8 +290,9 @@ public class DSachKH {
                                         && danhsach[i].getSdtKH().equals(newPhone)
                                         && !danhsach[i].getMaKH().equals(kh.getMaKH())) {
                                     trungSDT = true;
-                                    System.out.println("Error: Phone number '" + newPhone + "' already belongs to customer: "
-                                            + danhsach[i].getMaKH() + " - " + danhsach[i].getTenKH());
+                                    System.out.println(
+                                            "Error: Phone number '" + newPhone + "' already belongs to customer: "
+                                                    + danhsach[i].getMaKH() + " - " + danhsach[i].getTenKH());
                                     break;
                                 }
                             }
@@ -373,6 +378,10 @@ public class DSachKH {
     public void DocFile() {
         soluong = 0;
         try {
+
+            // ho tro doc file cho HOA DON
+            // FileReader fr = new FileReader(
+            // "E:\\doandeadline\\src\\src\\comx\\ThucAnNhanhNuocGiaiKhat\\CONNGUOI\\KhachHang.txt");
             FileReader fr = new FileReader("KhachHang.txt");
             BufferedReader br = new BufferedReader(fr);
             String line;
@@ -435,14 +444,25 @@ public class DSachKH {
         }
     }
 
+    // ham phu tro cho hoa don ( HOA DON )
+
+    public KhachHang timKiemKH(String maKH) {
+        for (int i = 0; i < soluong; i++) {
+            if (danhsach[i] != null && danhsach[i].getMaKH().equalsIgnoreCase(maKH)) {
+                return danhsach[i];
+            }
+        }
+        return null;
+    }
+
     public static void main(String[] args) {
         DSachKH dskh = new DSachKH(100);
         dskh.DocFile();
         dskh.hienThiDanhSach();
-        //dskh.themKhachHang();
-        //dskh.xoaKhachHang();
+        // dskh.themKhachHang();
+        // dskh.xoaKhachHang();
         dskh.SuaThongTinKhachHang();
-        //dskh.timKiemKhachHangTheoMa();
+        // dskh.timKiemKhachHangTheoMa();
 
     }
 }

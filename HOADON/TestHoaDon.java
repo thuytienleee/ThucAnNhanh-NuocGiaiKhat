@@ -13,14 +13,15 @@ public class TestHoaDon {
     public static void main(String[] args) {
         // Khởi tạo các danh sách
         DSachNV dsNV = new DSachNV(100);
-        DSachKH dsKH = new DSachKH();
+        DSachKH dsKH = new DSachKH(100);
         DSachSP dsSP = new DSachSP(100);
         DSachHD dsHD = new DSachHD(100, dsNV, dsKH, dsSP);
 
         // Đọc dữ liệu từ file
         System.out.println("========== KHOI TAO DU LIEU ==========");
-        docDuLieuNhanVien(dsNV);
-        dsKH.docDS();
+        // docDuLieuNhanVien(dsNV);
+        dsNV.DocFile();
+        dsKH.DocFile();
         dsSP.DocFile();
         dsHD.docDanhSachHD();
 
@@ -160,36 +161,40 @@ public class TestHoaDon {
         return null;
     }
 
-    private static void docDuLieuNhanVien(DSachNV dsNV) {
-        // Đọc từ file NhanVien.txt
-        try (java.io.BufferedReader br = new java.io.BufferedReader(
-                new java.io.FileReader(
-                        "E:\\doandeadline\\src\\src\\comx\\ThucAnNhanhNuocGiaiKhat\\CONNGUOI\\danhsachNV.txt"))) {
-            String line;
-            while ((line = br.readLine()) != null) {
-                if (line.trim().isEmpty())
-                    continue;
-
-                String[] parts = line.split("\\|");
-                if (parts.length >= 9) {
-                    String maNV = parts[0].trim();
-                    String ten = parts[1].trim();
-                    String sdt = parts[2].trim();
-                    String diaChi = parts[3].trim();
-                    String ngaySinh = parts[4].trim();
-                    String gioiTinh = parts[5].trim();
-                    double luong = Double.parseDouble(parts[6].trim());
-                    String chucVu = parts[7].trim();
-                    int namVaoLam = Integer.parseInt(parts[8].trim());
-
-                    NhanVien nv = new NhanVien(maNV, ten, sdt, diaChi,
-                            ngaySinh, gioiTinh, luong, chucVu, namVaoLam);
-                    dsNV.themNhanVien(nv);
-                }
-            }
-            System.out.println("Da doc danh sach nhan vien tu file thanh cong!");
-        } catch (Exception e) {
-            System.out.println("Loi khi doc file nhan vien: " + e.getMessage());
-        }
-    }
+    /*
+     * 
+     * private static void docDuLieuNhanVien(DSachNV dsNV) {
+     * // Đọc từ file NhanVien.txt
+     * try (java.io.BufferedReader br = new java.io.BufferedReader(
+     * new java.io.FileReader(
+     * "E:\\doandeadline\\src\\src\\comx\\ThucAnNhanhNuocGiaiKhat\\CONNGUOI\\danhsachNV.txt"
+     * ))) {
+     * String line;
+     * while ((line = br.readLine()) != null) {
+     * if (line.trim().isEmpty())
+     * continue;
+     * 
+     * String[] parts = line.split("\\|");
+     * if (parts.length >= 9) {
+     * String maNV = parts[0].trim();
+     * String ten = parts[1].trim();
+     * String sdt = parts[2].trim();
+     * String diaChi = parts[3].trim();
+     * String ngaySinh = parts[4].trim();
+     * String gioiTinh = parts[5].trim();
+     * double luong = Double.parseDouble(parts[6].trim());
+     * String chucVu = parts[7].trim();
+     * int namVaoLam = Integer.parseInt(parts[8].trim());
+     * 
+     * NhanVien nv = new NhanVien(maNV, ten, sdt, diaChi,
+     * ngaySinh, gioiTinh, luong, chucVu, namVaoLam);
+     * dsNV.themNhanVien(nv);
+     * }
+     * }
+     * System.out.println("Da doc danh sach nhan vien tu file thanh cong!");
+     * } catch (Exception e) {
+     * System.out.println("Loi khi doc file nhan vien: " + e.getMessage());
+     * }
+     * }
+     */
 }

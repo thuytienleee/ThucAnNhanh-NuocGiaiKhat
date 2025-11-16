@@ -1,3 +1,0 @@
-HD001;Hoa don ban hang;NV01;Nguyen Van A;KH01;123 Duong ABC, Quan 1;01/11/2025;100;SP01,10,15000|SP02,5,20000
-HD002;Hoa don ban hang;NV02;Nguyen Van B;KH02;123 Duong ABC, Quan 2;02/11/2025;200;SP03,10,15000|SP04,5,20000
-

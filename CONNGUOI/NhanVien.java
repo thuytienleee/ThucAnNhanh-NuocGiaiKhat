@@ -5,7 +5,6 @@ package CONNGUOI;
 
 import java.util.Date;
 
-
 public class NhanVien {
     private String maNV;
     private String tenNV;
@@ -18,10 +17,24 @@ public class NhanVien {
     private String chucVuNV;
     private int namVaoLam;
 
-    public NhanVien() {}
+    public NhanVien() {
+    }
 
-    public NhanVien(String maNV, String tenNV, int tuoiNV, String gioitinh, Date ngaySinh, String sdtNV, 
-                    String diaChiNV, double luong, String chucVuNV, int namVaoLam) {
+    // ho tro lam PHIEU NHAP
+    public NhanVien(String maNV, String tenNV, String diaChiNV, Date ngaySinh, String gioitinh, double luong,
+            String chucVuNV, int namVaoLam) {
+        this.maNV = maNV;
+        this.tenNV = tenNV;
+        this.gioitinh = gioitinh;
+        this.ngaySinh = ngaySinh;
+        this.diaChiNV = diaChiNV;
+        this.luong = luong;
+        this.chucVuNV = chucVuNV;
+        this.namVaoLam = namVaoLam;
+    }
+
+    public NhanVien(String maNV, String tenNV, int tuoiNV, String gioitinh, Date ngaySinh, String sdtNV,
+            String diaChiNV, double luong, String chucVuNV, int namVaoLam) {
 
         this.maNV = maNV;
         this.tenNV = tenNV;
@@ -116,9 +129,8 @@ public class NhanVien {
         this.namVaoLam = namVaoLam;
     }
 
-
-    public String toString(){
+    public String toString() {
         return String.format("%-5s | %-20s | %-3d | %-5s | %tF | %-12s | %-15s | %-12d | %-10s | %-10.1f",
-        maNV, tenNV, tuoiNV, gioitinh, ngaySinh, sdtNV, diaChiNV, namVaoLam, chucVuNV, luong);
+                maNV, tenNV, tuoiNV, gioitinh, ngaySinh, sdtNV, diaChiNV, namVaoLam, chucVuNV, luong);
     }
 }
