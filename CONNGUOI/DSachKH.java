@@ -444,7 +444,7 @@ public class DSachKH {
         }
     }
 
-    // ham phu tro cho hoa don ( HOA DON )
+    // Phuong thuc ho tro cho HOA DON
 
     public KhachHang timKiemKH(String maKH) {
         for (int i = 0; i < soluong; i++) {

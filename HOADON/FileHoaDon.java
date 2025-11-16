@@ -125,7 +125,7 @@ public class FileHoaDon {
                 if (parts.length > 7 && !parts[7].trim().isEmpty()) {
                     String[] maSPs = parts[7].split(",");
                     for (String maSP : maSPs) {
-                        SanPham sp = timSanPham(dsSP, maSP.trim());
+                        SanPham sp = dsSP.timkiemSP(maSP.trim());
                         if (sp != null) {
                             hd.themSanPham(sp);
                         }
@@ -147,26 +147,30 @@ public class FileHoaDon {
         return dsKH.timKiemKH(maKH);
     }
 
-    // Phương thức hỗ trợ tìm sản phẩm (sử dụng reflection để truy cập private
-    // field)
-    private static SanPham timSanPham(DSachSP dsSP, String maSP) {
-        try {
-            java.lang.reflect.Field danhSachField = DSachSP.class.getDeclaredField("danhsach");
-            danhSachField.setAccessible(true);
-            SanPham[] danhSach = (SanPham[]) danhSachField.get(dsSP);
-
-            java.lang.reflect.Field soLuongField = DSachSP.class.getDeclaredField("soluong");
-            soLuongField.setAccessible(true);
-            int soLuong = soLuongField.getInt(dsSP);
-
-            for (int i = 0; i < soLuong; i++) {
-                if (danhSach[i] != null && danhSach[i].getMaSP().equalsIgnoreCase(maSP)) {
-                    return danhSach[i];
-                }
-            }
-        } catch (Exception e) {
-            System.out.println("Loi khi tim san pham: " + e.getMessage());
-        }
-        return null;
-    }
+    /*
+     * Phương thức hỗ trợ tìm sản phẩm (sử dụng reflection để truy cập private
+     * // field)
+     * private static SanPham timSanPham(DSachSP dsSP, String maSP) {
+     * try {
+     * java.lang.reflect.Field danhSachField =
+     * DSachSP.class.getDeclaredField("danhsach");
+     * danhSachField.setAccessible(true);
+     * SanPham[] danhSach = (SanPham[]) danhSachField.get(dsSP);
+     * 
+     * java.lang.reflect.Field soLuongField =
+     * DSachSP.class.getDeclaredField("soluong");
+     * soLuongField.setAccessible(true);
+     * int soLuong = soLuongField.getInt(dsSP);
+     * 
+     * for (int i = 0; i < soLuong; i++) {
+     * if (danhSach[i] != null && danhSach[i].getMaSP().equalsIgnoreCase(maSP)) {
+     * return danhSach[i];
+     * }
+     * }
+     * } catch (Exception e) {
+     * System.out.println("Loi khi tim san pham: " + e.getMessage());
+     * }
+     * return null;
+     * }
+     */
 }

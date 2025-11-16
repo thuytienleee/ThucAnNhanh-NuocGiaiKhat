@@ -767,7 +767,7 @@ public class DSachNV {
         }
     }
 
-    // ham phu tro cho hoa don ( HOA DON )
+    // Phuong thuc ho tro cho HOA DON
 
     public NhanVien timKiemNhanVien(String maNV) {
         for (int i = 0; i < soluong; i++) {

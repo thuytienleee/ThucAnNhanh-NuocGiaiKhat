@@ -27,6 +27,14 @@ public class DSachHD {
         this.dsSP = dsSP;
     }
 
+    public int getSoLuongHD() {
+        return soLuongHD;
+    }
+
+    public HoaDon[] getDanhSachHD() {
+        return danhSachHD;
+    }
+
     // Thêm hóa đơn
     public void themHoaDon(HoaDon hd) {
         if (soLuongHD < danhSachHD.length) {
@@ -36,6 +44,75 @@ public class DSachHD {
             FileHoaDon.ghiVaoFile(hd);
         } else {
             System.out.println("Danh sach hoa don da day!");
+        }
+    }
+
+    public void themHoaDonMoi() {
+        try {
+            System.out.println("\n========== THEM HOA DON MOI ==========");
+
+            System.out.print("Ma hoa don: ");
+            String maHD = sc.nextLine();
+
+            System.out.print("Ten hoa don: ");
+            String tenHD = sc.nextLine();
+
+            System.out.print("Ma nhan vien (hoac N/A): ");
+            String maNV = sc.nextLine();
+            NhanVien nv = null;
+            if (!maNV.equalsIgnoreCase("N/A")) {
+                nv = dsNV.timKiemNhanVien(maNV);
+                if (nv == null) {
+                    System.out.println("Khong tim thay nhan vien. Tao hoa don khong co nhan vien.");
+                }
+            }
+
+            System.out.print("Ma khach hang (hoac N/A): ");
+            String maKH = sc.nextLine();
+            KhachHang kh = null;
+            if (!maKH.equalsIgnoreCase("N/A")) {
+                kh = dsKH.timKiemKH(maKH);
+                if (kh == null) {
+                    System.out.println("Khong tim thay khach hang. Tao hoa don khong co khach hang.");
+                }
+            }
+
+            System.out.print("Dia chi: ");
+            String diaChi = sc.nextLine();
+
+            System.out.print("Diem tich luy: ");
+            int diemTichLuy = Integer.parseInt(sc.nextLine());
+
+            Date ngayLap = new Date();
+
+            // Tạo hóa đơn
+            HoaDon hd = new HoaDon(maHD, nv, kh, tenHD, diaChi, diemTichLuy, ngayLap);
+
+            // Thêm sản phẩm
+            System.out.print("So luong san pham: ");
+            int soSP = Integer.parseInt(sc.nextLine());
+
+            for (int i = 0; i < soSP; i++) {
+                System.out.print("Ma san pham thu " + (i + 1) + ": ");
+                String maSP = sc.nextLine();
+
+                SanPham sp = dsSP.timkiemSP(maSP);
+                if (sp != null) {
+                    hd.themSanPham(sp);
+                    System.out.println("Da them san pham: " + sp.getTenSP());
+                } else {
+                    System.out.println("Khong tim thay san pham co ma: " + maSP);
+                    i--; // Nhập lại
+                }
+            }
+
+            // Thêm vào danh sách
+            themHoaDon(hd);
+            System.out.println("\nHoa don da duoc tao thanh cong!");
+            hd.inHoaDon();
+
+        } catch (Exception e) {
+            System.out.println("Loi khi tao hoa don: " + e.getMessage());
         }
     }
 
@@ -142,13 +219,5 @@ public class DSachHD {
             }
             System.out.println("Da doc " + soLuongHD + " hoa don tu file.");
         }
-    }
-
-    public int getSoLuongHD() {
-        return soLuongHD;
-    }
-
-    public HoaDon[] getDanhSachHD() {
-        return danhSachHD;
     }
 }

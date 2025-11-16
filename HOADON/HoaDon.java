@@ -38,7 +38,7 @@ public class HoaDon {
         this.tongTien = 0;
     }
 
-    // Getters và Setters bổ sung
+    // Getters và Setters
     public String getMaHoaDon() {
         return maHoaDon;
     }

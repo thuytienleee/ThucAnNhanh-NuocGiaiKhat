@@ -32,7 +32,7 @@ public class PhieuNhap {
         this.soLuongNL = 0;
     }
 
-    // ======== GETTER & SETTER ========
+    // ======== GETTER VA SETTER ========
     public String getMaPhieuNhap() {
         return maPhieuNhap;
     }

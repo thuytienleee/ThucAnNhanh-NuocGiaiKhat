@@ -20,7 +20,7 @@ public class NhanVien {
     public NhanVien() {
     }
 
-    // ho tro lam PHIEU NHAP
+    // Constructor ho tro cho PHIEU NHAP
     public NhanVien(String maNV, String tenNV, String diaChiNV, Date ngaySinh, String gioitinh, double luong,
             String chucVuNV, int namVaoLam) {
         this.maNV = maNV;

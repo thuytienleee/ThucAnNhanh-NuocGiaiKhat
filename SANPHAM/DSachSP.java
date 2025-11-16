@@ -15,6 +15,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
 
+import CONNGUOI.NhanVien;
+
 /**
  *
  * @author Thuy Tien
@@ -259,9 +261,9 @@ public class DSachSP {
         try {
 
             // ho tro HOA DON
-            // FileReader fr = new FileReader(
-            // "E:\\doandeadline\\src\\src\\comx\\ThucAnNhanhNuocGiaiKhat\\SANPHAM\\SanPham.txt");
-            FileReader fr = new FileReader("../SANPHAM/SanPham.txt");
+            FileReader fr = new FileReader(
+                    "E:\\doandeadline\\src\\src\\comx\\ThucAnNhanhNuocGiaiKhat\\SANPHAM\\SanPham.txt");
+            // FileReader fr = new FileReader("../SANPHAM/SanPham.txt");
             BufferedReader br = new BufferedReader(fr);
             String line;
             while ((line = br.readLine()) != null) {
@@ -619,6 +621,16 @@ public class DSachSP {
                 break;
             }
         }
+    }
+
+    // phuong thuc ho tro cho HOA DON
+    public SanPham timkiemSP(String maSP) {
+        for (int i = 0; i < soluong; i++) {
+            if (danhsach[i] != null && danhsach[i].getMaSP().equalsIgnoreCase(maSP)) {
+                return danhsach[i];
+            }
+        }
+        return null;
     }
 
     public static void main(String[] agrs) {
