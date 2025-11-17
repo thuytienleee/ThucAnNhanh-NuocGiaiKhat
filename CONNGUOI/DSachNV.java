@@ -688,15 +688,8 @@ public class DSachNV {
         try {
 
             // ho tro doc file cho HOA DON
-<<<<<<< HEAD
-            // FileReader fr = new FileReader(
-            // "E:\\doandeadline\\src\\src\\comx\\ThucAnNhanhNuocGiaiKhat\\CONNGUOI\\NhanVien.txt");
-            FileReader fr = new FileReader("CONNGUOI/NhanVien.txt");
-=======
-            FileReader fr = new FileReader(
-                    "E:\\doandeadline\\src\\src\\comx\\ThucAnNhanhNuocGiaiKhat\\CONNGUOI\\NhanVien.txt");
-            // FileReader fr = new FileReader("NhanVien.txt");
->>>>>>> 719ea70ce062ab6fdda87aed451c84cd07a10ff1
+            //FileReader fr = new FileReader("E:\\doandeadline\\src\\src\\comx\\ThucAnNhanhNuocGiaiKhat\\CONNGUOI\\NhanVien.txt");
+             FileReader fr = new FileReader("CONNGUOI/NhanVien.txt");
             BufferedReader br = new BufferedReader(fr);
             String line;
             while ((line = br.readLine()) != null) {

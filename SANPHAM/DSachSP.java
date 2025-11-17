@@ -225,7 +225,7 @@ public class DSachSP {
 
     public static void ghiVaoFile(SanPham sp) {
         try {
-            FileWriter fw = new FileWriter("../SANPHAM/SanPham.txt", true);
+            FileWriter fw = new FileWriter("SANPHAM/SanPham.txt", true);
             BufferedWriter bw = new BufferedWriter(fw);
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
             String line = sp.getMaSP() + "|"
@@ -259,8 +259,7 @@ public class DSachSP {
         try {
 
             // ho tro HOA DON
-            //FileReader fr = new FileReader(
-                    //"E:\\doandeadline\\src\\src\\comx\\ThucAnNhanhNuocGiaiKhat\\SANPHAM\\SanPham.txt");
+            //FileReader fr = new FileReader("E:\\doandeadline\\src\\src\\comx\\ThucAnNhanhNuocGiaiKhat\\SANPHAM\\SanPham.txt");
              FileReader fr = new FileReader("SANPHAM/SanPham.txt");
             BufferedReader br = new BufferedReader(fr);
             String line;
