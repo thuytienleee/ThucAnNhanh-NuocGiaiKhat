@@ -129,15 +129,8 @@ public class NhanVien {
         this.namVaoLam = namVaoLam;
     }
 
-<<<<<<< HEAD
-
-    public String toString(){
-        return String.format("%-5s | %-20s | %-3d | %-5s | %tF | %-12s | %-12d | %-10s | %-10.1f | %-15s",
-        maNV, tenNV, tuoiNV, gioitinh, ngaySinh, sdtNV, namVaoLam, chucVuNV, luong, diaChiNV);
-=======
     public String toString() {
         return String.format("%-5s | %-20s | %-3d | %-5s | %tF | %-12s | %-15s | %-12d | %-10s | %-10.1f",
                 maNV, tenNV, tuoiNV, gioitinh, ngaySinh, sdtNV, diaChiNV, namVaoLam, chucVuNV, luong);
->>>>>>> 6df7c51b1e5f4c764b5b294c13f9a2bb13393db2
     }
 }

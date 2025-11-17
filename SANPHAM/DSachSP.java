@@ -15,8 +15,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
 
-import CONNGUOI.NhanVien;
-
 /**
  *
  * @author Thuy Tien
@@ -261,9 +259,9 @@ public class DSachSP {
         try {
 
             // ho tro HOA DON
-            FileReader fr = new FileReader(
-                    "E:\\doandeadline\\src\\src\\comx\\ThucAnNhanhNuocGiaiKhat\\SANPHAM\\SanPham.txt");
-            // FileReader fr = new FileReader("../SANPHAM/SanPham.txt");
+            //FileReader fr = new FileReader(
+                    //"E:\\doandeadline\\src\\src\\comx\\ThucAnNhanhNuocGiaiKhat\\SANPHAM\\SanPham.txt");
+             FileReader fr = new FileReader("SANPHAM/SanPham.txt");
             BufferedReader br = new BufferedReader(fr);
             String line;
             while ((line = br.readLine()) != null) {
@@ -409,22 +407,27 @@ public class DSachSP {
 
     public void timKiemTheoMa() {
         while (true) {
-            System.out.println("============SEARCH PRODUCT BY ID============");
-            System.out.print("Enter product ID: ");
+            System.out.println("\n============ SEARCH PRODUCT BY ID OR TYPE ID ============");
+            System.out.print("Enter product ID or category ID: ");
             String maCanTim = sc.nextLine().trim().toLowerCase();
             boolean found = false;
 
             for (int i = 0; i < soluong; i++) {
-                if (danhsach[i] != null && danhsach[i].getMaLoai().toLowerCase().equals(maCanTim)) {
-                    System.out.println("Found product: " + danhsach[i].toString());
-                    found = true;
+                if (danhsach[i] != null) {
+                    String maSP = danhsach[i].getMaSP().toLowerCase();
+                    String maLoai = danhsach[i].getMaLoai().toLowerCase();
+
+                    if (maSP.contains(maCanTim) || maLoai.contains(maCanTim)) {
+                        System.out.println("Found product: " + danhsach[i]);
+                        found = true;
+                    }
                 }
             }
 
             if (found) {
-                break; // Thoát khi tìm thấy
+                break;
             } else {
-                System.out.println("Not found product with ID: " + maCanTim);
+                System.out.println("Not found any product with ID or category ID: " + maCanTim);
                 System.out.println("Please try again!");
             }
         }

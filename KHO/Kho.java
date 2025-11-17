@@ -21,8 +21,7 @@ public class Kho {
         NguyenLieu nl;
 
         try {
-            FileReader fr = new FileReader(
-                    "E:\\doandeadline\\src\\src\\comx\\ThucAnNhanhNuocGiaiKhat\\DSnguyenLieu.txt");
+            FileReader fr = new FileReader("DSnguyenLieu.txt");
             BufferedReader br = new BufferedReader(fr);
 
             while (true) {

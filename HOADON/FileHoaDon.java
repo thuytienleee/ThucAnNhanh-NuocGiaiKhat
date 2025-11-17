@@ -1,18 +1,18 @@
 package HOADON;
 
-import java.io.*;
-import java.text.SimpleDateFormat;
-import java.text.ParseException;
-import java.util.Date;
-import CONNGUOI.NhanVien;
-import CONNGUOI.KhachHang;
-import CONNGUOI.DSachNV;
 import CONNGUOI.DSachKH;
-import SANPHAM.SanPham;
+import CONNGUOI.DSachNV;
+import CONNGUOI.KhachHang;
+import CONNGUOI.NhanVien;
 import SANPHAM.DSachSP;
+import SANPHAM.SanPham;
+import java.io.*;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class FileHoaDon {
-    private static final String FILE_PATH = "E:\\doandeadline\\src\\src\\comx\\ThucAnNhanhNuocGiaiKhat\\hoadontest.txt";
+    private static final String FILE_PATH = "hoadontest.txt";
     private static final SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
     // Ghi một hóa đơn vào file (append mode)
@@ -144,7 +144,7 @@ public class FileHoaDon {
 
     // Phương thức hỗ trợ tìm khách hàng
     private static KhachHang timKhachHang(DSachKH dsKH, String maKH) {
-        return dsKH.timKiemKhachHangTheoMa(maKH);
+        return dsKH.timKiemKH(maKH);
     }
 
     /*

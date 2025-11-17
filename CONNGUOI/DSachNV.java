@@ -1,16 +1,14 @@
 // package NHANVIEN;
 package CONNGUOI;
 
-import CONNGUOI.NhanVien;
-
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.io.IOException;
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Scanner;
 
 public class DSachNV {
@@ -316,7 +314,7 @@ public class DSachNV {
 
     public void CapNhatFile() {
         SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter("NhanVien.txt"))) {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter("CONNGUOI/NhanVien.txt"))) {
             for (int i = 0; i < soluong; i++) {
                 NhanVien nv = danhsach[i];
                 if (nv == null) {
@@ -692,7 +690,7 @@ public class DSachNV {
             // ho tro doc file cho HOA DON
             // FileReader fr = new FileReader(
             // "E:\\doandeadline\\src\\src\\comx\\ThucAnNhanhNuocGiaiKhat\\CONNGUOI\\NhanVien.txt");
-            FileReader fr = new FileReader("NhanVien.txt");
+            FileReader fr = new FileReader("CONNGUOI/NhanVien.txt");
             BufferedReader br = new BufferedReader(fr);
             String line;
             while ((line = br.readLine()) != null) {
@@ -725,7 +723,7 @@ public class DSachNV {
 
         try {
             SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
-            FileWriter fw = new FileWriter("NhanVien.txt", true);
+            FileWriter fw = new FileWriter("CONNGUOI/NhanVien.txt", true);
             BufferedWriter bw = new BufferedWriter(fw);
 
             String line = nv.getMaNV() + "|"
@@ -753,7 +751,7 @@ public class DSachNV {
         System.out.print(
                 "+-----------------------------------------------------------------------------------------------------------------------------------+\n");
         System.out.print(
-                "|                                                           STAFF INFOMATION                                                        |\n");
+                "|                                                           STAFF INFORMATION                                                       |\n");
         System.out.print(
                 "+-----------------------------------------------------------------------------------------------------------------------------------+\n");
         System.out.print(String.format(" %-5s| %-20s | %-2s | %-5s | %-9s | %-12s | %-10s | %-10s | %-10s | %-15s%n",

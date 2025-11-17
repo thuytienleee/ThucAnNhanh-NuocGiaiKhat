@@ -6,9 +6,7 @@ import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.Scanner;
 
 public class DSachKH {
@@ -176,7 +174,7 @@ public class DSachKH {
 
     public void CapNhatFile() {
         SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter("KhachHang.txt"))) {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter("CONNGUOI/KhachHang.txt"))) {
             for (int i = 0; i < soluong; i++) {
                 KhachHang kh = danhsach[i];
                 if (kh == null) {
@@ -382,7 +380,7 @@ public class DSachKH {
             // ho tro doc file cho HOA DON
             // FileReader fr = new FileReader(
             // "E:\\doandeadline\\src\\src\\comx\\ThucAnNhanhNuocGiaiKhat\\CONNGUOI\\KhachHang.txt");
-            FileReader fr = new FileReader("KhachHang.txt");
+            FileReader fr = new FileReader("CONNGUOI/KhachHang.txt");
             BufferedReader br = new BufferedReader(fr);
             String line;
             while ((line = br.readLine()) != null) {
@@ -408,7 +406,7 @@ public class DSachKH {
     public void GhiFile(KhachHang kh) {
 
         try {
-            FileWriter fw = new FileWriter("KhachHang.txt", true);
+            FileWriter fw = new FileWriter("CONNGUOI/KhachHang.txt", true);
             BufferedWriter bw = new BufferedWriter(fw);
 
             String line = kh.getMaKH() + "|"
