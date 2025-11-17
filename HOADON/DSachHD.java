@@ -242,4 +242,35 @@ public class DSachHD {
             System.out.println("Da doc " + soLuongHD + " hoa don tu file.");
         }
     }
+
+    public HoaDon[] locHoaDonTheoKhoangNgay(String ngayBD, String ngayKT) {
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+
+        HoaDon[] temp = new HoaDon[soLuongHD]; 
+        int count = 0;
+
+        try {
+            Date start = sdf.parse(ngayBD);
+            Date end = sdf.parse(ngayKT);
+
+            for (int i = 0; i < soLuongHD; i++) {
+                HoaDon hd = danhSachHD[i];
+                if (hd == null) continue;
+
+                Date ngayHD = hd.getNgayLap();
+
+                // kiểm tra khoảng ngày
+                if (!ngayHD.before(start) && !ngayHD.after(end)) {
+                    temp[count++] = hd;
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        HoaDon[] result = new HoaDon[count];
+        for (int i = 0; i < count; i++) result[i] = temp[i];
+
+        return result;
+    }
 }
