@@ -1,20 +1,31 @@
-// package BAOCAO;
 package BAOCAO;
 
-public interface ICheck {
-    static boolean isValidDateFormat(String date) {
-        // Kiem tra dinh dang ngay hop le dd/MM/yyyy
-        if (date == null || !date.matches("\\d{2}/\\d{2}/\\d{4}"))
-            return false;
-        String[] parts = date.split("/");
-        int day = Integer.parseInt(parts[0]);
-        int month = Integer.parseInt(parts[1]);
-        int year = Integer.parseInt(parts[2]);
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
+import java.util.Date;
 
-        if (month < 1 || month > 12 || day < 1)
+interface ICheck {
+    static boolean isValidDateFormat(String dateStr) {
+        DateTimeFormatter df = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        try {
+            LocalDate.parse(dateStr, df);
+            return true;
+        } catch (DateTimeParseException e) {
             return false;
-        int[] daysInMonth = {31, (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) ? 29 : 28,
-                             31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-        return day <= daysInMonth[month - 1];
+        }
     }
+
+    static boolean isDateInRange(Date ngayLap, String bd, String kt) {
+        if (ngayLap == null || bd == null || kt == null) return false;
+
+        DateTimeFormatter dfInput = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        LocalDate start = LocalDate.parse(bd, dfInput);
+        LocalDate end   = LocalDate.parse(kt, dfInput);
+
+        LocalDate ngay = new java.sql.Date(ngayLap.getTime()).toLocalDate();
+
+        return (!ngay.isBefore(start) && !ngay.isAfter(end));
+    }
+
 }
