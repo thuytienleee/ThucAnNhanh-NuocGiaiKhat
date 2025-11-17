@@ -1,12 +1,17 @@
 import CONNGUOI.DSachKH;
 import CONNGUOI.DSachNV;
+import CONNGUOI.KhachHang;
+import CONNGUOI.NhanVien;
 import HOADON.DSachHD;
+import HOADON.HoaDon;
 import KHO.Kho;
 import NGUYENLIEU.DSNguyenLieu;
 import PHIEUNHAP.DSPhieuNhap;
 import PHIEUNHAP.PhieuNhap;
 import SANPHAM.DSachSP;
+import SANPHAM.SanPham;
 import java.util.Scanner;
+import java.util.Date;
 
 public class QUANLYCUAHANG {
 
@@ -14,6 +19,7 @@ public class QUANLYCUAHANG {
     private DSachNV dsNhanVien;
     private DSachKH dsKhachHang;
     private DSachHD dsHoaDon;
+    private DSPhieuNhap dsPhieuNhap;
 
     private Scanner sc = new Scanner(System.in);
 
@@ -119,7 +125,7 @@ public class QUANLYCUAHANG {
     }
 
     public void chonQuanLyNhanVien() {
-        
+
         if (dsNhanVien == null) {
             dsNhanVien = new DSachNV(1000);
             dsNhanVien.DocFile();
@@ -163,7 +169,7 @@ public class QUANLYCUAHANG {
     }
 
     public void chonQuanLyKhachHang() {
-         if (dsKhachHang == null) {
+        if (dsKhachHang == null) {
             dsKhachHang = new DSachKH(1000);
             dsKhachHang.DocFile();
         }
@@ -204,42 +210,66 @@ public class QUANLYCUAHANG {
             }
         } while (chon != 6);
     }
-        
 
     public void chonQuanLyHoaDon() {
-        int luaChon;
-        int chonMot;
+        // Khởi tạo các danh sách nếu chưa có
+        if (dsNhanVien == null) {
+            dsNhanVien = new DSachNV(1000);
+            dsNhanVien.DocFile();
+        }
+        if (dsKhachHang == null) {
+            dsKhachHang = new DSachKH(1000);
+            dsKhachHang.DocFile();
+        }
+        if (dsSanPham == null) {
+            dsSanPham = new DSachSP(1000);
+            dsSanPham.DocFile();
+        }
+        if (dsHoaDon == null) {
+            dsHoaDon = new DSachHD(1000, dsNhanVien, dsKhachHang, dsSanPham);
+            dsHoaDon.docDanhSachHD();
+        }
+
+        int choice;
         do {
-            System.out.println("\n===== QUAN LY HOA DON =====");
-            System.out.println("1. Chi tiet hoa don");
-            System.out.println("2. Chi tiet danh sach hoa don");
-            System.out.println("3. Chi tiet thanh toan");
-            System.out.println("0. Quay lai menu truoc");
-            System.out.println("=============================");
-            System.out.println("Moi ban nhap lua chon: ");
-            luaChon = Integer.parseInt(sc.nextLine());
-            switch (luaChon) {
-                case 1: {
-                    do {
-                        System.out.println("===== CHI TIET HOA DON =====");
-                        System.out.println("4. Tinh tong tien");
-                        System.out.println("5. In hoa don");
-                        System.out.println("6. Quay lai menu truoc");
-                        System.out.println("Moi ban chon chuc nang chi tiet hoa don: ");
-                        chonMot = Integer.parseInt(sc.nextLine());
-                        switch (chonMot) {
-                            case 4: {
-                                String filePath = "hoadon.txt";
-                                //HoaDon hoaDon = HoaDonIO.docHoaDonTuFile(filePath);
-                                //hoaDon.inHoaDon();
-                                break;
-                            }
-                        }
-                    } while (chonMot != 0);
+            System.out.println("\n========== QUAN LY HOA DON ==========");
+            System.out.println("1. Them hoa don moi");
+            System.out.println("2. Xoa hoa don");
+            System.out.println("3. Tim kiem hoa don theo ma");
+            System.out.println("4. Tim kiem hoa don theo khach hang");
+            System.out.println("5. In danh sach hoa don");
+            System.out.println("6. Tinh tong doanh thu");
+            System.out.println("0. Thoat");
+            System.out.println("======================================");
+            System.out.print("Nhap lua chon: ");
+            choice = Integer.parseInt(sc.nextLine());
+
+            switch (choice) {
+                case 1:
+                    dsHoaDon.themHoaDonMoi();
                     break;
-                }
+                case 2:
+                    dsHoaDon.xoaHoaDon();
+                    break;
+                case 3:
+                    dsHoaDon.timKiemHoaDonTheoMa();
+                    break;
+                case 4:
+                    dsHoaDon.timKiemHoaDonTheoKH();
+                    break;
+                case 5:
+                    dsHoaDon.inDanhSachHD();
+                    break;
+                case 6:
+                    dsHoaDon.tinhTongDoanhThu();
+                    break;
+                case 0:
+                    System.out.println("Quay lai menu chinh...");
+                    break;
+                default:
+                    System.out.println("Lua chon khong hop le. Vui long chon lai!");
             }
-        } while (luaChon != 0);
+        } while (choice != 0);
     }
 
     public void chonQuanLyKho() {
@@ -310,51 +340,8 @@ public class QUANLYCUAHANG {
         } while (chon != 0);
     }
 
-    public void chonQuanLyPhieuNhap(){
-        DSPhieuNhap dspn = new DSPhieuNhap();
-        dspn.docFile();
-        int chon;
-        do {
-            System.out.println("\n======== Quan ly phieu nhap ========");
-            System.out.println("1. Xem danh sach phieu nhap");
-            System.out.println("2. Them phieu nhap moi.");
-            System.out.println("3. Sua thong tin phieu");
-            System.out.println("4. Huy phieu nhap.");
-            System.out.println("0. Quay lai");
-            System.out.println("======================================");
-            System.out.print("Chon: ");
-            chon = Integer.parseInt(sc.nextLine());
-            switch (chon) {
-                case 1:
-                    PhieuNhap[] ds = dspn.getDsPhieu();
-                    int sl = dspn.getSoLuongPhieu();
-                    if(sl == 0) { 
-                        System.out.println("Khong co phieu nhap nao");
-                    } else {
-                        System.out.println("\n===== DANH SACH PHIEU NHAP =====");
-                        for (int i = 0; i < sl; i++) {
-                            System.out.println("Phieu thu " + (i + 1) + ":");
-                            ds[i].HienThiThongTin();
-                            System.out.println("-------------------------------");
-                        }
-                    }
-                    break;
-                case 2:
-                    //dspn.themPhieuNhap();
-                    break;
-/*                 case 3:
-                    dsNguyenLieu.suaNguyenLieu();
-                    break;
-                case 4:
-                    dsNguyenLieu.xoaNguyenLieu();
-                    break; */
-                case 0:
-                    System.out.println("Quay lai");
-                    break;
-                default:
-                    System.out.println("Lua chon khong hop le");
-            }
-        } while (chon != 0);
+    public void chonQuanLyPhieuNhap() {
+
     }
 
     public void chonBaoCao() {

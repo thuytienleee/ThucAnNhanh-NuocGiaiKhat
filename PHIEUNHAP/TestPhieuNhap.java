@@ -3,6 +3,9 @@ package PHIEUNHAP;
 import CONNGUOI.NhanVien;
 import NGUYENLIEU.NguyenLieu;
 import KHO.Kho;
+
+import java.text.SimpleDateFormat;
+import java.text.ParseException;
 import java.util.Date;
 import java.util.Scanner;
 
@@ -178,8 +181,16 @@ public class TestPhieuNhap {
         String soDT = sc.nextLine();
         System.out.print("Dia chi: ");
         String diaChi = sc.nextLine();
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        sdf.setLenient(false);
         System.out.print("Ngay sinh (dd/MM/yyyy): ");
         String ngaySinh = sc.nextLine();
+        Date ngay = null;
+        try {
+            ngay = sdf.parse(ngaySinh);
+        } catch (ParseException e) {
+            System.out.println("Ngay sinh khong hop le!");
+        }
         System.out.print("Gioi tinh: ");
         String gioiTinh = sc.nextLine();
         System.out.print("Luong: ");
@@ -191,7 +202,7 @@ public class TestPhieuNhap {
         int namVaoLam = sc.nextInt();
         sc.nextLine();
 
-        NhanVien nv = new NhanVien(maNV, tenNV, soDT, diaChi, ngaySinh,
+        NhanVien nv = new NhanVien(maNV, tenNV, diaChi, ngay,
                 gioiTinh, luong, chucVu, namVaoLam);
 
         System.out.print("So luong nguyen lieu toi da: ");

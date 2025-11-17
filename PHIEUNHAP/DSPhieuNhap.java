@@ -2,6 +2,7 @@ package PHIEUNHAP;
 
 import CONNGUOI.NhanVien;
 import NGUYENLIEU.NguyenLieu;
+import NGUYENLIEU.DSNguyenLieu;
 import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
@@ -101,14 +102,14 @@ public class DSPhieuNhap {
                 String tenNV = info[4].trim();
                 String soDT = info[5].trim();
                 String diaChi = info[6].trim();
-                String ngaySinh = info[7].trim();
+                Date ngaySinh = sdf.parse(info[7].trim());
                 String gioiTinh = info[8].trim();
                 double luong = Double.parseDouble(info[9].trim());
                 String chucVu = info[10].trim();
                 int namVaoLam = Integer.parseInt(info[11].trim());
 
                 // Tạo nhân viên
-                NhanVien nv = new NhanVien(maNV, tenNV, soDT, diaChi, ngaySinh,
+                NhanVien nv = new NhanVien(maNV, tenNV, diaChi, ngaySinh,
                         gioiTinh, luong, chucVu, namVaoLam);
 
                 // Đọc số lượng nguyên liệu trong phiếu
@@ -177,11 +178,11 @@ public class DSPhieuNhap {
                         phieu.getTenPhieuNhap() + " | " +
                         sdf.format(phieu.getNgayNhap()) + " | " +
                         nv.getMaNV() + " | " +
-                        nv.getTen() + " | " +
-                        nv.getSoDT() + " | " +
-                        nv.getDiaChi() + " | " +
+                        nv.getTenNV() + " | " +
+                        nv.getSdtNV() + " | " +
+                        nv.getDiaChiNV() + " | " +
                         nv.getNgaySinh() + " | " +
-                        nv.getGioiTinh() + " | " +
+                        nv.getGioitinh() + " | " +
                         nv.getLuong() + " | " +
                         nv.getChucVuNV() + " | " +
                         nv.getNamVaoLam());
