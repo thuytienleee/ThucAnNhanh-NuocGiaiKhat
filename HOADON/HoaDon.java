@@ -356,8 +356,8 @@ public class HoaDon {
         System.out.println("\n========== HOA DON ==========");
         System.out.println("Ma hoa don: " + maHoaDon);
         System.out.println("Ten hoa don: " + tenHoaDon);
-        System.out.println("Nhan vien: " + (nhanVien != null ? nhanVien.getTen() : "N/A"));
-        System.out.println("Khach hang: " + (khachHang != null ? khachHang.getTen() : "N/A"));
+        System.out.println("Nhan vien: " + (nhanVien != null ? nhanVien.getTenNV() : "N/A"));
+        System.out.println("Khach hang: " + (khachHang != null ? khachHang.getTenKH() : "N/A"));
         System.out.println("Dia chi: " + diaChi);
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         System.out.println("Ngay lap: " + sdf.format(ngayLap));

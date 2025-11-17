@@ -118,7 +118,7 @@ public class NhanVien {
 
 
     public String toString(){
-        return String.format("%-5s | %-20s | %-3d | %-5s | %tF | %-12s | %-15s | %-12d | %-10s | %-10.1f",
-        maNV, tenNV, tuoiNV, gioitinh, ngaySinh, sdtNV, diaChiNV, namVaoLam, chucVuNV, luong);
+        return String.format("%-5s | %-20s | %-3d | %-5s | %tF | %-12s | %-12d | %-10s | %-10.1f | %-15s",
+        maNV, tenNV, tuoiNV, gioitinh, ngaySinh, sdtNV, namVaoLam, chucVuNV, luong, diaChiNV);
     }
 }

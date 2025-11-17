@@ -745,8 +745,8 @@ public class DSachNV {
                 "|                                                           STAFF INFOMATION                                                        |\n");
         System.out.print(
                 "+-----------------------------------------------------------------------------------------------------------------------------------+\n");
-        System.out.print(String.format(" %-5s| %-20s | %-2s | %-5s | %-9s | %-12s | %-15s | %-10s | %-10s | %-10s%n",
-                "ID", "NAME", "AGE", "GENDER", "DATE", "PHONE", "ADDRESS", "YEAR OF JOIN", "POSITION", "SALARY"));
+        System.out.print(String.format(" %-5s| %-20s | %-2s | %-5s | %-9s | %-12s | %-10s | %-10s | %-10s | %-15s%n",
+                "ID", "NAME", "AGE", "GENDER", "DATE", "PHONE", "YEAR OF JOIN", "POSITION", "SALARY", "ADDRESS"));
         System.out.print(
                 "+-----------------------------------------------------------------------------------------------------------------------------------+\n");
         for (NhanVien nv : danhsach) {

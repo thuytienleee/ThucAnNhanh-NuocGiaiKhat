@@ -144,7 +144,7 @@ public class FileHoaDon {
 
     // Phương thức hỗ trợ tìm khách hàng
     private static KhachHang timKhachHang(DSachKH dsKH, String maKH) {
-        return dsKH.timKiemKH(maKH);
+        return dsKH.timKiemKhachHangTheoMa(maKH);
     }
 
     // Phương thức hỗ trợ tìm sản phẩm (sử dụng reflection để truy cập private
