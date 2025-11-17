@@ -345,8 +345,60 @@ public class QUANLYCUAHANG {
     }
 
     public void chonBaoCao() {
-        System.out.println("\n[Chuc nang thong ke dang phat trien...]");
+        Scanner sc = new Scanner(System.in);
+        BaoCao bc = new BaoCao();
+
+        while (true) {
+            System.out.println("\n===== MENU BAO CAO =====");
+            System.out.println("1. Tao bao cao moi");
+            System.out.println("2. Xem danh sach bao cao");
+            System.out.println("3. Xem chi tiet 1 bao cao");
+            System.out.println("4. Sua bao cao");
+            System.out.println("5. Xoa bao cao");
+            System.out.println("6. Thong ke TOP 5 san pham ban chay");
+            System.out.println("0. Quay lai menu chinh");
+            System.out.print("Nhap lua chon: ");
+
+            String choice = sc.nextLine().trim();
+
+            switch (choice) {
+                case "1":
+                    bc.taoBC();
+                    break;
+                case "2":
+                    bc.docFile();
+                    break;
+                case "3":
+                    System.out.print("Nhap ID bao cao can xem chi tiet: ");
+                    String idXem = sc.nextLine().trim();
+                    bc.xemChiTietBaoCao(idXem);
+                    break;
+                case "4":
+                    System.out.print("Nhap ID bao cao can sua: ");
+                    String idSua = sc.nextLine().trim();
+                    bc.suaBaoCao(idSua);
+                    break;
+                case "5":
+                    System.out.print("Nhap ID bao cao can xoa: ");
+                    String idXoa = sc.nextLine().trim();
+                    bc.xoaBaoCao(idXoa);
+                    break;
+                case "6":
+                    DSachNV dsNV = new DSachNV(100); dsNV.DocFile();
+                    DSachKH dsKH = new DSachKH(100); dsKH.DocFile();
+                    DSachSP dsSP = new DSachSP(100); dsSP.DocFile();
+                    DSachHD dsHD = new DSachHD(100, dsNV, dsKH, dsSP);
+                    dsHD.docDanhSachHD();
+                    bc.thongKeTop5SanPhamBanChay(dsHD, dsNV, dsKH, dsSP);
+                    break;
+                case "0":
+                    return;
+                default:
+                    System.out.println("Lua chon khong hop le. Vui long nhap lai!");
+            }
+        }
     }
+
 
     public static void main(String[] args) {
         QUANLYCUAHANG ql = new QUANLYCUAHANG();
