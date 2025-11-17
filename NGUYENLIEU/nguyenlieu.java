@@ -1,7 +1,7 @@
 // package NGUYENLIEU;
 package NGUYENLIEU;
 
-public class NguyenLieu{
+public class NguyenLieu {
     private String maNL;
     private String tenNL;
     private String donViTinh;

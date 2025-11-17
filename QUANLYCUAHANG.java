@@ -11,6 +11,9 @@ import PHIEUNHAP.PhieuNhap;
 import SANPHAM.DSachSP;
 import SANPHAM.SanPham;
 import java.util.Scanner;
+
+import BAOCAO.BaoCao;
+
 import java.util.Date;
 
 public class QUANLYCUAHANG {
@@ -341,7 +344,71 @@ public class QUANLYCUAHANG {
     }
 
     public void chonQuanLyPhieuNhap() {
+        if (dsPhieuNhap == null) {
+            dsPhieuNhap = new DSPhieuNhap();
+            dsPhieuNhap.khoiTaoKho();
+            dsPhieuNhap.docFile();
+        }
 
+        int choice;
+        do {
+            dsPhieuNhap.hienThiMenu();
+            System.out.print("Nhap lua chon cua ban: ");
+            choice = Integer.parseInt(sc.nextLine());
+
+            switch (choice) {
+                case 1:
+                    dsPhieuNhap.hienThiTatCaPhieu();
+                    break;
+                case 2:
+                    dsPhieuNhap.chonPhieuLamViec();
+                    break;
+                case 3:
+                    dsPhieuNhap.taoPhieuNhapMoi();
+                    break;
+                case 4:
+                    dsPhieuNhap.themNguyenLieuVaoPhieu();
+                    break;
+                case 5:
+                    dsPhieuNhap.xoaNguyenLieuKhoiPhieu();
+                    break;
+                case 6:
+                    dsPhieuNhap.suaNguyenLieuTrongPhieu();
+                    break;
+                case 7:
+                    dsPhieuNhap.timNguyenLieuTrongPhieu();
+                    break;
+                case 8:
+                    dsPhieuNhap.hienThiDanhSachNguyenLieuCuaPhieu();
+                    break;
+                case 9:
+                    dsPhieuNhap.xacNhanPhieu();
+                    break;
+                case 10:
+                    dsPhieuNhap.huyPhieu();
+                    break;
+                case 11:
+                    dsPhieuNhap.tinhTongTienPhieu();
+                    break;
+                case 12:
+                    dsPhieuNhap.kiemTraPhieuRong();
+                    break;
+                case 13:
+                    dsPhieuNhap.demSoLuongNguyenLieu();
+                    break;
+                case 14:
+                    dsPhieuNhap.hienThiTonKho();
+                    break;
+                case 15:
+                    dsPhieuNhap.luuVaThoat();
+                    break;
+                case 0:
+                    System.out.println("\nQuay lai menu chinh...");
+                    break;
+                default:
+                    System.out.println("Lua chon khong hop le!");
+            }
+        } while (choice != 0 && choice != 15);
     }
 
     public void chonBaoCao() {
@@ -384,9 +451,12 @@ public class QUANLYCUAHANG {
                     bc.xoaBaoCao(idXoa);
                     break;
                 case "6":
-                    DSachNV dsNV = new DSachNV(100); dsNV.DocFile();
-                    DSachKH dsKH = new DSachKH(100); dsKH.DocFile();
-                    DSachSP dsSP = new DSachSP(100); dsSP.DocFile();
+                    DSachNV dsNV = new DSachNV(100);
+                    dsNV.DocFile();
+                    DSachKH dsKH = new DSachKH(100);
+                    dsKH.DocFile();
+                    DSachSP dsSP = new DSachSP(100);
+                    dsSP.DocFile();
                     DSachHD dsHD = new DSachHD(100, dsNV, dsKH, dsSP);
                     dsHD.docDanhSachHD();
                     bc.thongKeTop5SanPhamBanChay(dsHD, dsNV, dsKH, dsSP);
@@ -398,7 +468,6 @@ public class QUANLYCUAHANG {
             }
         }
     }
-
 
     public static void main(String[] args) {
         QUANLYCUAHANG ql = new QUANLYCUAHANG();

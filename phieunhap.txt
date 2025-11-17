@@ -1,4 +1,20 @@
-PN001;Phieu nhap hang;02/12/2024;Hoang Thi Lan;NL01,Bot mi,Kg,20.00|NL02,Pho Mai,Kg,10.00|NL03,Rau,Kg,30.00|NL04,Tom,Kg,15.00|NL05,Muc,Kg,15.00|NLGA,Ga,Kg,10.00
-PN002;Phieu nhap hang;12/12/2024;Nguyen Van Son;NLBO,Bo,Kg,15.00|NLJB,JamBon,Kg,9.00|NLCA,Ca,Kg,10.00
-PN003;Phieu nhap hang;05/10/2024;Hoang Anh Kiet;COCA,Coca,Lon,100.00|SPR,Sprite,Lon,80.00|PS,Pepsi,Lon,100.00
-PN004;Phieu nhap hang;21/03/2024;Tran Tan Dat;ST,Sting,Lon,100.00|AQF,Aquafina,Chai,80.00|LV,Lavie,Chai,100.00
+PN001 | Phieu nhap thang 11 | 01/11/2025 | NV001 | Nguyen Van A | null | 123 Le Loi, Q1, TP.HCM | Tue May 15 00:00:00 ICT 1990 | Nam | 1.5E7 | Quan ly kho | 2020
+3
+NL01 | 50.0 | 25000.0
+NL02 | 20.0 | 80000.0
+NL03 | 30.0 | 15000.0
+
+PN002 | Phieu nhap thang 11 - dot 2 | 05/11/2025 | NV002 | Tran Thi B | null | 456 Nguyen Hue, Q1, TP.HCM | Sun Aug 20 00:00:00 ICT 1995 | Nu | 1.2E7 | Nhan vien kho | 2022
+4
+NL04 | 25.0 | 120000.0
+NL05 | 15.0 | 150000.0
+NLGA | 30.0 | 90000.0
+NLBO | 20.0 | 180000.0
+
+PN003 | Phieu nhap do uong | 10/11/2025 | NV003 | Le Van C | null | 789 Tran Hung Dao, Q5, TP.HCM | Tue Mar 10 00:00:00 ICT 1992 | Nam | 1.3E7 | Thu kho | 2021
+5
+COCA | 100.0 | 8000.0
+SPR | 80.0 | 7500.0
+PS | 100.0 | 8000.0
+ST | 100.0 | 9000.0
+AQF | 80.0 | 5000.0
