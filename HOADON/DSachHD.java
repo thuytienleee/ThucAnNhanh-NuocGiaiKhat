@@ -243,6 +243,12 @@ public class DSachHD {
         }
     }
 
+    public void themHoaDonKhongGhiFile(HoaDon hd) {
+        if (soLuongHD < danhSachHD.length) {
+            danhSachHD[soLuongHD++] = hd;
+        }
+    }
+    
     public HoaDon[] locHoaDonTheoKhoangNgay(String ngayBD, String ngayKT) {
         SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
 
