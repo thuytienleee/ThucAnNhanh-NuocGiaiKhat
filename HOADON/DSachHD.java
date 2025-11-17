@@ -89,20 +89,42 @@ public class DSachHD {
             HoaDon hd = new HoaDon(maHD, nv, kh, tenHD, diaChi, diemTichLuy, ngayLap);
 
             // Thêm sản phẩm
+            /*
+             * System.out.print("So luong san pham: ");
+             * int soSP = Integer.parseInt(sc.nextLine());
+             * 
+             * for (int i = 0; i < soSP; i++) {
+             * System.out.print("Ma san pham thu " + (i + 1) + ": ");
+             * String maSP = sc.nextLine();
+             * 
+             * SanPham sp = dsSP.timkiemSP(maSP);
+             * if (sp != null) {
+             * hd.themSanPham(sp);
+             * System.out.println("Da them san pham: " + sp.getTenSP());
+             * } else {
+             * System.out.println("Khong tim thay san pham co ma: " + maSP);
+             * i--; // Nhập lại
+             * }
+             * }
+             */
+
+            // *
             System.out.print("So luong san pham: ");
             int soSP = Integer.parseInt(sc.nextLine());
-
             for (int i = 0; i < soSP; i++) {
                 System.out.print("Ma san pham thu " + (i + 1) + ": ");
                 String maSP = sc.nextLine();
 
                 SanPham sp = dsSP.timkiemSP(maSP);
                 if (sp != null) {
-                    hd.themSanPham(sp);
-                    System.out.println("Da them san pham: " + sp.getTenSP());
+                    System.out.print("So luong: "); // THÊM MỚI
+                    int soLuong = Integer.parseInt(sc.nextLine()); // THÊM MỚI
+
+                    hd.themSanPham(sp, soLuong); // SỬA LẠI
+                    System.out.println("Da them san pham: " + sp.getTenSP() + " - SL: " + soLuong);
                 } else {
                     System.out.println("Khong tim thay san pham co ma: " + maSP);
-                    i--; // Nhập lại
+                    i--;
                 }
             }
 
