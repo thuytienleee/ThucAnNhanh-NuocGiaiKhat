@@ -11,10 +11,10 @@ import PHIEUNHAP.PhieuNhap;
 import SANPHAM.DSachSP;
 import SANPHAM.SanPham;
 import java.util.Scanner;
-
 import BAOCAO.BaoCao;
-
 import java.util.Date;
+import java.text.SimpleDateFormat;
+import java.text.ParseException;
 
 public class QUANLYCUAHANG {
 

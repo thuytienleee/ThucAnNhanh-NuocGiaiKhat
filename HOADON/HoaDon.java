@@ -18,12 +18,12 @@ public class HoaDon {
     private double tongTien;
     private int soHoaDon;
     private SanPham[] dsChiTiet;
-    private int[] soLuongSP; // *
+    private int[] soLuongSP;
 
     public HoaDon() {
         dsChiTiet = new SanPham[100];
         soHoaDon = 0;
-        soLuongSP = new int[100]; // *
+        soLuongSP = new int[100];
     }
 
     public HoaDon(String maHoaDon, NhanVien nhanVien, KhachHang khachHang,
@@ -38,7 +38,7 @@ public class HoaDon {
         this.dsChiTiet = new SanPham[100];
         this.soHoaDon = 0;
         this.tongTien = 0;
-        this.soLuongSP = new int[100]; // *
+        this.soLuongSP = new int[100];
     }
 
     // Getters và Setters
@@ -110,20 +110,10 @@ public class HoaDon {
         return soHoaDon;
     }
 
-    public int[] getSoLuongSP() { // *
+    public int[] getSoLuongSP() {
         return soLuongSP;
     }
 
-    /*
-     * Thêm sản phẩm vào hóa đơn
-     * public void themSanPham(SanPham sp) {
-     * if (soHoaDon < dsChiTiet.length) {
-     * dsChiTiet[soHoaDon++] = sp;
-     * }
-     * }
-     */
-
-    // *
     public void themSanPham(SanPham sp, int soLuong) {
         if (soHoaDon < dsChiTiet.length) {
             dsChiTiet[soHoaDon] = sp;
@@ -132,7 +122,6 @@ public class HoaDon {
         }
     }
 
-    // *
     public void themSanPham(SanPham sp) {
         themSanPham(sp, 1);
     }
@@ -157,10 +146,6 @@ public class HoaDon {
         System.out.println("Diem tich luy: " + diemTichLuy);
         System.out.println("\n--- Chi tiet san pham ---");
         for (int i = 0; i < soHoaDon; i++) {
-            // System.out.println((i + 1) + ". " + dsChiTiet[i].getTenSP() + " - " +
-            // dsChiTiet[i].getGia() + " VND");
-
-            // *
             double thanhTien = dsChiTiet[i].getGia() * soLuongSP[i];
             System.out.println((i + 1) + ". " + dsChiTiet[i].getTenSP()
                     + " - SL: " + soLuongSP[i]

@@ -88,27 +88,6 @@ public class DSachHD {
             // Tạo hóa đơn
             HoaDon hd = new HoaDon(maHD, nv, kh, tenHD, diaChi, diemTichLuy, ngayLap);
 
-            // Thêm sản phẩm
-            /*
-             * System.out.print("So luong san pham: ");
-             * int soSP = Integer.parseInt(sc.nextLine());
-             * 
-             * for (int i = 0; i < soSP; i++) {
-             * System.out.print("Ma san pham thu " + (i + 1) + ": ");
-             * String maSP = sc.nextLine();
-             * 
-             * SanPham sp = dsSP.timkiemSP(maSP);
-             * if (sp != null) {
-             * hd.themSanPham(sp);
-             * System.out.println("Da them san pham: " + sp.getTenSP());
-             * } else {
-             * System.out.println("Khong tim thay san pham co ma: " + maSP);
-             * i--; // Nhập lại
-             * }
-             * }
-             */
-
-            // *
             System.out.print("So luong san pham: ");
             int soSP = Integer.parseInt(sc.nextLine());
             for (int i = 0; i < soSP; i++) {
@@ -117,10 +96,10 @@ public class DSachHD {
 
                 SanPham sp = dsSP.timkiemSP(maSP);
                 if (sp != null) {
-                    System.out.print("So luong: "); // THÊM MỚI
-                    int soLuong = Integer.parseInt(sc.nextLine()); // THÊM MỚI
+                    System.out.print("So luong: ");
+                    int soLuong = Integer.parseInt(sc.nextLine());
 
-                    hd.themSanPham(sp, soLuong); // SỬA LẠI
+                    hd.themSanPham(sp, soLuong);
                     System.out.println("Da them san pham: " + sp.getTenSP() + " - SL: " + soLuong);
                 } else {
                     System.out.println("Khong tim thay san pham co ma: " + maSP);
@@ -243,16 +222,18 @@ public class DSachHD {
         }
     }
 
+    // Phương thức hỗ trợ cho báo cáo
     public void themHoaDonKhongGhiFile(HoaDon hd) {
         if (soLuongHD < danhSachHD.length) {
             danhSachHD[soLuongHD++] = hd;
         }
     }
-    
+
+    // Phương thức hỗ trợ cho báo cáo
     public HoaDon[] locHoaDonTheoKhoangNgay(String ngayBD, String ngayKT) {
         SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
 
-        HoaDon[] temp = new HoaDon[soLuongHD]; 
+        HoaDon[] temp = new HoaDon[soLuongHD];
         int count = 0;
 
         try {
@@ -261,7 +242,8 @@ public class DSachHD {
 
             for (int i = 0; i < soLuongHD; i++) {
                 HoaDon hd = danhSachHD[i];
-                if (hd == null) continue;
+                if (hd == null)
+                    continue;
 
                 Date ngayHD = hd.getNgayLap();
 
@@ -275,7 +257,8 @@ public class DSachHD {
         }
 
         HoaDon[] result = new HoaDon[count];
-        for (int i = 0; i < count; i++) result[i] = temp[i];
+        for (int i = 0; i < count; i++)
+            result[i] = temp[i];
 
         return result;
     }

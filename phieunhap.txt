@@ -1,17 +1,17 @@
-PN001 | Phieu nhap thang 11 | 01/11/2025 | NV001 | Nguyen Van A | null | 123 Le Loi, Q1, TP.HCM | Tue May 15 00:00:00 ICT 1990 | Nam | 1.5E7 | Quan ly kho | 2020
+PN001 | Phieu nhap thang 11 | 01/11/2025 | NV001 | Dam Van Duong | null | 123 Le Loi, Q1, TP.HCM | 02/02/2004 | Nam | 1.0E7 | Quan ly kho | 2020
 3
 NL01 | 50.0 | 25000.0
 NL02 | 20.0 | 80000.0
 NL03 | 30.0 | 15000.0
 
-PN002 | Phieu nhap thang 11 - dot 2 | 05/11/2025 | NV002 | Tran Thi B | null | 456 Nguyen Hue, Q1, TP.HCM | Sun Aug 20 00:00:00 ICT 1995 | Nu | 1.2E7 | Nhan vien kho | 2022
+PN002 | Phieu nhap thang 11 - dot 2 | 05/11/2025 | NV002 | Nguyen Thi Hong | null | 123 Le Loi, Q1, TP.HCM | 21/02/2002 | Nu | 1.2E7 | Nhan vien kho | 2022
 4
 NL04 | 25.0 | 120000.0
 NL05 | 15.0 | 150000.0
 NLGA | 30.0 | 90000.0
 NLBO | 20.0 | 180000.0
 
-PN003 | Phieu nhap do uong | 10/11/2025 | NV003 | Le Van C | null | 789 Tran Hung Dao, Q5, TP.HCM | Tue Mar 10 00:00:00 ICT 1992 | Nam | 1.3E7 | Thu kho | 2021
+PN003 | Phieu nhap do uong | 10/11/2025 | NV003 | Le Van Duc | null | 123 Le Loi, Q1, TP.HCM | 02/03/2003 | Nam | 1.3E7 | Thu kho | 2021
 5
 COCA | 100.0 | 8000.0
 SPR | 80.0 | 7500.0
