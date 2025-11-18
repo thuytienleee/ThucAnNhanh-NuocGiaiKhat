@@ -51,29 +51,47 @@ public class DSachHD {
         try {
             System.out.println("\n========== THEM HOA DON MOI ==========");
 
+            // Nhập và kiểm tra mã hóa đơn
             System.out.print("Ma hoa don: ");
-            String maHD = sc.nextLine();
+            String maHD = sc.nextLine().trim();
+
+            // Kiểm tra trùng mã hóa đơn
+            for (int i = 0; i < soLuongHD; i++) {
+                if (danhSachHD[i].getMaHoaDon().equalsIgnoreCase(maHD)) {
+                    System.out.println("LOI: Ma hoa don '" + maHD + "' da ton tai trong he thong!");
+                    System.out.println("Khong the tao hoa don moi.");
+                    return;
+                }
+            }
 
             System.out.print("Ten hoa don: ");
             String tenHD = sc.nextLine();
 
+            // Nhập và kiểm tra mã nhân viên
             System.out.print("Ma nhan vien (hoac N/A): ");
-            String maNV = sc.nextLine();
+            String maNV = sc.nextLine().trim();
             NhanVien nv = null;
+
             if (!maNV.equalsIgnoreCase("N/A")) {
                 nv = dsNV.timKiemNhanVien(maNV);
                 if (nv == null) {
-                    System.out.println("Khong tim thay nhan vien. Tao hoa don khong co nhan vien.");
+                    System.out.println("LOI: Khong tim thay nhan vien co ma '" + maNV + "' trong he thong!");
+                    System.out.println("Khong the tao hoa don moi.");
+                    return;
                 }
             }
 
+            // Nhập và kiểm tra mã khách hàng
             System.out.print("Ma khach hang (hoac N/A): ");
-            String maKH = sc.nextLine();
+            String maKH = sc.nextLine().trim();
             KhachHang kh = null;
+
             if (!maKH.equalsIgnoreCase("N/A")) {
                 kh = dsKH.timKiemKH(maKH);
                 if (kh == null) {
-                    System.out.println("Khong tim thay khach hang. Tao hoa don khong co khach hang.");
+                    System.out.println("LOI: Khong tim thay khach hang co ma '" + maKH + "' trong he thong!");
+                    System.out.println("Khong the tao hoa don moi.");
+                    return;
                 }
             }
 
@@ -90,9 +108,10 @@ public class DSachHD {
 
             System.out.print("So luong san pham: ");
             int soSP = Integer.parseInt(sc.nextLine());
+
             for (int i = 0; i < soSP; i++) {
                 System.out.print("Ma san pham thu " + (i + 1) + ": ");
-                String maSP = sc.nextLine();
+                String maSP = sc.nextLine().trim();
 
                 SanPham sp = dsSP.timkiemSP(maSP);
                 if (sp != null) {
@@ -112,8 +131,10 @@ public class DSachHD {
             System.out.println("\nHoa don da duoc tao thanh cong!");
             hd.inHoaDon();
 
+        } catch (NumberFormatException e) {
+            System.out.println("LOI: Dinh dang so khong hop le! " + e.getMessage());
         } catch (Exception e) {
-            System.out.println("Loi khi tao hoa don: " + e.getMessage());
+            System.out.println("LOI: " + e.getMessage());
         }
     }
 
