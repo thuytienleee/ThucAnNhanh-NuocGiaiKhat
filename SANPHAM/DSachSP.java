@@ -259,9 +259,9 @@ public class DSachSP {
         try {
 
             // ho tro HOA DON
-            FileReader fr = new FileReader(
-                    "E:\\doandeadline\\src\\src\\comx\\ThucAnNhanhNuocGiaiKhat\\SANPHAM\\SanPham.txt");
-            // FileReader fr = new FileReader("SANPHAM/SanPham.txt");
+            // FileReader fr = new FileReader(
+            // "E:\\doandeadline\\src\\src\\comx\\ThucAnNhanhNuocGiaiKhat\\SANPHAM\\SanPham.txt");
+            FileReader fr = new FileReader("SANPHAM/SanPham.txt");
             BufferedReader br = new BufferedReader(fr);
             String line;
             while ((line = br.readLine()) != null) {

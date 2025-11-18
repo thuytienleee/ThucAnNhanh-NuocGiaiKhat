@@ -1,17 +1,17 @@
-PN001 | Phieu nhap thang 11 | 01/11/2025 | NV001 | Nguyen Van Nam | 0901234567 | 123 Le Loi, Q1, TP.HCM | 15/05/1990 | Nam | 15000000 | Quan ly kho | 2020
+PN001 | Phieu nhap thang 11 | 01/11/2025 | NV001 | Nguyen Van Duong | 0911001111 | 123 Le Loi, Q1, TP.HCM | 02/02/2004 | Nam | 1.0E7 | Quan ly kho | 2020
 3
 NL01 | 50.0 | 25000
 NL02 | 20.0 | 80000
 NL03 | 30.0 | 15000
 
-PN002 | Phieu nhap thang 11 - dot 2 | 05/11/2025 | NV002 | Tran Thi Hong | 0912345678 | 123 Le Loi, Q1, TP.HCM | 20/08/1995 | Nu | 12000000 | Nhan vien kho | 2022
+PN002 | Phieu nhap thang 11 - dot 2 | 05/11/2025 | NV002 | Chu Bao Yen | 0922002222 | 123 Le Loi, Q1, TP.HCM | 02/02/2004 | Nu | 100000.0 | Nhan vien kho | 2022
 4
 NL04 | 25.0 | 120000
 NL05 | 15.0 | 150000
 NLGA | 30.0 | 90000
 NLBO | 20.0 | 180000
 
-PN003 | Phieu nhap do uong | 10/11/2025 | NV003 | Le Van Duc | 0923456789 | 123 Le Loi, Q1, TP.HCM | 10/03/1992 | Nam | 13000000 | Thu kho | 2021
+PN003 | Phieu nhap do uong | 10/11/2025 | NV003 | Truong Thi Trang | 0933003333 | 123 Le Loi, Q1, TP.HCM | 02/02/2004 | Nu | 1.1E7 | Thu kho | 2021
 5
 COCA | 100.0 | 8000
 SPR | 80.0 | 7500

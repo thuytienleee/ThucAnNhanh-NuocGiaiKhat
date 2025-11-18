@@ -378,9 +378,9 @@ public class DSachKH {
         try {
 
             // ho tro doc file cho HOA DON
-            FileReader fr = new FileReader(
-                    "E:\\doandeadline\\src\\src\\comx\\ThucAnNhanhNuocGiaiKhat\\CONNGUOI\\KhachHang.txt");
-            // FileReader fr = new FileReader("CONNGUOI/KhachHang.txt");
+            // FileReader fr = new FileReader(
+            // "E:\\doandeadline\\src\\src\\comx\\ThucAnNhanhNuocGiaiKhat\\CONNGUOI\\KhachHang.txt");
+            FileReader fr = new FileReader("CONNGUOI/KhachHang.txt");
             BufferedReader br = new BufferedReader(fr);
             String line;
             while ((line = br.readLine()) != null) {
